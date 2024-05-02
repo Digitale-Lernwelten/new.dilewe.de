@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import '../styles/lato/stylesheet.css';
 
 interface Props {
 	title: string;
@@ -34,20 +35,30 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--primary: #3DA98F;
+		--secondary: #D58337;
+		--content-width: 1200px;
+		--content-padding: 32px;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		color: #fff;
-		background-size: 224px;
+	html, body {
+		font-family: Lato, system-ui, sans-serif;
+		font-weight: 300;
+		background: #FBFBFB;
+		color: #1E1E1E;
+		margin: 0;
+		padding: 0;
+	}
+
+	* {
+		line-height: 1.35em;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		text-transform: uppercase;
+		font-weight: 300;
+	}
+
+	p {
+		margin:0 0 1em;
 	}
 </style>

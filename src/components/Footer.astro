@@ -1,18 +1,50 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
+
+import logo from "../assets/logo-dilewe-small.svg";
+import socialFacebook from "../assets/social-facebook.svg";
+import socialLinkedin from "../assets/social-linkedin.svg";
+import socialBluesky from "../assets/social-bluesky.svg";
+import socialInstagram from "../assets/social-instagram.svg";
+import socialTwitter from "../assets/social-twitter.svg";
 ---
 <nav>
 	<a class={currentPath === "datenschutz/" ? "active" : ""} href="/datenschutz/">Datenschutz</a>
 	<a class={currentPath === "impressum/" ? "active" : ""} href="/impressum/">Impressum</a>
+	<img class="logo" src={logo.src} width={logo.width} height={logo.height} />
+	<a href=""><img src={socialFacebook.src} width={socialFacebook.width} height={socialFacebook.height} /></a>
+	<a href=""><img src={socialLinkedin.src} width={socialLinkedin.width} height={socialLinkedin.height} /></a>
+	<a href=""><img src={socialBluesky.src} width={socialBluesky.width} height={socialBluesky.height} /></a>
+	<a href=""><img src={socialInstagram.src} width={socialInstagram.width} height={socialInstagram.height} /></a>
+	<a href=""><img src={socialTwitter.src} width={socialTwitter.width} height={socialTwitter.height} /></a>
 </nav>
 
 <style>
+	nav {
+		text-align: center;
+		display: block;
+		padding: 2rem 0 3.5rem;
+	}
 	a {
+		text-transform: uppercase;
 		text-decoration: none;
-		color:#fff;
+		color:var(--primary);
+		margin: 0 0.5rem;
 	}
 	a.active {
 		text-decoration: underline;;
+	}
+
+	img.logo {
+		transform: translate(0, 42%);
+		margin: 0 0.5rem;
+	}
+
+	a img {
+		display: inline-block;
+		width: 2rem;
+		height: 2rem;
+		margin-bottom: -0.5rem;
 	}
 </style>

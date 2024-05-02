@@ -1,12 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeaderImage from "../components/HeaderImage.astro";
 import TeaserBox from "../components/TeaserBox.astro";
 import HeaderTextParagraph from "../components/HeaderTextParagraph.astro";
 import TeamSlider from "../components/TeamSlider";
 import TeamSliderSlide from "../components/TeamSliderSlide";
+
+import headerImage from "../assets/header-index.jpg";
 ---
 
 <Layout title="Über uns">
+	<HeaderImage image={headerImage} />
 	<TeaserBox>
 		<h2>Manufaktur für digitale Bildung</h2>
 		<p>
@@ -17,8 +21,10 @@ import TeamSliderSlide from "../components/TeamSliderSlide";
 		</p>
 	</TeaserBox>
 	<HeaderTextParagraph>
-		<h3>Unsere Kernkompetenz</h3>
-		<h4>Ganzheitliche digitale Bildungsprojekte</h4>
+		<div>
+			<h3>Unsere Kernkompetenz</h3>
+			<h4>Ganzheitliche digitale Bildungsprojekte</h4>
+		</div>
 		<p>
 			Wir kennen die Bedürfnisse öffentlicher und privater Auftraggeber – seit
 			Jahren arbeiten wir erfolgreich mit Kultusministerien, Landesämtern,
@@ -34,7 +40,9 @@ import TeamSliderSlide from "../components/TeamSliderSlide";
 		</p>
 	</HeaderTextParagraph>
 	<HeaderTextParagraph>
-		<h3>Unser Ziel</h3>
+		<div>
+			<h3>Unser Ziel</h3>
+		</div>
 		<p>
 			Wir finden praktikable Lösungen für die aktuellen und langfristigen
 			Herausforderungen im Bildungs- und Kulturbereich – sei es
@@ -44,8 +52,10 @@ import TeamSliderSlide from "../components/TeamSliderSlide";
 		</p>
 	</HeaderTextParagraph>
 	<HeaderTextParagraph>
-		<h3>Unsere Digitalen Lösungen</h3>
-		<h4>als Antwort auf akute Krisen</h4>
+		<div>
+			<h3>Unsere Digitalen Lösungen</h3>
+			<h4>als Antwort auf akute Krisen</h4>
+		</div>
 		<p>
 			Corona, Ukraine, Lehrermangel – drei Krisen aus der letzten Zeit, auf die
 			wir schnell und kreativ mit spezifischen digitalen Lösungen antworten
@@ -55,8 +65,10 @@ import TeamSliderSlide from "../components/TeamSliderSlide";
 		</p>
 	</HeaderTextParagraph>
 	<HeaderTextParagraph>
-		<h3>Unsere Geschichte</h3>
-		<h4>über 10 Jahre Engagement für digitale Bildung</h4>
+		<div>
+			<h3>Unsere Geschichte</h3>
+			<h4>über 10 Jahre Engagement für digitale Bildung</h4>
+		</div>
 		<p>
 			Das Team der Digitalen Lernwelten prägt seit über zehn Jahren eine von
 			Didaktik und Inhalt motivierte Digitalisierung der Bildung aktiv mit.

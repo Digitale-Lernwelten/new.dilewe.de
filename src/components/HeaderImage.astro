@@ -1,0 +1,69 @@
+---
+import logo from "../assets/logo-dilewe.svg";
+
+interface Props {
+	image: ImageMetadata;
+}
+
+const { image } = Astro.props;
+---
+
+<div>
+	<svg height="0" width="0">
+		<defs>
+			<clipPath id="headerImageClipPath" clipPathUnits="objectBoundingBox">
+				<path d="M 0 0 L 0.9 0 C 1 0.3 1 0.7 0.92 1 L 0 1 L 0 0"></path>
+			</clipPath>
+		</defs>
+	</svg>
+	<div class="left">
+		<img src={image.src} width={image.width} height={image.height} />
+	</div>
+	<div class="right">
+		<img src={logo.src} width={logo.width} height={logo.height} />
+	</div>
+</div>
+
+<style>
+	div {
+		width: 100%;
+		height: 50vh;
+		position: relative;
+		background: var(--primary);
+	}
+
+	.left {
+		width: 50%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		overflow: hidden;
+		clip-path: url(#headerImageClipPath);
+	}
+
+	.left img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		display: block;
+		overflow: hidden;
+	}
+
+	.right {
+		width: 50%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.right img {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+</style>

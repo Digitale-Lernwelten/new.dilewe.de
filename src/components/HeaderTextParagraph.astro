@@ -5,3 +5,37 @@
 <div>
 	<slot/>
 </div>
+
+<style>
+	div {
+		width: 100%;
+		max-width: var(--content-width);
+		padding: 0 var(--content-padding);
+		margin:0 auto 2rem;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-areas: "col-left col-right";
+		gap: 2rem;
+	}
+
+	div > :global(*) {
+		grid-area: col-right;
+	}
+
+	div > :global(div) {
+		color: var(--primary);
+		grid-area: col-left;
+		display: block;
+		text-align: right;
+	}
+
+	div :global(h3) {
+		font-size: 1.8rem;
+		margin: 0;
+	}
+
+	div :global(h4) {
+		font-size: 1.2rem;
+		margin: 0;
+	}
+</style>
