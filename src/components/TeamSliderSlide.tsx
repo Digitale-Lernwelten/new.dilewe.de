@@ -38,7 +38,7 @@ export const TeamSliderSlide: React.FC<TeamSliderSlideProps> = ({
 			<p>{text}</p>
 		</div>
 		<div className={css.right}>
-			<img src={portrait.src} width={portrait.width} height={portrait.height} alt={portraitName ? portraitName : portraitLeftName + ' und ' + portraitRightName} />
+			<img src={'.' + portrait.src} width={portrait.width} height={portrait.height} alt={portraitName ? portraitName : portraitLeftName + ' und ' + portraitRightName} />
 			<div className={css.nameWrap}>
 				{portraitLeftName ? <span className={css.leftName}>{portraitLeftName}</span> : ''}
 				{portraitRightName ? <span className={css.rightName}>{portraitRightName}</span> : ''}
