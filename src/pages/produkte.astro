@@ -1,7 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeaderImage from "../components/HeaderImage.astro";
+
+import headerImage from "../assets/header-products.jpg";
+import logo from "../assets/logo-dilewe-small.svg?raw";
 ---
 
-<Layout title="Produkte">
+<Layout title="Produkte" bodyClass="products">
+	<HeaderImage image={headerImage}>
+		<h2>direkt, digital<br/>unterrichten</h2>
+		<span class="logo"><Fragment set:html={logo} /></span>
+	</HeaderImage>
 	<h1>Produkte</h1>
 </Layout>
+
+<style>
+	h2 {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 3rem;
+		color: var(--primary);
+		font-weight: 100;
+		letter-spacing: 3px;
+	}
+
+	.logo :global(svg) {
+		width: 25vw;
+		height: 25vw;
+		display: block;
+		position: absolute;
+		left: -8vw;
+		bottom: -2vw;
+		z-index:0;
+	}
+
+	.logo :global(svg) :global(path) {
+		fill: #0002;
+	}
+</style>

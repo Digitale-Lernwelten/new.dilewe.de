@@ -8,10 +8,10 @@ interface TeamSliderProps {
 	slides: TeamSliderSlideProps[];
 }
 
-const TeamSlider: React.FC<TeamSliderProps> = ({
-	headline,
-	slides,
-}) => {
+const TeamSlider: React.FC<TeamSliderProps> = props => {
+	const headline = props.headline || '';
+	const slides = props.slides || [];
+
 	const [activeSlide, setActiveSlide] = useState<string>(() => slides[0]?.name || '');
 
 	const slideNodes = slides.map(s => <TeamSliderSlide {...s} active={activeSlide === s.name} />);

@@ -5,6 +5,7 @@ import TeaserBox from "../components/TeaserBox.astro";
 import HeaderTextParagraph from "../components/HeaderTextParagraph.astro";
 import TeamSlider from "../components/TeamSlider";
 
+import logo from "../assets/logo-dilewe.svg";
 import headerImage from "../assets/header-index.jpg";
 import portraitFloMarcus from "../assets/portrait-flo-marcus.jpg";
 import portraitPiera from "../assets/portrait-piera.jpg";
@@ -12,9 +13,20 @@ import portraitObi from "../assets/portrait-obi.jpg";
 import portraitBen from "../assets/portrait-ben.jpg";
 import portraitFabi from "../assets/portrait-fabi.jpg";
 ---
-
-<Layout title="Über uns">
-	<HeaderImage image={headerImage} />
+<style>
+	p {
+		font-size: 1.2rem;
+	}
+</style>
+<Layout title="Über uns" bodyClass="index">
+	<HeaderImage image={headerImage}>
+		<img src={logo.src} width={logo.width} height={logo.height} style={{
+			position: 'absolute',
+			left: '50%',
+			top: '50%',
+			transform: 'translate(-50%, -50%)'
+		}} />
+	</HeaderImage>
 	<TeaserBox>
 		<h2>Manufaktur für digitale Bildung</h2>
 		<p>

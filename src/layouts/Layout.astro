@@ -5,9 +5,10 @@ import './fonts.css';
 
 interface Props {
 	title: string;
+	bodyClass: string;
 }
 
-const { title } = Astro.props;
+const { title, bodyClass } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +21,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={bodyClass}>
 		<header>
 			<Header />
 		</header>
@@ -37,16 +38,40 @@ const { title } = Astro.props;
 	:root {
 		--primary: #3DA98F;
 		--secondary: #D58337;
+		--tertiary: #027AAD;
+		--nav-background: var(--primary);
+		--nav-text-color: #FBFBFB;
 		--content-width: 1200px;
 		--content-padding: 32px;
+		--text-color: #1E1E1E;
+		--background-color: #FBFBFB;
 	}
 	html, body {
 		font-family: Lato, system-ui, sans-serif;
 		font-weight: 300;
-		background: #FBFBFB;
-		color: #1E1E1E;
+		background: var(--background-color);
+		color: var(--text-color);
 		margin: 0;
 		padding: 0;
+	}
+
+	body.privacy {
+		--primary: #027AAD;
+		--nav-background: #027AAD;
+	}
+
+	body.imprint,
+	body.references {
+		--primary: #D58337;
+		--secondary: #3DA98F;
+		--nav-background: #D58337;
+	}
+
+	body.products {
+		--primary: #616161;
+		--secondary: #d9d9d9;
+		--nav-background: #FBFBFB;
+		--nav-text-color: #616161;``
 	}
 
 	* {
@@ -54,6 +79,7 @@ const { title } = Astro.props;
 	}
 
 	h1,h2,h3,h4,h5,h6 {
+		font-family: Lato, system-ui, sans-serif;
 		text-transform: uppercase;
 		font-weight: 300;
 	}

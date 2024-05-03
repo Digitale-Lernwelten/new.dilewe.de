@@ -1,7 +1,145 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeaderImage from "../components/HeaderImage.astro";
+
+import headerImage from "../assets/header-references.jpg";
+import logo from "../assets/logo-dilewe-small.svg?raw";
+import PageContent from "../components/PageContent.astro";
 ---
 
-<Layout title="Datenschutz">
-	<h1>Datenschutz</h1>
+<Layout title="Datenschutz" bodyClass="privacy">
+	<HeaderImage image={headerImage}>
+		<h2>Datenschutz</h2>
+		<span class="logo"><Fragment set:html={logo} /></span>
+	</HeaderImage>
+	<br/><br/>
+	<PageContent>
+		<h3 id="geltungsbereich">Geltungsbereich</h3><p>
+			Nutzer erhalten mit dieser Datenschutzerklärung Information über die Art,
+			den Umfang und Zweck der Erhebung und Verwendung ihrer Daten durch den
+			verantwortlichen Anbieter erhoben und verwendet werden. Den rechtlichen
+			Rahmen für den Datenschutz bilden das Bundesdatenschutzgesetz (BDSG) und das
+			Telemediengesetz (TMG).
+		</p><h3 id="erfassung-allgemeiner-informationen">
+			Erfassung allgemeiner Informationen
+		</h3><p>
+			Mit jedem Zugriff auf dieses Angebot werden durch uns bzw. den
+			Webspace-Provider automatisch Informationen erfasst. Diese Informationen,
+			auch als Server-Logfiles bezeichnet, sind allgemeiner Natur und erlauben
+			keine Rückschlüsse auf Ihre Person. Erfasst werden unter anderem: Name der
+			Webseite, Datei, Datum, Datenmenge, Webbrowser und Webbrowser-Version,
+			Betriebssystem, der Domainname Ihres Internet-Providers, die sogenannte
+			Referrer-URL (jene Seite, von der aus Sie auf unser Angebot zugegriffen
+			haben) und die IP-Adresse. Ohne diese Daten wäre es technisch teils nicht
+			möglich, die Inhalte der Webseite auszuliefern und darzustellen. Insofern
+			ist die Erfassung der Daten zwingend notwendig. Darüber hinaus verwenden wir
+			die anonymen Informationen für statistische Zwecke. Sie helfen uns bei der
+			Optimierung des Angebots und der Technik. Wir behalten uns zudem das Recht
+			vor, die Log-Files bei Verdacht auf eine rechtswidrige Nutzung unseres
+			Angebotes nachträglich zu kontrollieren.
+		</p><h3 id="erbringung-kostenpflichtiger-leistungen">
+			Erbringung kostenpflichtiger Leistungen
+		</h3><p>
+			Damit wir kostenpflichtige Leistungen erbringen können, fragen wir
+			zusätzliche Daten ab. Das gilt zum Beispiel für die Angaben zur Zahlung.
+			Damit die Sicherheit Ihrer Daten während der Übertragung gewährleistet ist,
+			arbeiten wir mit Verschlüsselungsverfahren (etwa SSL) über HTTPS, die den
+			aktuellen Stand der Technik widerspiegeln.
+		</p><h3 id="kommentarfunktion">Kommentarfunktion</h3><p>
+			Werden Kommentare oder sonstige Beiträge auf unserem Angebot verfasst und
+			veröffentlicht, speichern wir die IP-Adresse, den Nutzernamen und den
+			Zeitpunkt der Erstellung. Diese Daten werden aus Sicherheitsgründen erhoben,
+			da der Anbieter für rechtswidrige Inhalte (verbotene Propaganda,
+			Beleidigungen u.a.) belangt werden kann, auch wenn sie von dritter Seite
+			erstellt wurden. In einem solchen Fall dienen die Informationen dazu, die
+			Identität des Verfassers zu ermitteln.
+		</p><h3 id="kommentarabonnement">Kommentarabonnement</h3><p>
+			Wenn Nutzer dieses Angebots Nachfolgekommentare abonnieren, erhalten sie
+			eine Bestätigungsmail. Mit dieser E-Mail stellen wir sicher, dass der Nutzer
+			auch tatsächlich Inhaber der genannten E-Mail-Adresse ist. Sie haben
+			jederzeit die Möglichkeit, das Kommentarabonnement zu beenden. Hinweise dazu
+			erhalten Sie zusammen mit der Bestätigungsmail.
+		</p><h3 id="newsletter">Newsletter</h3><p>
+			Melden Sie sich für unseren Newsletter an, verwenden wir die von Ihnen
+			eingegebenen Daten ausschließlich für diesen Zweck oder um sie über die für
+			diesen Dienst oder die Registrierung relevanten Umstände zu informieren.
+			Diese Daten geben wir nicht an Dritte weiter. Für den Empfang des
+			Newsletters bedarf es einer validen (gültigen) E-Mail-Adresse. Gespeichert
+			werden zudem die IP-Adresse, über die Sie sich für den Newsletter anmelden
+			und das Datum, an dem Sie den Newsletter bestellen. Diese Daten dienen uns
+			als Nachweis bei Missbrauch, falls eine fremde E-Mail-Adresse für den
+			Newsletter angemeldet wird. Um darüber hinaus sicherzustellen, dass eine
+			E-Mail-Adresse nicht missbräuchlich durch Dritte in unseren Verteiler
+			eingetragen wird, arbeiten wir gesetzeskonform mit dem sogenannten
+			„Double-Opt-In“-Verfahren. Im Rahmen dieses Verfahren werden die Bestellung
+			des Newsletters, der Versand der Bestätigungsmail und der Erhalt der
+			Anmeldebestätigung protokolliert. Sie haben jederzeit die Möglichkeit, Ihre
+			Einwilligung zur Speicherung der Daten, Ihrer E-Mail-Adresse und deren
+			Nutzung für den Newsletter-Versand zu widerrufen. Für den Widerruf stellen
+			wir Ihnen in jedem Newsletter und auf der Webseite einen Link zur Verfügung.
+			Sie haben außerdem die Möglichkeit, uns Ihren Widerrufswunsch über die in
+			diesem Dokument genannten Kontaktmöglichkeiten mitzuteilen.
+		</p><h3 id="kontaktformular">Kontaktformular</h3><p>
+			Wenn Sie uns über das Onlineformular oder per E-Mail kontaktieren, speichern
+			wir die von Ihnen gemachten Angaben, um Ihre Anfrage beantworten und
+			mögliche Anschlussfragen stellen zu können.
+		</p><h3 id="datensparsamkeit">Datensparsamkeit</h3><p>
+			Personenbezogene Daten speichern wir gemäß den Grundsätzen der
+			Datenvermeidung und Datensparsamkeit nur so lange, wie es erforderlich ist
+			oder vom Gesetzgeber her vorgeschrieben wird (gesetzliche Speicherfrist).
+			Entfällt der Zweck der erhobenen Informationen oder endet die Speicherfrist,
+			sperren oder löschen wir die Daten.
+		</p><p>
+			Ihre Rechte auf Auskunft, Berichtigung, Sperre, Löschung und Widerspruch Sie
+			haben das Recht, auf Antrag unentgeltlich eine Auskunft, über die bei uns
+			gespeicherten personenbezogenen Daten, anzufordern und/oder eine
+			Berichtigung, Sperrung oder Löschung zu verlangen. Ausnahmen: Es handelt
+			sich um die vorgeschriebene Datenspeicherung zur Geschäftsabwicklung oder
+			die Daten unterliegen der gesetzlichen Aufbewahrungspflicht. Für diese
+			Zwecke kontaktieren Sie bitte unseren Datenschutzbeauftragen (Kontaktdaten:
+			am Ende der Datenschutzerklärung). Um eine Datensperre jederzeit
+			berücksichtigen zu können, ist es erforderlich, die Daten für Kontrollzwecke
+			in einer Sperrdatei vorzuhalten. Besteht keine gesetzliche
+			Archivierungspflicht, können Sie auch die Löschung der Daten verlangen.
+			Anderenfalls sperren wir die Daten, sofern Sie dies wünschen.
+		</p><h3 id="änderung-unserer-datenschutzerklärung">
+			Änderung unserer Datenschutzerklärung
+		</h3><p>
+			Um zu gewährleisten, dass unsere Datenschutzerklärung stets den aktuellen
+			gesetzlichen Vorgaben entspricht, behalten wir uns jederzeit Änderungen vor.
+			Das gilt auch für den Fall, dass die Datenschutzerklärung aufgrund neuer
+			oder überarbeiteter Leistungen, zum Beispiel neuer Serviceleistungen,
+			angepasst werden muss. Die neue Datenschutzerklärung greift dann bei Ihrem
+			nächsten Besuch auf unserem Angebot.
+		</p><p>
+			Quelle: Datenschutz-Konfigurator von mein-datenschutzbeauftragter.de
+		</p>
+	</PageContent>
 </Layout>
+
+<style>
+	h2 {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 3rem;
+		color: #fff;
+		font-weight: 100;
+		letter-spacing: 3px;
+	}
+
+	.logo :global(svg) {
+		width: 25vw;
+		height: 25vw;
+		display: block;
+		position: absolute;
+		left: -8vw;
+		bottom: -2vw;
+		z-index:0;
+	}
+
+	.logo :global(svg) :global(path) {
+		fill: #fff2;
+	}
+</style>

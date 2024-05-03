@@ -2,16 +2,16 @@
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
-
 <nav>
 	<a class={currentPath === "" ? "active" : ""} href="/">Über uns</a>
 	<a class={currentPath === "referenzen/" ? "active" : ""} href="/referenzen/">Referenzen</a>
-	<a class={currentPath === "produkte/" ? "active" : ""} href="/produkte/">Produkte</a>
+	<a href="https://netbook-deutsch.de/" target="_blank">netBook</a>
+	{ /* <a class={currentPath === "produkte/" ? "active" : ""} href="/produkte/">Produkte</a> */ }
 </nav>
 
 <style>
 	nav {
-		background: var(--primary);
+		background: var(--nav-background);
 		position: fixed;
 		right: 0;
 		top: 0;
@@ -22,7 +22,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
 
 	a {
 		text-decoration: none;
-		color:#fff;
+		color: var(--nav-text-color);
 		text-transform: uppercase;
 		padding:0 32px;
 		font-size: 1.2rem;
