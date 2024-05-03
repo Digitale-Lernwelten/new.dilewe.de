@@ -8,29 +8,38 @@ import imageFox from "../assets/header-fox.png";
 const { image, fox } = Astro.props;
 ---
 
-<div class="wrap">
-	<svg height="0" width="0">
-		<defs>
-			<clipPath id="headerImageClipPath" clipPathUnits="objectBoundingBox">
-				<path d="M 0 0 L 0.9 0 C 1 0.3 1 0.7 0.92 1 L 0 1 L 0 0"></path>
-			</clipPath>
-		</defs>
-	</svg>
-	<div class="left">
-		<img src={image.src} width={image.width} height={image.height} />
+<div class="outerWrap">
+	<div class="wrap">
+		<svg height="0" width="0">
+			<defs>
+				<clipPath id="headerImageClipPath" clipPathUnits="objectBoundingBox">
+					<path d="M 0 0 L 0.9 0 C 1 0.3 1 0.7 0.92 1 L 0 1 L 0 0"></path>
+				</clipPath>
+			</defs>
+		</svg>
+		<div class="left">
+			<img src={image.src} width={image.width} height={image.height} />
+		</div>
+		<div class="right">
+			<slot />
+		</div>
 	</div>
 	{ !fox ? '' : (<img class="fox" src={imageFox.src} width={imageFox.width} height={imageFox.height} alt="Ein Fuchs" />)}
-	<div class="right">
-		<slot />
-	</div>
 </div>
 
 <style>
 	.wrap {
 		width: 100%;
-		height: 50vh;
+		height: 100%;
 		position: relative;
 		background: var(--nav-background);
+		overflow: hidden;
+	}
+
+	.outerWrap {
+		width: 100%;
+		height: 50vh;
+		position: relative;
 	}
 
 	.left {
@@ -60,7 +69,6 @@ const { image, fox } = Astro.props;
 		position: absolute;
 		right: 0;
 		top: 0;
-		overflow: hidden;
 	}
 
 	.fox {
