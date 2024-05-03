@@ -1,9 +1,11 @@
 ---
 interface Props {
 	image: ImageMetadata;
+	fox?: boolean;
 }
 
-const { image } = Astro.props;
+import imageFox from "../assets/header-fox.png";
+const { image, fox } = Astro.props;
 ---
 
 <div class="wrap">
@@ -17,6 +19,7 @@ const { image } = Astro.props;
 	<div class="left">
 		<img src={image.src} width={image.width} height={image.height} />
 	</div>
+	{ !fox ? '' : (<img class="fox" src={imageFox.src} width={imageFox.width} height={imageFox.height} alt="Ein Fuchs" />)}
 	<div class="right">
 		<slot />
 	</div>
@@ -28,7 +31,6 @@ const { image } = Astro.props;
 		height: 50vh;
 		position: relative;
 		background: var(--nav-background);
-		overflow:hidden;
 	}
 
 	.left {
@@ -58,5 +60,24 @@ const { image } = Astro.props;
 		position: absolute;
 		right: 0;
 		top: 0;
+		overflow: hidden;
+	}
+
+	.fox {
+		position: absolute;
+		z-index: 2;
+		left: 50%;
+		margin-left: -900px;
+		width: 360px;
+		height: auto;
+		display: block;
+		bottom: 0;
+		transform: translate(0, 45.5%);
+	}
+
+	@media only screen and (max-width: 1700px)  {
+		.fox {
+			display: none;
+		}
 	}
 </style>
