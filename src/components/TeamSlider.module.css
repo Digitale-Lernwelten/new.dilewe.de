@@ -1,0 +1,37 @@
+.wrap {
+	display: block;
+	overflow: hidden;
+}
+
+.wrap h3 {
+	color: var(--primary);
+}
+
+.headerWrap,
+.tabs {
+	display: block;
+	text-align: center;
+	width: 100%;
+	max-width: var(--content-width);
+	padding:0 var(--content-padding);
+	margin: 0 auto;
+}
+
+.slides {
+	background: var(--primary);
+	color: #fff;
+	display: block;
+	margin-bottom: 2rem;
+}
+
+.headerWrap {
+	text-align: left;
+}
+
+.headerWrap h3 {
+	width: 50%;
+	display:inline-block;
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 0.25rem;
+}

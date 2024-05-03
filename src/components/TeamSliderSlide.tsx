@@ -1,36 +1,50 @@
 import React from 'react';
+import css from './TeamSliderSlide.module.css';
+import type { ImageMetadata } from 'astro';
 
-interface PlaceholderProps {
+export interface TeamSliderSlideProps {
 	portraitLeftName?: string;
 	portraitRightName?: string;
 	portraitName?: string;
 	portraitWide?: boolean;
-	slideName: string;
-	children?: React.ReactNode;
+	portrait: ImageMetadata;
+	name: string;
+	text: string;
+	active?: boolean;
 }
 
-const TeamSliderSlide: React.FC<PlaceholderProps> = ({
+export const TeamSliderSlide: React.FC<TeamSliderSlideProps> = ({
 	portraitLeftName,
 	portraitRightName,
 	portraitName,
 	portraitWide = false,
-	slideName,
-	children,
+	portrait,
+	name,
+	text,
+	active,
 }) => {
-	const style = {
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		borderRadius: '5px',
-		marginBottom: portraitWide ? '0px' : '0px', // Not necessary, only done so that portraitWide is used somewhere for now
-	};
+	if(!active){return null;}
+	const classes = [css.slide];
+	if(portraitWide){
+		classes.push(css.wide);
+	}
+	if(active){
+		classes.push(css.active);
+	}
 
-	return <div style={style}>
-		<h4>{slideName}</h4>
-		{children}
-		{portraitLeftName || ''}
-		{portraitRightName || ''}
-		{portraitName || ''}
+	return <div className={classes.join(' ')}>
+		<div className={css.left}>
+			<h4>{name}</h4>
+			<p>{text}</p>
+		</div>
+		<div className={css.right}>
+			<img src={portrait.src} width={portrait.width} height={portrait.height} alt={portraitName ? portraitName : portraitLeftName + ' und ' + portraitRightName} />
+			<div className={css.nameWrap}>
+				{portraitLeftName ? <span className={css.leftName}>{portraitLeftName}</span> : ''}
+				{portraitRightName ? <span className={css.rightName}>{portraitRightName}</span> : ''}
+				{portraitName ? <span className={css.name}>{portraitName}</span> : ''}
+			</div>
+		</div>
 	</div>;
 };
 

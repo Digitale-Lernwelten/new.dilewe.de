@@ -4,9 +4,13 @@ import HeaderImage from "../components/HeaderImage.astro";
 import TeaserBox from "../components/TeaserBox.astro";
 import HeaderTextParagraph from "../components/HeaderTextParagraph.astro";
 import TeamSlider from "../components/TeamSlider";
-import TeamSliderSlide from "../components/TeamSliderSlide";
 
 import headerImage from "../assets/header-index.jpg";
+import portraitFloMarcus from "../assets/portrait-flo-marcus.jpg";
+import portraitPiera from "../assets/portrait-piera.jpg";
+import portraitObi from "../assets/portrait-obi.jpg";
+import portraitBen from "../assets/portrait-ben.jpg";
+import portraitFabi from "../assets/portrait-fabi.jpg";
 ---
 
 <Layout title="Über uns">
@@ -79,67 +83,65 @@ import headerImage from "../assets/header-index.jpg";
 			die gestaltende Teilnahme an Tagungen und Konferenzen.
 		</p>
 	</HeaderTextParagraph>
-	<TeamSlider headline="Kompetenzen" client:load>
-		<TeamSliderSlide
-			slideName="Geschäftsführung & Strategie"
-			portraitLeftName="Dr. Florian Sochatzy"
-			portraitRightName="Dr. Marcus Ventzke"
-			portraitWide
-		>
-			<p>
-				Wissen, was man tut und wie man es tut. Darin stecken die
-				Voraussetzungen, denen er mit Intensität nachgeht. Immer und überall.
-				Lesen, Konzepte entwickeln, Strategie reflektieren, eigene Erfahrungen
-				einbringen – er gibt unserer Firma den notwendigen Drive nach vorne. So
-				kann er Menschen von Ideen begeistern. Und dafür sorgen, dass immer
-				etwas Spannendes auf die Agenda rückt. Langeweile ist nicht.
-			</p>
-		</TeamSliderSlide>
-		<TeamSliderSlide slideName="Grafik & Motion" portraitName="Piera Jelinek">
-			<p>
-				Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
-				dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
-				Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
-				vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
-				Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
-				Digitalen Lernwelten.
-			</p>
-		</TeamSliderSlide>
-		<TeamSliderSlide
-			slideName="Inhalt & Konzepte"
-			portraitName="Veronika Obermeier"
-		>
-			<p>
-				Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
-				dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
-				Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
-				vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
-				Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
-				Digitalen Lernwelten.
-			</p>
-		</TeamSliderSlide>
-		<TeamSliderSlide
-			slideName="Entwicklung & IT"
-			portraitName="Benjamin Schulenburg"
-		>
-			<p>
-				Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
-				dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
-				Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
-				vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
-				Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
-				Digitalen Lernwelten.
-			</p>
-		</TeamSliderSlide>
-		<TeamSliderSlide slideName="Video & Audio" portraitName="Fabian Hell">
-			<p>
-				Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
-				dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
-				Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
-				vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
-				Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
-				Digitalen Lernwelten.
-			</p>
-		</TeamSliderSlide>
-	</TeamSlider>
+	<TeamSlider 
+		client:load
+		headline="Kompetenzen"
+		slides={
+			[
+				{
+					name: "Geschäftsführung & Strategie",
+					portraitLeftName: "Dr. Florian Sochatzy",
+					portraitRightName: "Dr. Marcus Ventzke",
+					portraitWide: true,
+					portrait: portraitFloMarcus,
+					text: `Wissen, was man tut und wie man es tut. Darin stecken die
+						Voraussetzungen, denen er mit Intensität nachgeht. Immer und überall.
+						Lesen, Konzepte entwickeln, Strategie reflektieren, eigene Erfahrungen
+						einbringen – er gibt unserer Firma den notwendigen Drive nach vorne. So
+						kann er Menschen von Ideen begeistern. Und dafür sorgen, dass immer
+						etwas Spannendes auf die Agenda rückt. Langeweile ist nicht.`,
+				},{
+					name: "Grafik & Motion",
+					portraitName: "Piera Jelinek",
+					portrait: portraitPiera,
+					text: `Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
+						dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
+						Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
+						vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
+						Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
+						Digitalen Lernwelten.`,
+				},{
+					name: "Inhalt & Konzepte",
+					portraitName: "Veronika Obermeier",
+					portrait: portraitObi,
+					text: `Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
+						dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
+						Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
+						vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
+						Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
+						Digitalen Lernwelten.`,
+				},{
+					name: "Entwicklung & IT",
+					portraitName: "Benjamin Schulenburg",
+					portrait: portraitBen,
+					text: `Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
+						dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
+						Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
+						vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
+						Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
+						Digitalen Lernwelten.`,
+				},{
+					name: "Video & Audio",
+					portraitName: "Fabian Hell",
+					portrait: portraitFabi,
+					text: `Piera interpretiert die Welt in Bildern. So weit, so gut. Hinzu kommt,
+						dass sie unglaublich geduldig ist und selbst hilflose Umschreibungen des
+						Gewollten präzise erfasst und umsetzt. Dabei ist ihre Bandbreite enorm:
+						vom Logo über Infografik und Headerbild bis zur Animation. Um ihren
+						Arbeitsplatz herum entsteht jeden Tag aufs Neue das Kreativzentrum der
+						Digitalen Lernwelten.`,
+				},
+			]
+		}
+	/>
 </Layout>

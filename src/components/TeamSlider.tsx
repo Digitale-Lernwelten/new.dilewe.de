@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { type TeamSliderSlideProps, TeamSliderSlide } from './TeamSliderSlide';
+import TeamSliderTab from './TeamSliderTab';
+import css from './TeamSlider.module.css';
 
-interface PlaceholderProps {
+interface TeamSliderProps {
 	headline: string;
-	children?: React.ReactNode;
+	slides: TeamSliderSlideProps[];
 }
 
-const TeamSlider: React.FC<PlaceholderProps> = ({
+const TeamSlider: React.FC<TeamSliderProps> = ({
 	headline,
-	children,
+	slides,
 }) => {
-	const style = {
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		borderRadius: '5px',
-	};
+	const [activeSlide, setActiveSlide] = useState<string>(() => slides[0]?.name || '');
 
-	return <div style={style}>
-		<h3>{headline}</h3>
-		{children}
+	const slideNodes = slides.map(s => <TeamSliderSlide {...s} active={activeSlide === s.name} />);
+	const slideTabs = slides.map(s => <TeamSliderTab name={s.name} active={activeSlide === s.name} setActiveSlide={setActiveSlide} />)
+
+	return <div className={css.wrap}>
+		<div className={css.headerWrap}><h3>{headline}</h3></div>
+		<div className={css.slides}>{slideNodes}</div>
+		<div className={css.tabs}>{slideTabs}</div>
 	</div>;
 };
 

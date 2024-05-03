@@ -1,0 +1,85 @@
+.slide {
+	display: block;
+	text-align: center;
+	width: 100%;
+	max-width: var(--content-width);
+	padding:0 var(--content-padding);
+	margin: 0 auto;
+}
+
+.active {
+
+}
+
+.wide {
+
+}
+
+.left {
+	display: block;
+	width: 50%;
+	float: left;
+}
+
+.left h4 {
+	font-size: 1.6rem;
+}
+
+.left p {
+	font-size: 1.4rem;
+	line-height: 1.5em;
+	margin-bottom: 3rem;
+}
+
+.right {
+	display: block;
+	width: 50%;
+	float: right;
+	padding: 0 6rem;
+	box-sizing: border-box;
+}
+
+.right img {
+	width: 100%;
+	display: block;
+	height: auto;
+	border-radius: 50%;
+	margin-top: -6rem;
+}
+
+.slide::after {
+	content:'';
+	display: block;
+	clear:both;
+}
+
+.wide .right {
+	padding: 0;
+}
+
+.wide .right img {
+	margin-top: -21rem;
+}
+
+.nameWrap {
+	display: block;
+	width: 24rem;
+	margin: 0 auto;
+	font-size: 1.2rem;
+	padding: 1rem 0;
+}
+
+.leftName {
+	float:left;
+	clear:both;
+}
+
+.rightName {
+	float:right;
+	clear:both;
+}
+
+.name {
+	clear:both;
+	text-align:center;
+}

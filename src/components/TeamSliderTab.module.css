@@ -1,0 +1,10 @@
+.tab {
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 1rem;
+	color: var(--primary);
+}
+
+.active {
+	text-decoration: underline;
+}
