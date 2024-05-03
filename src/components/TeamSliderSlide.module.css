@@ -45,6 +45,7 @@
 	height: auto;
 	border-radius: 50%;
 	margin-top: -6rem;
+	background: #fbfbfb;
 }
 
 .slide::after {
