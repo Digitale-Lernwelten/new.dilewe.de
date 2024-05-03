@@ -31,7 +31,7 @@ const { image, odd } = Astro.props;
 	}
 
 	.image {
-		width: 50%;
+		width: calc(50% + 100px);
 		height: 100%;
 		display: block;
 		position: absolute;
@@ -62,7 +62,7 @@ const { image, odd } = Astro.props;
 	.textInner {
 		display: block;
 		width: 100%;
-		padding: 3rem 50% 3rem 0;
+		padding: 3rem calc(50% + 100px) 3rem 0;
 		box-sizing: border-box;
 	}
 
@@ -74,6 +74,6 @@ const { image, odd } = Astro.props;
 
 	.odd .textInner {
 		padding-right: 0;
-		padding-left: 50%;
+		padding-left: calc(50% + 100px);
 	}
 </style>
