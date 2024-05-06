@@ -13,7 +13,7 @@ const { image, fox } = Astro.props;
 		<svg height="0" width="0">
 			<defs>
 				<clipPath id="headerImageClipPath" clipPathUnits="objectBoundingBox">
-					<path d="M 1 0 L 0 0 C 0.05 0.5 0.05 0.5 0 1 L 1 1 L 1 0"></path>
+					<path d="M 1 0 L 0 0 C 0.05 0.4 0.05 0.6 0 1 L 1 1 L 1 0"></path>
 				</clipPath>
 			</defs>
 		</svg>
@@ -38,16 +38,16 @@ const { image, fox } = Astro.props;
 
 	.outerWrap {
 		width: 100%;
-		height: 50vh;
+		height: calc(min(50vh, 40vw));
 		position: relative;
 	}
 
 	.left {
-		width: 55%;
+		width: 50%;
 		height: 100%;
 		display: block;
 		position: absolute;
-		left: 0;
+		right: 0;
 		top: 0;
 	}
 
@@ -57,6 +57,7 @@ const { image, fox } = Astro.props;
 		height: 100%;
 		display: block;
 		overflow: hidden;
+		clip-path: url(#headerImageClipPath);
 	}
 
 	.right {
@@ -64,12 +65,22 @@ const { image, fox } = Astro.props;
 		height: 100%;
 		display: block;
 		position: absolute;
-		right: 0;
+		left: 0;
 		top: 0;
-		clip-path: url(#headerImageClipPath);
-		overflow: hidden;
-		background: var(--nav-background);
-		z-index:2;
+	}
+
+	.right :global(img) {
+		display: block;
+		height: auto;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 100%;
+		height: 100%;
+		object-fit:scale-down;
+		padding: 4rem;
+		box-sizing: border-box;
+		transform: translate(-50%, -50%);
 	}
 
 	.fox {
@@ -77,14 +88,14 @@ const { image, fox } = Astro.props;
 		z-index: 2;
 		left: 50%;
 		margin-left: -900px;
-		width: 360px;
+		width: 280px;
 		height: auto;
 		display: block;
 		bottom: 0;
 		transform: translate(0, 45.5%);
 	}
 
-	@media only screen and (max-width: 1700px)  {
+	@media only screen and (max-width: 1750px)  {
 		.fox {
 			display: none;
 		}

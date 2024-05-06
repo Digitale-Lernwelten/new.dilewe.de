@@ -14,20 +14,10 @@ import portraitObi from "../assets/portraits/obi.jpg";
 import portraitBen from "../assets/portraits/ben.jpg";
 import portraitFabi from "../assets/portraits/fabi.jpg";
 ---
-<style>
-	p {
-		font-size: 1.2rem;
-	}
-</style>
 
 <Layout title="Über uns" bodyClass="index">
 	<HeaderImage image={headerImage} fox>
-		<img src={logo.src} width={logo.width} height={logo.height} style={{
-			position: 'absolute',
-			left: '50%',
-			top: '50%',
-			transform: 'translate(-50%, -50%)'
-		}} />
+		<img src={logo.src} width={logo.width} height={logo.height} />
 	</HeaderImage>
 	<TeaserBox>
 		<h2>Manufaktur für digitale Bildung</h2>

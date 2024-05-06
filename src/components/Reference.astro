@@ -7,14 +7,16 @@ interface Props {
 const { image } = Astro.props;
 ---
 
+
+
 <div class="wrap">
 	<svg height="0" width="0">
 		<defs>
 			<clipPath id="referenceClipPathLeft" clipPathUnits="objectBoundingBox">
-				<path d="M 0 0 L 1 0 C 0.95 0.5 0.95 0.5 1 1 L 0 1 L 0 0"></path>
+				<path d="M 0 0 L 1 0 C 0.95 0.4 0.95 0.6 1 1 L 0 1 L 0 0"></path>
 			</clipPath>
 			<clipPath id="referenceClipPathRight" clipPathUnits="objectBoundingBox">
-				<path d="M 1 0 L 0 0 C 0.05 0.5 0.05 0.5 0 1 L 1 1 L 1 0"></path>
+				<path d="M 1 0 L 0 0 C 0.05 0.4 0.05 0.6 0 1 L 1 1 L 1 0"></path>
 			</clipPath>
 		</defs>
 	</svg>
@@ -57,12 +59,17 @@ const { image } = Astro.props;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: 30% 50%;
+	}
+
+	.wrap:nth-child(even) .image img {
+		object-position: 70% 50%;
 	}
 
 	.text {
 		width: 100%;
 		height: 100%;
-		max-width: var(--content-width);
+		max-width: var(--content-wide-width);
 		padding: 0 var(--content-padding);
 		margin: 0 auto;
 		display: block;
@@ -71,6 +78,7 @@ const { image } = Astro.props;
 
 	.textInner {
 		display: block;
+		position: relative;
 		width: 100%;
 		padding: 3rem calc(50% + 3rem) 3rem 0;
 		box-sizing: border-box;
@@ -85,5 +93,40 @@ const { image } = Astro.props;
 	.wrap:nth-child(even) .textInner {
 		padding-right: 0;
 		padding-left: calc(50% + 3rem);
+	}
+
+	.wrap:nth-child(odd) .textInner {
+		text-align: right;
+	}
+
+	.textInner :global(h3) {
+		font-size: 2rem;
+		font-weight: 200;
+		color: var(--tertiary);
+		margin: 0 0 0.5rem;
+	}
+
+	.textInner :global(h4) {
+		font-size: 1.4rem;
+		font-weight: 200;
+		color: var(--text-color);
+		text-transform: none;
+		margin: 0 0 4rem;
+	}
+
+	.textInner :global(p) {
+		margin: 0 0 4rem;
+		font-size: 1.2rem;
+		color: var(--text-color);
+	}
+
+	.textInner :global(a) {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: var(--tertiary);
+	}
+
+	.textInner :global(.links) {
+		font-size: 1.2rem;
 	}
 </style>

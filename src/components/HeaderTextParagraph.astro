@@ -15,7 +15,9 @@
 		display: grid;
 		grid-template-columns: 50% 50%;
 		grid-template-areas: "col-left col-right";
-		gap: 2rem;
+		gap: var(--content-padding);
+		grid-gap: var(--content-padding);
+		box-sizing: border-box;
 	}
 
 	div > :global(*) {
@@ -34,8 +36,13 @@
 		margin: 0;
 	}
 
+	div :global(p),
 	div :global(h4) {
 		font-size: 1.2rem;
 		margin: 0;
+	}
+
+	div :global(p) {
+		margin-right: var(--content-padding);
 	}
 </style>
