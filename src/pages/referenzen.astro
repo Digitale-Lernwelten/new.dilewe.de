@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Reference from "../components/Reference.astro";
+import Reference from "../components/Reference.tsx"
 import HeaderImage from "../components/HeaderImage.astro";
 
 import headerImage from "../assets/header/3.jpg";
@@ -57,7 +57,7 @@ import referenceModule from "../assets/references/module.jpg";
 </style>
 
 <Layout title="Referenzen" bodyClass="references">
-	<HeaderImage image={headerImage}>
+	<HeaderImage image={headerImage} foxReferences>
 		<h2>Aktuelle Projekte</h2>
 		<span class="logo"><Fragment set:html={logo} /></span>
 	</HeaderImage>

@@ -1,0 +1,13 @@
+---
+interface Props {
+	image: ImageMetadata;
+}
+
+import Reference from './Reference';
+const {image} = Astro.props;
+
+---
+
+<Reference image={image} client:load>
+	<slot />
+</Reference>

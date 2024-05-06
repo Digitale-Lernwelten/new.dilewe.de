@@ -2,10 +2,12 @@
 interface Props {
 	image: ImageMetadata;
 	fox?: boolean;
+	foxReferences?: boolean;
 }
 
 import imageFox from "../assets/header-fox.png";
-const { image, fox } = Astro.props;
+import imageFoxReferences from "../assets/header-fox-references.png";
+const { image, fox, foxReferences } = Astro.props;
 ---
 
 <div class="outerWrap">
@@ -17,14 +19,15 @@ const { image, fox } = Astro.props;
 				</clipPath>
 			</defs>
 		</svg>
-		<div class="left">
+		<div class="image">
 			<img src={image.src} width={image.width} height={image.height} />
 		</div>
-		<div class="right">
+		<div class="text">
 			<slot />
 		</div>
 	</div>
 	{ !fox ? '' : (<img class="fox" src={imageFox.src} width={imageFox.width} height={imageFox.height} alt="Ein Fuchs" />)}
+	{ !foxReferences ? '' : (<img class="fox-references" src={imageFoxReferences.src} width={imageFoxReferences.width} height={imageFoxReferences.height} alt="Ein Fuchs" />)}
 </div>
 
 <style>
@@ -42,25 +45,25 @@ const { image, fox } = Astro.props;
 		position: relative;
 	}
 
-	.left {
+	.image {
 		width: 50%;
 		height: 100%;
 		display: block;
 		position: absolute;
 		right: 0;
 		top: 0;
+		clip-path: url(#headerImageClipPath);
 	}
 
-	.left img {
+	.image img {
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
 		display: block;
 		overflow: hidden;
-		clip-path: url(#headerImageClipPath);
 	}
 
-	.right {
+	.text {
 		width: 50%;
 		height: 100%;
 		display: block;
@@ -69,7 +72,7 @@ const { image, fox } = Astro.props;
 		top: 0;
 	}
 
-	.right :global(img) {
+	.text :global(img) {
 		display: block;
 		height: auto;
 		position: absolute;
@@ -86,12 +89,13 @@ const { image, fox } = Astro.props;
 	.fox {
 		position: absolute;
 		z-index: 2;
-		left: 50%;
-		margin-left: -900px;
+		right: 50%;
+		margin-right: -900px;
 		width: 280px;
 		height: auto;
 		display: block;
 		bottom: 0;
+		z-index:10;
 		transform: translate(0, 45.5%);
 	}
 
@@ -99,5 +103,16 @@ const { image, fox } = Astro.props;
 		.fox {
 			display: none;
 		}
+	}
+
+	.fox-references {
+		position: absolute;
+		z-index: 2;
+		left: 50%;
+		width: 580px;
+		height: auto;
+		display: block;
+		bottom: 0;
+		z-index:10;
 	}
 </style>
