@@ -13,7 +13,7 @@ const { image, fox } = Astro.props;
 		<svg height="0" width="0">
 			<defs>
 				<clipPath id="headerImageClipPath" clipPathUnits="objectBoundingBox">
-					<path d="M 0 0 L 0.9 0 C 1 0.3 1 0.7 0.92 1 L 0 1 L 0 0"></path>
+					<path d="M 1 0 L 0 0 C 0.05 0.5 0.05 0.5 0 1 L 1 1 L 1 0"></path>
 				</clipPath>
 			</defs>
 		</svg>
@@ -43,15 +43,12 @@ const { image, fox } = Astro.props;
 	}
 
 	.left {
-		width: calc(50% + 100px);
+		width: 55%;
 		height: 100%;
 		display: block;
 		position: absolute;
 		left: 0;
 		top: 0;
-		overflow: hidden;
-		z-index:1;
-		clip-path: url(#headerImageClipPath);
 	}
 
 	.left img {
@@ -63,12 +60,16 @@ const { image, fox } = Astro.props;
 	}
 
 	.right {
-		width: calc(50% - 100px);
+		width: 50%;
 		height: 100%;
 		display: block;
 		position: absolute;
 		right: 0;
 		top: 0;
+		clip-path: url(#headerImageClipPath);
+		overflow: hidden;
+		background: var(--nav-background);
+		z-index:2;
 	}
 
 	.fox {

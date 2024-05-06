@@ -3,11 +3,11 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 
 import logo from "../assets/logo-dilewe-small.svg?raw";
-import socialFacebook from "../assets/social-facebook.svg?raw";
-import socialLinkedin from "../assets/social-linkedin.svg?raw";
-import socialBluesky from "../assets/social-bluesky.svg?raw";
-import socialInstagram from "../assets/social-instagram.svg?raw";
-import socialTwitter from "../assets/social-twitter.svg?raw";
+import socialFacebook from "../assets/social/facebook.svg?raw";
+import socialLinkedin from "../assets/social/linkedin.svg?raw";
+import socialBluesky from "../assets/social/bluesky.svg?raw";
+import socialInstagram from "../assets/social/instagram.svg?raw";
+import socialTwitter from "../assets/social/twitter.svg?raw";
 ---
 <nav>
 	<a class={currentPath === "datenschutz/" ? "active" : ""} href="/datenschutz/">Datenschutz</a>
