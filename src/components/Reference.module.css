@@ -1,5 +1,8 @@
 .wrap {
 	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
 }
 
 .wrap::after {
@@ -51,18 +54,22 @@
 	box-sizing: border-box;
 }
 
-.wrap:nth-child(even) .image {
+.wrap.even .image {
 	right: auto;
 	left: 0;
 	clip-path: url(#referenceClipPathLeft);
 }
 
-.wrap:nth-child(even) .textInner {
+.wrap.even .image img {
+	clip-path: url(#referenceClipPathLeft);
+}
+
+.wrap.even .textInner {
 	padding-right: 0;
 	padding-left: calc(50% + 3rem);
 }
 
-.wrap:nth-child(odd) .textInner {
+.wrap.odd .textInner {
 	text-align: right;
 }
 

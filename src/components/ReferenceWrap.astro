@@ -1,13 +1,14 @@
 ---
 interface Props {
 	image: ImageMetadata;
+	odd?: boolean;
 }
 
 import Reference from './Reference';
-const {image} = Astro.props;
+const {image, odd} = Astro.props;
 
 ---
 
-<Reference image={image} client:load>
+<Reference image={image} odd={odd ? true : false} client:load>
 	<slot />
 </Reference>

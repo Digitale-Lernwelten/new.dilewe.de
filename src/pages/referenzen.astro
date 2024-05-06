@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Reference from "../components/Reference.tsx"
+import Reference from "../components/ReferenceWrap.astro"
 import HeaderImage from "../components/HeaderImage.astro";
 
 import headerImage from "../assets/header/3.jpg";
@@ -72,7 +72,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://www.bildung.sachsen.de/blog/index.php/2022/12/13/digitale-module-unterstuetzen-lehrkraefte-beim-unterrichten/?fbclid=IwAR1qk2mCchC_Bn8NGA3jtW80mETbgrfvBGodGkKNGJQbMQzf4Mlpecuin88" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceMbookGL}>
+	<Reference image={referenceMbookGL} odd>
 		<h3>Plattform Digitale Schule<br/>NRW &amp; mBook GL</h3>
 		<h4>Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen</h4>
 
@@ -93,7 +93,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://euregio-mr.info/de/Projekte/emrlingua.php" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceDemokratie}>
+	<Reference image={referenceDemokratie} odd>
 		<h3>Demokratie - Medien - Persönlichkeit</h3>
 		<h4>Hessisches Ministerium des Inneren und für Sport</h4>
 
@@ -114,7 +114,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://redaktionsvorschau-bdv.test-dilewe.de/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceRD}>
+	<Reference image={referenceRD} odd>
 		<h3>Infoportal Russlanddeutsche in Hessen</h3>
 		<h4>Hessisches Ministerium des Inneren und für Sport & Interessengemeinschaft der Deutschen aus Russland in Hessen</h4>
 
@@ -136,7 +136,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://mpublish.cbm.de/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceLeipzig}>
+	<Reference image={referenceLeipzig} odd>
 		<h3>mPublish Archiv Bürgerbewegung Leipzig</h3>
 		<h4>Archiv Bürgerbewegung Leipzig e.V.</h4>
 
@@ -157,7 +157,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://missioforlife.de/unterrichtsmaterial/details/globale-perspektiven-auf-behinderung/wir-und-die-anderen-%E2%80%93-globale-perspektiven-auf-behinderung" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceSoulchat}>
+	<Reference image={referenceSoulchat} odd>
 		<h3>Soul Chat - der Krisenchat für Jugendliche</h3>
 		<h4>Pädagogisch-Theologisches Zentrum der Evangelischen Landeskirche in Württemberg</h4>
 
@@ -179,7 +179,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://m-vet.de/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceAltenburg}>
+	<Reference image={referenceAltenburg} odd>
 		<h3>mGuide Altenburg - interaktive Stadt- und Kulturführung</h3>
 		<h4>Stadt Altenburg; Sparkassenstiftung Altenburger Land</h4>
 
@@ -200,7 +200,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://mguide-jura-museum.de/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceMemories}>
+	<Reference image={referenceMemories} odd>
 		<h3>Lernplattform “Keeping Memories”</h3>
 		<h4>KZ-Gedenkstätte Flossenbürg / Stiftung Bayerische Gedenkstätten</h4>
 
@@ -220,7 +220,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://www.helftamysticism.org/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceSpiegelarche}>
+	<Reference image={referenceSpiegelarche} odd>
 		<h3>Kosmos SpiegelArche</h3>
 		<h4>Der Grüne Salon e.V. gefördert vom Bundesministerium für Bildung und Forschung</h4>
 
@@ -240,7 +240,7 @@ import referenceModule from "../assets/references/module.jpg";
 			<a href="https://st.daz.dilewe.de/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceDeutsch}>
+	<Reference image={referenceDeutsch} odd>
 		<h3>Deutsch digital, 5./6. Klasse</h3>
 		<h4>Digitale Lernwelten</h4>
 
