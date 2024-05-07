@@ -1,0 +1,32 @@
+.wrap {
+	display: block;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	padding: 12rem;
+	box-sizing: border-box;
+	transform: translate(-50%, -50%);
+}
+
+.logo {
+	width: 24%;
+	height: auto;
+	float: left;
+}
+
+.text {
+	width: 68.5%;
+	height: auto;
+	float: right;
+}
+
+.wrap::after {
+	content:'';
+	display: block;
+	position: relative;
+	clear: both;
+}

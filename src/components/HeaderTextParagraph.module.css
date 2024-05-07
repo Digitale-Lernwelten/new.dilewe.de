@@ -1,0 +1,38 @@
+.wrap {
+	width: 100%;
+	max-width: var(--content-width);
+	padding: 0 var(--content-padding);
+	margin:0 auto 2rem;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-areas: "col-left col-right";
+	gap: var(--content-padding);
+	grid-gap: var(--content-padding);
+	box-sizing: border-box;
+}
+
+.wrap > .text {
+	grid-area: col-right;
+}
+
+.wrap > .headers {
+	color: var(--primary);
+	grid-area: col-left;
+	display: block;
+	text-align: right;
+}
+
+.wrap h3 {
+	font-size: 1.8rem;
+	margin: 0;
+}
+
+.wrap .text,
+.wrap h4 {
+	font-size: 1.2rem;
+	margin: 0;
+}
+
+.wrap p {
+	margin-right: var(--content-padding);
+}

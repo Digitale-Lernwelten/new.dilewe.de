@@ -9,8 +9,8 @@ interface TeamSliderProps {
 }
 
 const TeamSlider: React.FC<TeamSliderProps> = props => {
-	const headline = props.headline || '';
-	const slides = props.slides || [];
+	const headline = props?.headline || '';
+	const slides = props?.slides || [];
 
 	const [activeSlide, setActiveSlide] = useState<string>(() => slides[0]?.name || '');
 
