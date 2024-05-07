@@ -16,12 +16,9 @@
 	width: 50%;
 	height: 100%;
 	display: block;
-	position: absolute;
-	right: 0;
-	top: 0;
+	float: right;
 	overflow: hidden;
 	z-index:1;
-	clip-path: url(#referenceClipPathRight);
 }
 
 .image img {
@@ -30,6 +27,8 @@
 	height: 100%;
 	object-fit: cover;
 	object-position: 30% 50%;
+	clip-path: url(#referenceClipPathRight);
+	background: var(--background-color);
 }
 
 .wrap:nth-child(even) .image img {
@@ -55,8 +54,7 @@
 }
 
 .wrap.even .image {
-	right: auto;
-	left: 0;
+	float: left;
 	clip-path: url(#referenceClipPathLeft);
 }
 

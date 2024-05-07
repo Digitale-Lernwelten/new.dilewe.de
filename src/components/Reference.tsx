@@ -22,7 +22,7 @@ const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
 	const variantsText = !odd ? variantLeft : variantRight;
 	return (
 		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
-			<svg height="0" width="0">
+			<svg height="0" width="0" style={{position:'absolute'}}>
 				<defs>
 					<clipPath id="referenceClipPathLeft" clipPathUnits="objectBoundingBox">
 						<path d="M 0 0 L 1 0 C 0.95 0.4 0.95 0.6 1 1 L 0 1 L 0 0"></path>
@@ -37,7 +37,8 @@ const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					transition={{ duration: 0.3 }}
+					transition={{ duration: 0.4 }}
+					
 					variants={variantsImage}
 				>
 					<img src={image.src} width={image.width} height={image.height} />
