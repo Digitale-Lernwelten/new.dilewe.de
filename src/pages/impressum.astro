@@ -2,13 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import HeaderImage from "../components/HeaderImage.astro";
 
-import headerImage from "../assets/header/4.jpg";
+import { headerImages } from "../assets/header";
 import logo from "../assets/logo-dilewe-small.svg?raw";
 import PageContent from "../components/PageContent.astro";
 ---
 
 <Layout title="Impressum" bodyClass="imprint">
-	<HeaderImage image={headerImage}>
+	<HeaderImage images={headerImages}>
 		<h2>Impressum</h2>
 		<span class="logo"><Fragment set:html={logo} /></span>
 	</HeaderImage>

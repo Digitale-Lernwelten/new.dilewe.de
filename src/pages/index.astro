@@ -6,7 +6,7 @@ import HeaderTextParagraph from "../components/HeaderTextParagraph.astro";
 import TeamSlider from "../components/TeamSlider";
 
 import logo from "../assets/logo-dilewe.svg";
-import headerImage from "../assets/header/2.jpg";
+import { headerImages } from "../assets/header";
 
 import portraitFloMarcus from "../assets/portraits/flo-marcus.jpg";
 import portraitPiera from "../assets/portraits/piera.jpg";
@@ -16,7 +16,7 @@ import portraitFabi from "../assets/portraits/fabi.jpg";
 ---
 
 <Layout title="Über uns" bodyClass="index">
-	<HeaderImage image={headerImage} fox>
+	<HeaderImage images={headerImages} fox>
 		<img src={logo.src} width={logo.width} height={logo.height} />
 	</HeaderImage>
 	<TeaserBox>

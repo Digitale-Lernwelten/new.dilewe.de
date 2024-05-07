@@ -1,13 +1,14 @@
 ---
 interface Props {
-	image: ImageMetadata;
+	images: ImageMetadata[];
 	fox?: boolean;
 	foxReferences?: boolean;
 }
 
 import imageFox from "../assets/header-fox.png";
 import imageFoxReferences from "../assets/header-fox-references.png";
-const { image, fox, foxReferences } = Astro.props;
+import { ImageShow } from "./ImageShow";
+const { images, fox, foxReferences } = Astro.props;
 ---
 
 <div class="outerWrap">
@@ -20,7 +21,7 @@ const { image, fox, foxReferences } = Astro.props;
 			</defs>
 		</svg>
 		<div class="image">
-			<img src={image.src} width={image.width} height={image.height} />
+			<ImageShow images={images} client:load />
 		</div>
 		<div class="text">
 			<slot />
@@ -55,14 +56,6 @@ const { image, fox, foxReferences } = Astro.props;
 		clip-path: url(#headerImageClipPath);
 	}
 
-	.image img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-		display: block;
-		overflow: hidden;
-	}
-
 	.text {
 		width: 50%;
 		height: 100%;
@@ -81,7 +74,7 @@ const { image, fox, foxReferences } = Astro.props;
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
-		padding: 6rem;
+		padding: 12rem;
 		box-sizing: border-box;
 		transform: translate(-50%, -50%);
 	}
