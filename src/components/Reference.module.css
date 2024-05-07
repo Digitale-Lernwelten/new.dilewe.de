@@ -23,16 +23,15 @@
 
 .image img {
 	display: block;
-	width: 100%;
+	width: 50%;
 	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
 	object-fit: cover;
 	object-position: 30% 50%;
 	clip-path: url(#referenceClipPathRight);
 	background: var(--background-color);
-}
-
-.wrap:nth-child(even) .image img {
-	object-position: 70% 50%;
 }
 
 .text {
@@ -53,13 +52,11 @@
 	box-sizing: border-box;
 }
 
-.wrap.even .image {
-	float: left;
-	clip-path: url(#referenceClipPathLeft);
-}
-
 .wrap.even .image img {
 	clip-path: url(#referenceClipPathLeft);
+	object-position: 70% 50%;
+	right: auto;
+	left: 0;
 }
 
 .wrap.even .textInner {

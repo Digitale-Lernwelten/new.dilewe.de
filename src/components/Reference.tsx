@@ -33,16 +33,16 @@ const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
 				</defs>
 			</svg>
 			<div className={css.image}>
-				<motion.div
+				<motion.img
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					transition={{ duration: 0.4 }}
-					
+					transition={{ duration: 0.4, ease:'easeOut' }}
 					variants={variantsImage}
-				>
-					<img src={image.src} width={image.width} height={image.height} />
-				</motion.div>
+					src={image.src}
+					width={image.width}
+					height={image.height}
+				/>
 			</div>
 			<div className={css.text}>
 					<div className={css.textInner}>
@@ -50,7 +50,7 @@ const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					transition={{ duration: 0.3 }}
+					transition={{ duration: 0.3, ease:'easeOut' }}
 					variants={variantsText}
 				>
 						{children}
