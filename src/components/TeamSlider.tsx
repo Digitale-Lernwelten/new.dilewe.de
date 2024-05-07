@@ -14,8 +14,8 @@ const TeamSlider: React.FC<TeamSliderProps> = props => {
 
 	const [activeSlide, setActiveSlide] = useState<string>(() => slides[0]?.name || '');
 
-	const slideNodes = slides.map(s => <TeamSliderSlide {...s} active={activeSlide === s.name} />);
-	const slideTabs = slides.map(s => <TeamSliderTab name={s.name} active={activeSlide === s.name} setActiveSlide={setActiveSlide} />)
+	const slideNodes = slides.map(s => <TeamSliderSlide key={s.name} {...s} active={activeSlide === s.name} />);
+	const slideTabs = slides.map(s => <TeamSliderTab key={s.name} name={s.name} active={activeSlide === s.name} setActiveSlide={setActiveSlide} />)
 
 	return <div className={css.wrap}>
 		<div className={css.headerWrap}><h3>{headline}</h3></div>

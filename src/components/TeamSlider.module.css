@@ -17,6 +17,10 @@
 	margin: 0 auto;
 }
 
+.tabs {
+	padding-bottom: 8px;
+}
+
 .slides {
 	background: var(--primary);
 	color: #fff;

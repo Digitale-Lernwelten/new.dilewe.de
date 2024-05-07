@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { motion } from 'framer-motion';
 import css from './TeamSliderTab.module.css';
 
 export interface TeamSliderTabProps {
@@ -13,12 +14,20 @@ const TeamSliderTab: React.FC<TeamSliderTabProps> = ({
 	setActiveSlide,
 }) => {
 	const onClick = useCallback(() => setActiveSlide(name), [setActiveSlide, name]);
-	const classes = [css.tab];
-	if(active){
-		classes.push(css.active)
-	}
 
-	return <h4 className={classes.join(' ')} onClick={onClick}>{name}</h4>;
+	return <h4 className={css.tab} onClick={onClick}>
+		{name}
+		<motion.div
+			className={css.underline}
+			animate={active ? 'visible' : 'hidden'}
+			initial="hidden"
+			transition={{ duration: 0.5, ease:'easeOut' }}
+			variants={{
+				visible: { transform: "scale(1)" },
+				hidden: { transform: "scale(0)" }
+			}}
+		/>
+	</h4>;
 };
 
 export default TeamSliderTab;
