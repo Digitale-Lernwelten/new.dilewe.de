@@ -11,7 +11,6 @@ import header10 from "./10.jpg";
 import header11 from "./11.jpg";
 import header12 from "./12.jpg";
 import header13 from "./13.jpg";
-import header14 from "./14.jpg";
 
 export const headerImages = [
 	header1,
@@ -26,6 +25,5 @@ export const headerImages = [
 	header10,
 	header11,
 	header12,
-	header13,
-	header14
+	header13
 ];

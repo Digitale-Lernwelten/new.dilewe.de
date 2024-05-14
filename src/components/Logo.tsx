@@ -44,6 +44,7 @@ export const Logo: React.FC<LogoProps> = () => {
 				src={text.src}
 				width={text.width}
 				height={text.height}
+				alt="Digitale Lernwelten"
 			/>
 		</div>
 	);

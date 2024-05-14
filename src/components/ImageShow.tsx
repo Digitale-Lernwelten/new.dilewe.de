@@ -12,9 +12,13 @@ export const ImageShow: React.FC<ImageShowProps> = ({images}) => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setIndex((prevCounter) => (prevCounter + 1) % images.length);
-		}, 3000);
+		}, 5000);
 	
 		return () => clearInterval(interval);
+	}, []);
+
+	useEffect(() => {
+		setIndex((prevCounter) => (prevCounter + 1) % images.length);
 	}, []);
 
 	return (<div className={css.show}>
