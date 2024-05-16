@@ -72,6 +72,7 @@
 	font-size: 2rem;
 	font-weight: 200;
 	color: var(--tertiary);
+	text-transform: none;
 	margin: 0 0 0.5rem;
 }
 
