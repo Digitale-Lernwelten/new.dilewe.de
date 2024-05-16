@@ -139,4 +139,9 @@
 	.wrap .text .textInner {
 		padding: 2rem;
 	}
+
+	.wrap .text .textInner p,
+	.wrap .text .textInner h4 {
+		margin-bottom: 2rem;
+	}
 }
