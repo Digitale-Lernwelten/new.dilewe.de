@@ -36,3 +36,14 @@
 .wrap p {
 	margin-right: var(--content-padding);
 }
+
+@media only screen and (max-width: 1000px)  {
+	.wrap {
+		display: block;
+	}
+
+	.wrap .headers {
+		text-align: left;
+		margin-bottom: 1rem;
+	}
+}

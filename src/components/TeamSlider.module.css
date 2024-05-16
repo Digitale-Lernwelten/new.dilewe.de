@@ -1,6 +1,7 @@
 .wrap {
 	display: block;
 	overflow: hidden;
+	padding-top: 4rem;
 }
 
 .wrap h3 {
@@ -15,6 +16,7 @@
 	max-width: var(--content-width);
 	padding:0 var(--content-padding);
 	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 .tabs {
@@ -37,5 +39,15 @@
 	display:inline-block;
 	text-align: center;
 	font-size: 2rem;
+	margin-top: 0;
 	margin-bottom: 0.25rem;
+}
+
+@media only screen and (max-width: 1100px)  { 
+	.headerWrap h3 {
+		text-align: center;
+		width: 100%;
+		position: relative;
+		z-index:2;
+	}
 }

@@ -5,18 +5,16 @@ import { motion } from 'framer-motion';
 import logo from "../assets/logo-dilewe-logo.svg";
 import text from "../assets/logo-dilewe-text.svg";
 
-interface LogoProps {
-	
-}
+interface LogoProps { }
 
 export const Logo: React.FC<LogoProps> = () => {
 	const variantLogo = {
 		visible: { opacity: 1, transform: "translate(0,0) scale(1.0)" },
-		hidden: { opacity: 0, transform: "translate(-180%, -50%) scale(1.5)" }
+		hidden: { opacity: 0, transform: "translate(-40%, -50%) scale(1.5)" }
 	};
 	const variantText = {
 		visible: { opacity: 1, transform: "translate(0,0)" },
-		hidden: { opacity: 0, transform: "translate(20%, 180%)" }
+		hidden: { opacity: 0, transform: "translate(20%, 40%)" }
 	};
 
 	return (

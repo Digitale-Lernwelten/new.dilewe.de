@@ -23,6 +23,7 @@ import referenceMemories from "../assets/references/memories.jpg";
 import referenceMMMMO from "../assets/references/mmmmo.jpg";
 import referenceSpiegelarche from "../assets/references/spiegelarche.jpg";
 import referenceDeutsch from "../assets/references/deutsch.jpg";
+import referenceVielfalt from "../assets/references/vielfalt_religion.jpg";
 
 ---
 
@@ -33,6 +34,7 @@ import referenceDeutsch from "../assets/references/deutsch.jpg";
 		top: 50%;
 		transform: translate(-50%, -50%);
 		font-size: 3rem;
+		margin: 0;
 		color: #fff;
 		font-weight: 100;
 		letter-spacing: 3px;
@@ -210,7 +212,18 @@ import referenceDeutsch from "../assets/references/deutsch.jpg";
 			<a href="https://www.spiegelarche.de/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceDeutsch} odd>
+
+	
+	<Reference image={referenceVielfalt} odd>
+		<h3>Ausstellung Vielfalt der Religionen</h3>
+		<h4>Sächsische Landeszentrale für politische Bildung</h4>
+
+		<p>Schon mal von den eritreisch-orthodoxen Tewahedo-Gemeinden gehört, den polnisch-katholischen Gemeinden oder von den vietnamesischen Buddhisten in Bad-Gottleuba-Berggießhübel? Wir entwickeln das Konzept einer hybriden (Wander-)Ausstellung zum Thema “Vielfalt der Religionen in Sachsen” und setzen dieses auch um. Dabei wird die Vielfalt der religiösen Gemeinschaften deutlich. Wir integrieren alle Mediengenres und verknüpfen beide Ausstellungsteile mit QR-Codes. Zugleich wird für jede Religionsgemeinschaft ein digital-multimediales Unterrichtsmaterial gestaltet, das über die sächsischen Bildungsplattformen erreichbar ist.</p>
+
+	</Reference>
+
+
+	<Reference image={referenceDeutsch}>
 		<h3>netBook Deutsch</h3>
 		<h4>Digitale Lernwelten</h4>
 
@@ -220,7 +233,7 @@ import referenceDeutsch from "../assets/references/deutsch.jpg";
 			<a href="https://netbook-deutsch.de/" target="_blank">Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceMbookGL}>
+	<Reference image={referenceMbookGL} odd>
 		<h3>Plattform Digitale Schule<br/>NRW &amp; mBook GL</h3>
 		<h4>Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen</h4>
 

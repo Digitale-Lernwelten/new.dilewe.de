@@ -10,20 +10,25 @@ import socialInstagram from "../assets/social/instagram.svg?raw";
 import socialTwitter from "../assets/social/twitter.svg?raw";
 ---
 <nav>
-	<a class={currentPath === "datenschutz/" ? "active" : ""} href="/datenschutz/">Datenschutz</a>
-	<a class={currentPath === "impressum/" ? "active" : ""} href="/impressum/">Impressum</a>
+	<span class="site-links">
+		<a class={currentPath === "datenschutz/" ? "active" : ""} href="/datenschutz/">Datenschutz</a>
+		<a class={currentPath === "impressum/" ? "active" : ""} href="/impressum/">Impressum</a>
+	</span>
 	<div class="logo"><Fragment set:html={logo} /></div> 
-	<a href="https://www.facebook.com/digitalelernwelten" target="_blank"><Fragment set:html={socialFacebook} /></a>
-	<a href="https://www.linkedin.com/company/digitale-lernwelten-gmbh" target="_blank"><Fragment set:html={socialLinkedin} /></a>
-	<a href="https://bsky.app/profile/digitalelernwelten.bsky.social" target="_blank"><Fragment set:html={socialBluesky} /></a>
-	<a href="https://www.instagram.com/digitalelernwelten/" target="_blank"><Fragment set:html={socialInstagram} /></a>
-	<a href="https://twitter.com/DLernwelten" target="_blank"><Fragment set:html={socialTwitter} /></a>
+	<span class="social-links">
+		<a href="https://www.facebook.com/digitalelernwelten" target="_blank"><Fragment set:html={socialFacebook} /></a>
+		<a href="https://www.linkedin.com/company/digitale-lernwelten-gmbh" target="_blank"><Fragment set:html={socialLinkedin} /></a>
+		<a href="https://bsky.app/profile/digitalelernwelten.bsky.social" target="_blank"><Fragment set:html={socialBluesky} /></a>
+		<a href="https://www.instagram.com/digitalelernwelten/" target="_blank"><Fragment set:html={socialInstagram} /></a>
+		<a href="https://twitter.com/DLernwelten" target="_blank"><Fragment set:html={socialTwitter} /></a>
+	</span>
 </nav>
 
 <style>
 	nav {
 		text-align: center;
 		display: block;
+		position: relative;
 		padding: 2rem 0 3.5rem;
 	}
 
@@ -53,5 +58,34 @@ import socialTwitter from "../assets/social/twitter.svg?raw";
 
 	:global(svg) :global(path.primaryColor) {
 		fill: var(--primary);
+	}
+
+	@media only screen and (max-width: 650px)  { 
+		nav {
+			margin: 0 auto;
+			text-align: left;
+			padding-left: 6.5rem;
+			width: 100%;
+			max-width: 320px;
+		}
+
+		.site-links,
+		.social-links {
+			display: block;
+		}
+
+		.site-links {
+			padding-top: 0.75rem;
+		}
+
+		.site-links {
+			margin-bottom: 0.75rem;
+		}
+
+		.logo {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
 	}
 </style>

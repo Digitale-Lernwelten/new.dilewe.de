@@ -5,12 +5,14 @@
 	max-width: var(--content-width);
 	padding:0 var(--content-padding);
 	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 .left {
 	display: block;
 	width: 50%;
 	float: left;
+	padding-bottom: 2rem;
 }
 
 .left h4 {
@@ -62,6 +64,13 @@
 	padding: 1rem 0;
 }
 
+.nameWrap::after {
+	content:'';
+	display:block;
+	position:relative;
+	clear:both;
+}
+
 .leftName {
 	float:left;
 	clear:both;
@@ -75,4 +84,51 @@
 .name {
 	clear:both;
 	text-align:center;
+}
+
+@media only screen and (max-width: 1100px)  {
+	.right,
+	.left {
+		width: 100%;
+		float: none;
+		padding: 0 2rem 2rem;
+		box-sizing: border-box;
+		margin: 0px auto;
+	}
+	
+	.right {
+		max-width: 500px;
+		position: relative;
+	}
+
+	.right img {
+		margin-top: 1rem !important;
+	}
+
+	.wide .right img {
+		margin-top: -8rem !important;
+	}
+
+	.right::before {
+		content:'';
+		display: block;
+		background: var(--background-color);
+		width: 100vw;
+		height: 50%;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0;
+		z-index:0;
+	}
+
+	.right img {
+		z-index:1;
+		position: relative;
+	}
+
+	.left h4 {
+		display: block;
+		text-align: center;
+	}
 }

@@ -78,12 +78,6 @@ const { images, fox, foxReferences } = Astro.props;
 		transform: translate(0, 45.5%);
 	}
 
-	@media only screen and (max-width: 1750px)  {
-		.fox {
-			display: none;
-		}
-	}
-
 	.fox-references {
 		position: absolute;
 		z-index: 2;
@@ -93,5 +87,22 @@ const { images, fox, foxReferences } = Astro.props;
 		display: block;
 		bottom: 0;
 		z-index:10;
+	}
+
+	@media only screen and (max-width: 750px)  {
+		.text {
+			width: 100%;
+		}
+
+		.image {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: 1750px)  {
+		.fox-references,
+		.fox {
+			display: none;
+		}
 	}
 </style>
