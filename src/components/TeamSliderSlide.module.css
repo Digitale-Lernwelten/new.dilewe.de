@@ -58,7 +58,7 @@
 
 .nameWrap {
 	display: block;
-	width: 24rem;
+	width: 20rem;
 	max-width: 100%;
 	box-sizing: border-box;
 	margin: 0 auto;
@@ -89,6 +89,20 @@
 }
 
 @media only screen and (max-width: 1100px)  {
+
+	.left p {
+		font-size: 1.2rem;
+	}
+
+	.left,
+	.nameWrap {
+		padding:0 var(--content-padding);
+	}
+
+	.nameWrap {
+		padding-top: 1rem;
+	}
+
 	.right,
 	.left {
 		width: 100%;
@@ -98,8 +112,13 @@
 		margin: 0px auto;
 	}
 
+	.right,
+	.slide {
+		padding: 0;
+	}
+
 	.left {
-		padding: 0 0 2rem;
+		padding: 0 2rem 2rem;
 	}
 	
 	.right {
@@ -138,3 +157,4 @@
 		text-align: center;
 	}
 }
+

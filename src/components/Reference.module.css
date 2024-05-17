@@ -131,6 +131,10 @@
 		float:none;	
 	}
 
+	.wrap.odd .textInner {
+		text-align: left;
+	}
+
 	.wrap .image img {
 		width: 100%;
 		position: relative;

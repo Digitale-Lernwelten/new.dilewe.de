@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import css from './ImageShow.module.css';
 import type { ImageMetadata } from 'astro';
-import useWindowSize from './useWindowSize';
 
 interface ImageShowProps {
 	images: ImageMetadata[];
@@ -9,7 +8,6 @@ interface ImageShowProps {
 
 export const ImageShow: React.FC<ImageShowProps> = ({images}) => {
 	const [index, setIndex] = useState(0);
-	const size = useWindowSize();  
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -22,10 +20,6 @@ export const ImageShow: React.FC<ImageShowProps> = ({images}) => {
 	useEffect(() => {
 		setIndex((prevCounter) => (prevCounter + 1) % images.length);
 	}, []);
-
-	if(size.width && size.width < 750) {
-		return <></>;
-	}
 
 	return (<div className={css.show}>
 		{images.map((image, i) => (<img key={i} className={i === index  ? `${css.img} ${css.active}` : css.img} src={image.src} width={image.width} height={image.height} />))}

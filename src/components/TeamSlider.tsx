@@ -19,8 +19,9 @@ const TeamSlider: React.FC<TeamSliderProps> = props => {
 
 	return <div className={css.wrap}>
 		<div className={css.headerWrap}><h3>{headline}</h3></div>
+		<div className={css.tabs + " " + css.mobile}>{slideTabs}</div>
 		<div className={css.slides}>{slideNodes}</div>
-		<div className={css.tabs}>{slideTabs}</div>
+		<div className={css.tabs + " " + css.desktop}>{slideTabs}</div>
 	</div>;
 };
 
