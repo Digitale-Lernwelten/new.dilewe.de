@@ -35,7 +35,11 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 	const size = useWindowSize();
 	if(size.width && (size.width <= 900)){
 		variantsImage = variantEye;
-	} 
+	}
+
+	const imageTransition = (size.width && (size.width <= 900))
+		? ({ duration: 0.6, ease:'circInOut', type: "spring", bounce: 0.5 })
+		: ({ duration: 0.3, ease:'easeOut', type: "spring", bounce: 0.5 });
 
 	return (
 		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
@@ -57,7 +61,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					transition={{ duration: 0.6, ease:'circInOut', type: "spring", bounce: 0.5 }}
+					transition={imageTransition}
 					variants={variantsImage}
 					src={image.src}
 					width={image.width}
