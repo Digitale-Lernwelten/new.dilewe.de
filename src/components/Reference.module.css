@@ -131,6 +131,10 @@
 		float:none;	
 	}
 
+	.image {
+		padding: 3rem 0 0rem;
+	}
+
 	.wrap.odd .textInner {
 		text-align: left;
 	}
@@ -138,7 +142,7 @@
 	.wrap .image img {
 		width: 100%;
 		position: relative;
-		clip-path: none !important;
+		clip-path: url(#headerImageClipPathTop) !important;
 	}
 
 	.wrap .text .textInner {

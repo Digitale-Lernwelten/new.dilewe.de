@@ -2,6 +2,7 @@ import React, { type ReactNode } from 'react';
 import css from './Reference.module.css';
 import { motion } from 'framer-motion';
 import type { ImageMetadata } from 'astro';
+import { useWindowSize } from './useWindowSize';
 
 interface ReferenceProps {
 	image: ImageMetadata;
@@ -9,17 +10,33 @@ interface ReferenceProps {
 	children?: ReactNode;
 }
 
-const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
-	const variantLeft = {
-		visible: { opacity: 1, transform: "translateX(0)" },
-		hidden: { opacity: 0, transform: "translateX(100%)" }
-	};
-	const variantRight = {
-		visible: { opacity: 1, transform: "translateX(0)" },
-		hidden: { opacity: 0, transform: "translateX(-100%)" }
-	};
-	const variantsImage = odd ? variantLeft : variantRight;
+const variantLeft = {
+	visible: { opacity: 1, transform: "translateX(0)" },
+	hidden: { opacity: 0, transform: "translateX(100%)" }
+};
+const variantRight = {
+	visible: { opacity: 1, transform: "translateX(0)" },
+	hidden: { opacity: 0, transform: "translateX(-100%)" }
+};
+const variantEye = {
+	visible: { opacity: 1, transform: "scaleY(1)" },
+	hidden: { opacity: 0, transform: "scaleY(0)" }
+}
+
+const Reference: React.FC<ReferenceProps> = (props) => {
+	if(!props){
+		return <></>;
+	}
+	const {image, odd, children} = props;
+
+	let variantsImage = odd ? variantLeft : variantRight;
 	const variantsText = !odd ? variantLeft : variantRight;
+
+	const size = useWindowSize();
+	if(size.width && (size.width <= 900)){
+		variantsImage = variantEye;
+	} 
+
 	return (
 		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
 			<svg height="0" width="0" style={{position:'absolute'}}>
@@ -30,6 +47,9 @@ const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
 					<clipPath id="referenceClipPathRight" clipPathUnits="objectBoundingBox">
 						<path d="M 1 0 L 0 0 C 0.05 0.4 0.05 0.6 0 1 L 1 1 L 1 0"></path>
 					</clipPath>
+					<clipPath id="headerImageClipPathTop" clipPathUnits="objectBoundingBox">
+						<path d="M 1 0.2 C 0.6667 -0.05 0.3333 -0.05 0 0.2 L 0 0.8 C 0.3333 1.05 0.6667 1.05 1 0.8 L 1 0.2"></path>
+					</clipPath>
 				</defs>
 			</svg>
 			<div className={css.image}>
@@ -37,7 +57,7 @@ const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					transition={{ duration: 0.4, ease:'easeOut' }}
+					transition={{ duration: 0.6, ease:'circInOut', type: "spring", bounce: 0.5 }}
 					variants={variantsImage}
 					src={image.src}
 					width={image.width}
@@ -46,16 +66,16 @@ const Reference: React.FC<ReferenceProps> = ({image, odd, children}) => {
 			</div>
 			<div className={css.text}>
 					<div className={css.textInner}>
-					<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true }}
-					transition={{ duration: 0.3, ease:'easeOut' }}
-					variants={variantsText}
-				>
+						<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}
+						transition={{ duration: 0.3, ease:'easeOut' }}
+						variants={variantsText}
+					>
 						{children}
-				</motion.div>
-					</div>
+					</motion.div>
+				</div>
 			</div>
 		</div>)
 };

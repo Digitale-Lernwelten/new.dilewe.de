@@ -24,6 +24,7 @@ import referenceMMMMO from "../assets/references/mmmmo.jpg";
 import referenceSpiegelarche from "../assets/references/spiegelarche.jpg";
 import referenceDeutsch from "../assets/references/deutsch.jpg";
 import referenceVielfalt from "../assets/references/vielfalt_religion.jpg";
+import TeaserBox from "../components/TeaserBox.astro";
 
 ---
 
@@ -39,6 +40,7 @@ import referenceVielfalt from "../assets/references/vielfalt_religion.jpg";
 		font-weight: 100;
 		letter-spacing: 3px;
 		text-align: center;
+		letter-spacing: 0rem;
 	}
 
 	.logo :global(svg) {
@@ -51,8 +53,28 @@ import referenceVielfalt from "../assets/references/vielfalt_religion.jpg";
 		z-index:0;
 	}
 
+	
+
 	.logo :global(svg) :global(path) {
 		fill: #fff2;
+	}
+
+	@media only screen and (max-width: 1000px)  {
+		h2 {
+			font-size: 2.6rem;
+		}
+	}
+
+	@media only screen and (min-width: 900px) {
+		div.mobileOnly {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: 600px)  {
+		h2 {
+			font-size: 2.2rem;
+		}
 	}
 </style>
 
@@ -61,6 +83,11 @@ import referenceVielfalt from "../assets/references/vielfalt_religion.jpg";
 		<h2>Aktuelle Projekte</h2>
 		<span class="logo"><Fragment set:html={logo} /></span>
 	</HeaderImage>
+	<div class="mobileOnly">
+		<TeaserBox>
+			<p>Im Folgenden finden Sie eine Auswahl unserer aktuellen Projekte in den Bereichen Kultur, Bildung und Wissenschaft: Ausstellungen, digitale Lehr- und Lernmittel, vielfältige App-Anwendungen, Konzeption, Beratung und einiges mehr.</p>
+		</TeaserBox>
+	</div>
 	<Reference image={referenceLasub}>
 		<h3>E-Learning-Module<br/>für den Freistaat Sachsen</h3>
 		<h4>Landesamt für Schule und Bildung Sachsen & Sächsisches Staats&shy;ministerium für Kultus</h4>
