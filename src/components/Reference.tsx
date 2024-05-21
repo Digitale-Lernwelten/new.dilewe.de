@@ -11,16 +11,16 @@ interface ReferenceProps {
 }
 
 const variantLeft = {
-	visible: { opacity: 1, transform: "translateX(0)" },
-	hidden: { opacity: 0, transform: "translateX(100%)" }
+	visible: { opacity: 1, transform: "translateX(0%)" },
+	hidden: { opacity: 0.5, transform: "translateX(10%)" }
 };
 const variantRight = {
-	visible: { opacity: 1, transform: "translateX(0)" },
-	hidden: { opacity: 0, transform: "translateX(-100%)" }
+	visible: { opacity: 1, transform: "translateX(0%)" },
+	hidden: { opacity: 0.5, transform: "translateX(-10%)" }
 };
 const variantEye = {
 	visible: { opacity: 1, transform: "scaleY(1)" },
-	hidden: { opacity: 0, transform: "scaleY(0)" }
+	hidden: { opacity: 0.01, transform: "scaleY(0.1)" }
 }
 
 const Reference: React.FC<ReferenceProps> = (props) => {
@@ -57,16 +57,15 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 				</defs>
 			</svg>
 			<div className={css.image}>
-				<motion.img
+				<motion.div
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
 					transition={imageTransition}
 					variants={variantsImage}
-					src={image.src}
-					width={image.width}
-					height={image.height}
-				/>
+				>
+					<img src={image.src} width={image.width} height={image.height} />
+				</motion.div>
 			</div>
 			<div className={css.text}>
 					<div className={css.textInner}>
