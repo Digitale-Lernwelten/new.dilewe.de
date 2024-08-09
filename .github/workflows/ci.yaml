@@ -1,4 +1,4 @@
-name: GH Pages CI V2
+name: GH Pages CI for live env
 
 on:
   push:
