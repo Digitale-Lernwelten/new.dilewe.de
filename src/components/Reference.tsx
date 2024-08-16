@@ -8,6 +8,7 @@ interface ReferenceProps {
 	image: ImageMetadata;
 	odd?: boolean;
 	children?: ReactNode;
+	backgroundColor: string;
 }
 
 const variantLeft = {
@@ -27,8 +28,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
-	const {image, odd, children} = props;
-
+	const {image, odd, children, backgroundColor} = props;
 	let variantsImage = odd ? variantLeft : variantRight;
 	const variantsText = !odd ? variantLeft : variantRight;
 
@@ -41,8 +41,19 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 		? ({ duration: 0.6, ease:'circInOut', type: "spring", bounce: 0.5 })
 		: ({ duration: 0.3, ease:'easeOut', type: "spring", bounce: 0.5 });
 
+	const wrapClasses = [css.wrap]; 
+	if (odd) {
+		wrapClasses.push(css.odd);
+	} else {
+		wrapClasses.push(css.even);
+	}
+
+	if (backgroundColor){
+		wrapClasses.push(css.hasBackgroundColor)
+	}
+
 	return (
-		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
+		<div className={wrapClasses.join(' ')}>
 			<div className={css.image}>
 				<motion.div
 					initial="hidden"
