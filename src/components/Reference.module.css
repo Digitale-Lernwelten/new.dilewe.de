@@ -1,3 +1,14 @@
+.hasBackgroundColor .image > div {
+	background: var(--background-color);
+}
+
+.hasBackgroundColor .image > div > img {
+	object-fit: contain;
+	object-position: 50% 100%;
+	/* Fotos ersetzten, Abschneiden, richtig Positionieren
+	 und einmal in Mobile anschauen -> kleinstes ca 350 Breite */
+}
+
 .wrap {
 	position: relative;
 	display: block;

@@ -5,14 +5,16 @@ import TeaserBox from "../components/TeaserBox.astro";
 import { HeaderTextParagraph } from "../components/HeaderTextParagraph.tsx";
 import TeamSlider from "../components/TeamSlider";
 import { Logo }  from "../components/Logo";
+import Reference from "../components/ReferenceWrap.astro";
 
 import { headerImages } from "../assets/header";
 
 import portraitFloMarcus from "../assets/portraits/flo-marcus.jpg";
-import portraitPiera from "../assets/portraits/piera.jpg";
+import portraitPiera from "../assets/portraits/piera.png";
 import portraitObi from "../assets/portraits/obi.jpg";
 import portraitBen from "../assets/portraits/ben.jpg";
 import portraitFabi from "../assets/portraits/fabi.jpg";
+import type { color } from "framer-motion";
 ---
 
 <Layout title="Über uns" bodyClass="index">
@@ -52,7 +54,7 @@ import portraitFabi from "../assets/portraits/fabi.jpg";
 		subheader="über 10 Jahre Engagement für digitale Bildung"
 		text=`Das Team der Digitalen Lernwelten prägt seit über zehn Jahren eine von Didaktik und Inhalt motivierte Digitalisierung der Bildung aktiv mit. Unter anderem stehen die Auszeichnungen ‘Schulbuch des Jahres’ und ‘Digital Publishing Award’ für diesen Weg und den damit verbundenen Erfolg. Wir beteiligen uns aktiv und kritisch am aktuellen Bildungsdiskurs. Dafür nutzen wir Formate wie den Podcast ‘EduCouch’ oder die gestaltende Teilnahme an Tagungen und Konferenzen.`
 	/>
-	<TeamSlider 
+	<!-- <TeamSlider 
 		client:idle
 		headline="Kompetenzen"
 		slides={
@@ -87,5 +89,26 @@ import portraitFabi from "../assets/portraits/fabi.jpg";
 				}
 			]
 		}
-	/>
+	/> -->
+
+	<Reference image={portraitFloMarcus} backgroundColor="light-blue">
+		<h3>Geschäftsführung & Strategie</h3>
+		<h4>Wissen, was man tut und wie man es tut. Darin stecken die Voraussetzungen, denen wir mit Intensität nachgehen. Immer und überall. Lesen, Konzepte entwickeln, Strategien reflektieren, eigene Erfahrungen einbringen. So kann man Menschen von Ideen begeistern - und dafür sorgen, dass immer etwas Spannendes auf die Agenda rückt. Langeweile ist nicht.</h4>
+	</Reference>
+	<Reference image={portraitObi} odd backgroundColor="yellow">
+		<h3>Inhalt & Konzepte</h3>
+		<h4>Unser Team aus Didaktikern deckt breite Wissensfelder ab und kennt sich mit dem aktuellen Stand der Bildungs- und Wissenschaftssysteme aus. Nahe an didaktischen Vielfalten bleiben wir durch den intensiven Austausch mit Schulen, Museen und Kultureinrichtungen. Wir achten dabei immer darauf, unsere Inhalte passgenau der Zielgruppe anzupassen.</h4>
+	</Reference>
+	<Reference image={portraitBen} backgroundColor="pink">
+		<h3>Entwicklung & IT</h3>
+		<h4>Bei technischen Lösungen sind unsere IT-Experten immer zur Stelle. Sie erschaffen aus bloßen Vorstellungen konkrete Anwendungen. Dabei scheuen sie sich nie, neue und innovative Wege zu beschreiten. Diese digitalen Kompetenzen lassen wir stets zielführend in unsere Projekte einfließen.</h4>
+	</Reference>
+	<Reference image={portraitFabi} odd backgroundColor="light-blue">
+		<h3>Video & Audio</h3>
+		<h4>Die Produktion hochwertiger Lern- und Erklärvideos ist in der heutigen Zeit unabdingbar. Durch die Unterstützung unserer Video- und Audio-Abteilung können wir u.a. maßgeschneidertes Unterrichtsmaterial erstellen. Hierfür betreiben wir ein hauseigenes Greenscreenstudio und ein Tonstudio, in dem wir Podcasts, Sprechertexte und vieles mehr aufnehmen. Vom Script über die Aufnahme bis zur Nachbearbeitung entsteht so alles aus einer Hand.</h4>
+	</Reference>
+	<Reference image={portraitPiera} backgroundColor="yellow">
+		<h3>Grafik & Motion</h3>
+		<p>Durch unsere Grafikabteilung werden Ideen und Konzepte ästhetische Wirklichkeit. Mit hochwertigen Grafiken gewinnen unsere Produktionen an Leben, egal ob Ausstellungen, digitale Bildungsprojekte, App-Oberflächen oder Raumgestaltungen. Auch bei Animation und Motiondesign ist alles möglich, was inhaltlich sinnvoll ist.</p>
+	</Reference>
 </Layout>
