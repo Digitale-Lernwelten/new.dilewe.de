@@ -1,0 +1,37 @@
+.header {
+	height: auto;
+	position: relative;
+	object-fit: contain;
+	box-sizing: border-box;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-right: 3rem;
+}
+.title {
+	text-align: right;
+	width: 100%;
+	margin: 0;
+	font-size: 2rem;
+	font-weight: 500;
+}
+.text {
+	text-align: right;
+	margin-left: 14rem;
+	letter-spacing: 3;
+	word-spacing: 0.1rem;
+	font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1200px)  {
+	.header {
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		margin: 0;
+		flex: 0;
+	}
+
+}

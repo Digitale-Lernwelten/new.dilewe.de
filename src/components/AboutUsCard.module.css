@@ -23,10 +23,10 @@
 
 .image > div {
 	display: block;
-	width: 55%;
+	width: 70%;
 	height: 100%;
 	position: absolute;
-	left: 5%;
+	left: 0;
 	top: 0;
 	object-fit: cover;
 	object-position: 30% 50%;
@@ -36,9 +36,10 @@
 .image img {
 	display: block;
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	height: 110%;
+	object-fit: contain;
 	object-position: 30% 50%;
+	padding-top: 0.5rem;
 }
 
 .text {
@@ -49,7 +50,7 @@
 	margin: 0rem  0rem 0rem calc(50% + 0rem) ;
 	display: block;
 	box-sizing: border-box;
-	background-color: white;
+	background-color: #E9E9E9;
 	clip-path: url(#referenceClipPathRight);
 }
 .textInner {
@@ -57,23 +58,31 @@
 	position: relative;
 	width: 80%;
 	height: 100%;
+	align-items: center;
+	justify-content: center;
+	/* padding: 3rem calc(50% + 3rem) 3rem 0; */
 	box-sizing: border-box;
 	padding: 5rem 0;
 	margin-left: 6rem;
 }
+.blue {
+	background-color: rgba(2, 122, 173, 0.70);
+}
+.yellow {
+	background-color: #DCD640;
+}
+.pink {
+	background-color: rgba(246, 99, 120, 1);
+}
 
 .wrap.even .image img {
-	object-position: 70% 50%;
+	object-position: 50% 50%;
 }
 
-.wrap.odd .image > div {
-	left: 0;
-	float: left;
-}
 .wrap.even .image > div {
 	right: 0;
 	float: right;
-	margin: 0rem  0rem 0rem calc(40% + 0rem) ;
+	margin: 0rem  0rem 0 calc(40% + 0rem);
 }
 
 .wrap.even .textInner {
@@ -85,15 +94,21 @@
 	clip-path: url(#referenceClipPathLeft);
 }
 
+
 .wrap.odd .textInner {
 	text-align: left;
 }
-
-.textInner :global(h3) {
+.textInner :global(h2) {
 	color: var(--primary);
 	font-weight: 350;
 	font-size: 2rem;
 	margin: 0;
+}
+.textInner :global(h3) {
+	font-size: 1.25rem;
+	font-weight: 200;
+	text-transform: none;
+	margin: 0 0 1rem;
 }
 
 .textInner :global(h4) {
@@ -101,11 +116,11 @@
 	font-weight: 200;
 	color: var(--text-color);
 	text-transform: none;
-	margin: 0.5rem 0 3.5rem;
+	margin: 0 0 4rem;
 }
 
 .textInner :global(p) {
-	margin: 0 0 4rem;
+	margin: 0 0 0rem;
 	font-size: 1.2rem;
 	color: var(--text-color);
 }
@@ -137,6 +152,11 @@
 }
 
 @media only screen and (max-width: 1200px)  {
+	.textInner :global(h2) {
+		font-size: 1.6rem;
+		text-align: center;
+	}
+
 	.textInner :global(h3) {
 		font-size: 1.6rem;
 		text-align: center;
@@ -147,18 +167,12 @@
 		text-align: center;
 	}
 
-	.textInner :global(.links){
-		font-size: 1.1rem;
-	}
+	.textInner :global(.links),
 	.textInner :global(p) {
 		font-size: 1.1rem;
 		text-align: justify;
 	}
 
-	.textInner :global(a) {
-		text-align: center;
-		display: block;
-	}
 	.textInner {
 		padding: 2rem calc(50% + 2rem) 2rem 0;
 		margin: 0;
@@ -170,12 +184,16 @@
 		padding-left: calc(50% + 2rem);
 	}
 	.text {
-		margin: 0
+		margin: 0;
+		background-color: white
 	}
 	.image {
 		background-color: white;
 		width: 100%;
 		height: 25rem;
+	}
+	.image img {
+		object-position: 30% 70%;
 	}
 }
 
@@ -199,10 +217,6 @@
 		position: relative;
 		clip-path: url(#headerImageClipPathTop) !important;
 	}
-	.wrap.even .image > div {
-		margin: 0;
-		left: 0
-	}
 
 	.wrap .text .textInner {
 		padding: 2rem;
@@ -211,5 +225,16 @@
 	.wrap .text .textInner p,
 	.wrap .text .textInner h4 {
 		margin-bottom: 2rem;
+	}
+}
+
+@media only screen and (max-width: 900px)  {
+	.image {
+		background-color: white;
+		width: 100%;
+		height: 15rem;
+	}
+	.image img {
+		object-position: 50% 70%;
 	}
 }

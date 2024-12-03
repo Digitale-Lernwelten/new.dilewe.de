@@ -1,0 +1,15 @@
+---
+import AboutUsHeaderCard from './AboutUsHeaderCard'
+
+interface Props {
+	image?: ImageMetadata;
+	odd?: boolean;
+}
+
+const {image, odd} = Astro.props;
+
+---
+
+<AboutUsHeaderCard image={image} odd={odd ? true : false} client:only>
+	<slot />
+</AboutUsHeaderCard>

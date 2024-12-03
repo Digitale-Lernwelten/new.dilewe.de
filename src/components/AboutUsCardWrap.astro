@@ -1,0 +1,15 @@
+---
+interface Props {
+	image?: ImageMetadata;
+	odd?: boolean;
+	color: "blue" | "yellow" | "pink"
+}
+
+import AboutUsCard from './AboutUsCard'
+const {image, odd, color} = Astro.props;
+
+---
+
+<AboutUsCard image={image} odd={odd ? true : false} color={color} client:only>
+	<slot />
+</AboutUsCard>

@@ -1,12 +1,13 @@
 import React, { type ReactNode } from 'react';
-import css from './Reference.module.css';
+import css from './AboutUsCard.module.css';
 import { motion } from 'framer-motion';
 import type { ImageMetadata } from 'astro';
 import { useWindowSize } from './useWindowSize';
 
-interface ReferenceProps {
+interface AboutUsCardProps {
 	image?: ImageMetadata;
 	odd?: boolean;
+	color: "blue" | "yellow" | "pink";
 	children?: ReactNode;
 }
 
@@ -23,11 +24,11 @@ const variantEye = {
 	hidden: { opacity: 0.01, transform: "scaleY(0.1)" }
 }
 
-const Reference: React.FC<ReferenceProps> = (props) => {
+const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
-	const {image, odd, children} = props;
+	const {image, odd, children, color} = props;
 
 	let variantsImage = odd ? variantRight : variantLeft;
 	const variantsText = !odd ? variantRight : variantLeft;
@@ -51,7 +52,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 					transition={imageTransition}
 					variants={variantsImage}
 				>
-						<img src={image?.src} width={image?.width} height={image?.height} />
+					<img src={image?.src} width={image?.width} height={image?.height} className={color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink} />
 
 				</motion.div>
 			</div>
@@ -71,4 +72,4 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 		</div>)
 };
 
-export default Reference;
+export default AboutUsCard;

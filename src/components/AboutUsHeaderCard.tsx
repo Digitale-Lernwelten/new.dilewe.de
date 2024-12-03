@@ -1,5 +1,5 @@
 import React, { type ReactNode } from 'react';
-import css from './Reference.module.css';
+import css from './AboutUsHeaderCard.module.css';
 import { motion } from 'framer-motion';
 import type { ImageMetadata } from 'astro';
 import { useWindowSize } from './useWindowSize';
@@ -23,14 +23,14 @@ const variantEye = {
 	hidden: { opacity: 0.01, transform: "scaleY(0.1)" }
 }
 
-const Reference: React.FC<ReferenceProps> = (props) => {
+const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
 	const {image, odd, children} = props;
 
-	let variantsImage = odd ? variantRight : variantLeft;
-	const variantsText = !odd ? variantRight : variantLeft;
+	let variantsImage = odd ? variantLeft : variantRight;
+	const variantsText = !odd ? variantLeft : variantRight;
 
 	const size = useWindowSize();
 	if(size.width && (size.width <= 900)){
@@ -38,8 +38,8 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 	}
 
 	const imageTransition = (size.width && (size.width <= 900))
-		? ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0, delay: 0.1 })
-		: ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0, delay: 0.1 });
+		? ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0 })
+		: ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0 });
 
 	return (
 		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
@@ -51,7 +51,30 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 					transition={imageTransition}
 					variants={variantsImage}
 				>
+					{
+					image
+					?
 						<img src={image?.src} width={image?.width} height={image?.height} />
+					:
+						<div className={css.textVariant2Container}>
+							<div className={css.textVariant2Wrapper}>
+								<h2 className={css.textVariant2Header}>Unsere Kernkompetenz</h2>
+								<p className={css.textVariant2}>Ganzheitliche digitale Bildungsprojekte</p>
+							</div>
+							<div className={css.textVariant2Wrapper}>
+								<h2 className={css.textVariant2Header}>Unsere Leistungen</h2>
+								<p className={css.textVariant2}>alles aus einer Hand</p>
+							</div>
+							<div className={css.textVariant2Wrapper}>
+								<h2 className={css.textVariant2Header}>Unsere Digitalen Lösungen</h2>
+								<p className={css.textVariant2}>als Antwort auf akute Krisen</p>
+							</div>
+							<div className={css.textVariant2Wrapper}>
+								<h2 className={css.textVariant2Header}>Unsere Geschichte</h2>
+								<p className={css.textVariant2}>über 10 Jahre Engagement für digitale Bildung</p>
+							</div>
+						</div>
+					}
 
 				</motion.div>
 			</div>
@@ -61,7 +84,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 							initial="hidden"
 							whileInView="visible"
 							viewport={{ once: true }}
-							transition={{ duration: 0.6, ease:'easeOut', delay: 0.1 }}
+							transition={{ duration: 0.3, ease:'easeOut' }}
 							variants={variantsText}
 						>
 						{children}
@@ -71,4 +94,4 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 		</div>)
 };
 
-export default Reference;
+export default AboutUsHeaderCard;

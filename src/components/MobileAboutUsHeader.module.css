@@ -1,0 +1,69 @@
+.header {
+	height: auto;
+	position: relative;
+	object-fit: contain;
+	box-sizing: border-box;
+	margin-top: 1rem;
+}
+.title {
+	text-align: center;
+	margin: 0 2.5rem 0.2rem;
+	font-weight: 350;
+	color: var(--tertiary);
+	font-size: 2rem;
+	text-transform: none;
+}
+.text {
+	text-align: justify;
+	letter-spacing: 3;
+	word-spacing: 0.1rem;
+	font-size: 1.1rem;
+	margin: 0 2.5rem;
+	margin-bottom: 2rem;
+
+}
+.subTitle {
+	text-align: center;
+	margin: 0 2.5rem 1rem;
+	text-transform: none;
+	padding: 0;
+	color: var(--primary);
+	font-weight: 350;
+	font-size: 1.5rem;
+
+}
+
+
+@media only screen and (min-width: 1200px)  {
+	.header {
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		margin: 0;
+		flex: 0;
+	}
+	.title {
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		margin: 0;
+		flex: 0;
+	}
+	.text {
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		margin: 0;
+		flex: 0;
+
+	}
+	.subTitle {
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		margin: 0;
+		flex: 0;
+
+	}
+
+}

@@ -6,14 +6,14 @@ interface Props {
 }
 
 import imageFox from "../assets/header-fox.png";
-import imageFoxReferences from "../assets/header-fox-references.png";
+import imageFoxReferences from "../assets/header-fox-reference.png";
 import { ImageShow } from "./ImageShow";
 const { images, fox, foxReferences } = Astro.props;
 ---
 
 <div class="outerWrap">
 	<div class="wrap">
-		<svg height="0" width="0">
+		<!-- <svg height="0" width="0">
 			<defs>
 				<clipPath id="headerImageClipPath" clipPathUnits="objectBoundingBox">
 					<path d="M 1 0 L 0 0 C 0.05 0.4 0.05 0.6 0 1 L 1 1 L 1 0"></path>
@@ -22,12 +22,15 @@ const { images, fox, foxReferences } = Astro.props;
 					<path d="M 1 0.2 C 0.6667 -0.05 0.3333 -0.05 0 0.2 L 0 0.8 C 0.3333 1.05 0.6667 1.05 1 0.8 L 1 0.2"></path>
 				</clipPath>
 			</defs>
-		</svg>
-		<div class="text">
-			<slot />
-		</div>
+		</svg> -->
+
 		<div class="image">
 			<ImageShow images={images} client:load />
+			<div class={foxReferences ? "headerWrap gradientRightToLeft" : "headerWrap gradientLeftToRight"}>
+				<div class="text">
+					<slot />
+				</div>
+			</div>
 		</div>
 	</div>
 	{ !fox ? '' : (<img class="fox" src={imageFox.src} width={imageFox.width} height={imageFox.height} alt="Ein Fuchs" />)}
@@ -51,22 +54,38 @@ const { images, fox, foxReferences } = Astro.props;
 	}
 
 	.image {
-		width: 50%;
+		width: 100%;
 		height: 100%;
-		display: block;
+		display: flex;
 		position: absolute;
 		right: 0;
 		top: 0;
 		clip-path: url(#headerImageClipPath);
 	}
 
-	.text {
-		width: 50%;
-		height: 100%;
-		display: block;
+	.headerWrap {
+		display: flex;
 		position: absolute;
-		left: 0;
-		top: 0;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
+		width: 100%;
+		height: 100%;
+	}
+	.gradientLeftToRight {
+		background: linear-gradient(270deg, rgba(30, 30, 30, 0.00) 0%, rgba(0, 0, 0, 0.80) 65%);
+	}
+	.gradientRightToLeft {
+		background: linear-gradient(270deg, rgba(0, 0, 0, 0.80) 0%, rgba(30, 30, 30, 0.00) 65%);
+	}
+	.text {
+		display: flex;
+		flex: 1;
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		height: 100%;
 	}
 
 	.fox {
@@ -85,7 +104,7 @@ const { images, fox, foxReferences } = Astro.props;
 	.fox-references {
 		position: absolute;
 		z-index: 2;
-		left: 50%;
+		left: 32%;
 		width: 580px;
 		height: auto;
 		display: block;
@@ -103,7 +122,6 @@ const { images, fox, foxReferences } = Astro.props;
 
 		.image {
 			margin-top: calc(min(-2vh, -2vw));
-			clip-path: url(#headerImageClipPathTop);
 			height: calc(min(70vh, 70vw));
 			z-index:10;
 		}
@@ -121,6 +139,12 @@ const { images, fox, foxReferences } = Astro.props;
 			width:100%;
 			background: #fff;
 			height: calc(min(20vh, 20vw));
+		}
+		.gradientLeftToRight {
+			background: linear-gradient(0deg, rgba(30, 30, 30, 0.00) 0%, rgba(0, 0, 0, 0.80) 80%);
+		}
+		.gradientRightToLeft {
+			background: linear-gradient(0deg, rgba(30, 30, 30, 0.00) 0%, rgba(0, 0, 0, 0.80) 80%);
 		}
 
 	}

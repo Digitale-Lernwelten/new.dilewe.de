@@ -16,9 +16,9 @@ const currentPath = pathname.slice(1); // remove the first "/"
 		position: fixed;
 		left: 0;
 		top: 0;
-		padding: 0.5rem 0;
-		border-radius: 0 0 1rem 0;
-		z-index:100;
+		padding: 1rem 1rem;
+		border-radius: 0 0 0.5rem 0;
+		z-index: 100;
 	}
 
 	a {
@@ -27,9 +27,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
 		text-transform: uppercase;
 		padding:0 32px;
 		font-size: 1.2rem;
+		font-weight: 300;
 	}
 	a.active {
 		text-decoration: underline;;
+		text-underline-offset: 5px;
 	}
 
 	@media only screen and (max-width: 1000px)  {
@@ -37,6 +39,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
 			width: 100%;
 			border-radius: 0;
 			text-align: center;
+			padding: 2rem 0 1rem;
 		}
 	}
 

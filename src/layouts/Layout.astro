@@ -25,6 +25,9 @@ const { title, bodyClass } = Astro.props;
 	<body class={bodyClass}>
 		<svg height="0" width="0" style={{position:'absolute'}}>
 			<defs>
+				<clipPath id="referenceClipPathLeftHeader" clipPathUnits="objectBoundingBox">
+					<path d="M 0 0 L 1 0 C 0.90 0.4 0.90 0.6 1 1 L 0 1 L 0 0"></path>
+				</clipPath>
 				<clipPath id="referenceClipPathLeft" clipPathUnits="objectBoundingBox">
 					<path d="M 0 0 L 1 0 C 0.95 0.4 0.95 0.6 1 1 L 0 1 L 0 0"></path>
 				</clipPath>
@@ -59,7 +62,7 @@ const { title, bodyClass } = Astro.props;
 		--content-wide-width: 1600px;
 		--content-padding: 32px;
 		--text-color: #1E1E1E;
-		--background-color: #FBFBFB;
+		--background-color: white;
 	}
 	html, body {
 		font-family: Lato, system-ui, sans-serif;
@@ -73,7 +76,11 @@ const { title, bodyClass } = Astro.props;
 
 	body.references {
 		--primary: #027AAD;
-		--nav-background: #027AAD;
+		--nav-background: #616161;
+	}
+	body.index {
+		--primary: #027AAD;
+		--nav-background: #616161;
 	}
 
 	body.imprint,

@@ -1,9 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeaderImage from "../components/HeaderImage.astro";
-import TeaserBox from "../components/TeaserBox.astro";
-import { HeaderTextParagraph } from "../components/HeaderTextParagraph.tsx";
-import TeamSlider from "../components/TeamSlider";
 import { Logo }  from "../components/Logo";
 
 import { headerImages } from "../assets/header";
@@ -13,31 +10,73 @@ import portraitPiera from "../assets/portraits/piera.jpg";
 import portraitObi from "../assets/portraits/obi.jpg";
 import portraitBen from "../assets/portraits/ben.jpg";
 import portraitFabi from "../assets/portraits/fabi.jpg";
+import { HeaderText } from "../components/HeaderText"
+
+import marcusFlo from "../assets/aboutus/marcus_flo.png"
+import obi from "../assets/aboutus/obi.png"
+import benni from "../assets/aboutus/benni.png"
+import fabi from "../assets/aboutus/fabi.png"
+import piera from "../assets/aboutus/piera.png"
+import AboutUsCard from "../components/AboutUsCardWrap.astro"
+import AboutUsHeaderCard from "../components/AboutUsHeaderCardWrap.astro"
+import { MobileHeaderText } from "../components/MobileHeaderText"
+import { MobileAboutUsHeader } from "../components/MobileAboutUsHeader"
 ---
 
+
 <Layout title="Über uns" bodyClass="index">
-	<HeaderImage images={headerImages} fox>
+	<HeaderImage images={headerImages}>
+		<HeaderText client:load/>
 		<Logo client:load />
 	</HeaderImage>
-	<TeaserBox>
-		<h2>Manufaktur für digitale Bildung</h2>
-		<p>
-			Die Digitalen Lernwelten konzipieren und produzieren Lösungen für Kultur, Bildung und Wissenschaft.
-			Wir verbinden Inhalt und Technik, Wissenschaft und Praxis, Medien und Didaktik, Datenschutz und Nutzbarkeit, um mit unseren Partnern gemeinsam nachhaltige Lösungen zu entwickeln. 
-		</p>
-	</TeaserBox>
-	<HeaderTextParagraph
+	<MobileHeaderText client:load/>
+	<AboutUsHeaderCard>
+		<div class="alignedWrapper">
+			<p class="aligned">Wir kennen die Bedürfnisse öffentlicher und privater Auftraggeber – seit Jahren arbeiten wir erfolgreich mit Kultusministerien, Landesämtern, Bundesbehörden, Stiftungen und Vereinen zusammen. Unsere Projekte werden in diesen Kooperationen grundsätzlich termingerecht und im vereinbarten Kostenrahmen fertiggestellt. Die dafür notwendigen Kompetenzen sind ein effizient strukturiertes Projektmanagement, zielgenaue Kommunikation und transdisziplinäre Fachkenntnis.</p>
+			<p class="aligned">Die möglichen Leistungen bei der erfolgreichen Entwicklung eines Projekts umfassen die Bereiche Strategie, Konzeption, Projektorganisation, Inhalts- und Medienproduktion, Technologieentwicklung, Implementierung, langfristige Betreuung und öffentliche Kommunikation. Wir finden praktikable Lösungen für die aktuellen und langfristigen Herausforderungen im Bildungs- und Kulturbereich – sei es Lehrkräftemangel, Inklusion, Medienbildung, Diversität, Bildung für nachhaltige Entwicklung, Kompetenzorientierung oder der Umgang mit künstlicher Intelligenz und virtuellen Realitäten.</p>
+			<p class="aligned">Corona, Ukraine, Lehrermangel – drei Krisen aus der letzten Zeit, auf die wir schnell und kreativ mit spezifischen digitalen Lösungen antworten konnten. So entstanden z. B. Lerneinheiten für den Distanzunterricht, digitale Alphabetisierungs-Materialien (DaZ) und Selbstlern-Module mit integrierten Videolehrkräften.</p>
+			<p class="aligned">Das Team der Digitalen Lernwelten prägt seit über zehn Jahren eine von Didaktik und Inhalt motivierte Digitalisierung der Bildung aktiv mit. Unter anderem stehen die Auszeichnungen ‘Schulbuch des Jahres’ und ‘Digital Publishing Award’ für diesen Weg und den damit verbundenen Erfolg. Wir beteiligen uns aktiv und kritisch am aktuellen Bildungsdiskurs. Dafür nutzen wir Formate wie den Podcast ‘EduCouch’ oder die gestaltende Teilnahme an Tagungen und Konferenzen.</p>
+		</div>
+	</AboutUsHeaderCard>
+	<MobileAboutUsHeader client:load/>
+	<AboutUsCard image={marcusFlo} odd color="blue">
+		<h2>Geschäftsführung & Strategie</h2>
+		<h3>Prof. Dr. Marcus Ventzke & Dr. Florian Sochatzy</h3>
+		<p>Wissen, was man tut und wie man es tut. Darin stecken die Voraussetzungen, denen wir mit Intensität nachgehen. Immer und überall. Lesen, Konzepte entwickeln, Strategien reflektieren, eigene Erfahrungen einbringen. So kann man Menschen von Ideen begeistern - und dafür sorgen, dass immer etwas Spannendes auf die Agenda rückt. Langeweile ist nicht.</p>
+	</AboutUsCard>
+	<AboutUsCard image={obi} color="yellow">
+		<h2>Inhalt & konzepte</h2>
+		<h3>Veronika Obermeier</h3>
+		<p>Unser Team aus Didaktikern deckt breite Wissensfelder ab und kennt sich mit dem aktuellen Stand der Bildungs- und Wissenschaftssysteme aus. Nahe an didaktischen Vielfalten bleiben wir durch den intensiven Austausch mit Schulen, Museen und Kultureinrichtungen. Wir achten dabei immer darauf, unsere Inhalte passgenau der Zielgruppe anzupassen.</p>
+	</AboutUsCard>
+	<AboutUsCard image={benni} odd color="pink">
+		<h2>Entwicklung & IT</h2>
+		<h3>Benjamin Schulenburg</h3>
+		<p>Bei technischen Lösungen sind unsere IT-Experten immer zur Stelle. Sie erschaffen aus bloßen Vorstellungen konkrete Anwendungen. Dabei scheuen sie sich nie, neue und innovative Wege zu beschreiten. Diese digitalen Kompetenzen lassen wir stets zielführend in unsere Projekte einfließen.</p>
+	</AboutUsCard>
+	<AboutUsCard image={fabi} color="blue">
+		<h2>Video & Audio</h2>
+		<h3>Fabian Hell</h3>
+		<p>Die Produktion hochwertiger Lern- und Erklärvideos ist in der heutigen Zeit unabdingbar. Durch die Unterstützung unserer Video- und Audio-Abteilung können wir u.a. maßgeschneidertes Unterrichtsmaterial erstellen. Hierfür betreiben wir ein hauseigenes Greenscreenstudio und ein Tonstudio, in dem wir Podcasts, Sprechertexte und vieles mehr aufnehmen. Vom Script über die Aufnahme bis zur Nachbearbeitung entsteht so alles aus einer Hand.</p>
+	</AboutUsCard>
+	<AboutUsCard image={piera} odd color="yellow">
+		<h2>grafik & motion</h2>
+		<h3>Piera Jelinek</h3>
+		<p>Durch unsere Grafikabteilung werden Ideen und Konzepte ästhetische Wirklichkeit. Mit hochwertigen Grafiken gewinnen unsere Produktionen an Leben, egal ob Ausstellungen, digitale Bildungsprojekte, App-Oberflächen oder Raumgestaltungen. Auch bei Animation und Motiondesign ist alles möglich, was inhaltlich sinnvoll ist.</p>
+	</AboutUsCard>
+
+	<!-- <HeaderTextParagraph
 		client:load
 		header="Unsere Kernkompetenz"
 		subheader="Ganzheitliche digitale Bildungsprojekte"
-		text=`Wir kennen die Bedürfnisse öffentlicher und privater Auftraggeber – seit Jahren arbeiten wir erfolgreich mit Kultusministerien, Landesämtern, Bundesbehörden, Stiftungen und Vereinen zusammen. Unsere Projekte werden in diesen Kooperationen grundsätzlich termingerecht und im vereinbarten Kostenrahmen fertiggestellt. 
+		text=`Wir kennen die Bedürfnisse öffentlicher und privater Auftraggeber – seit Jahren arbeiten wir erfolgreich mit Kultusministerien, Landesämtern, Bundesbehörden, Stiftungen und Vereinen zusammen. Unsere Projekte werden in diesen Kooperationen grundsätzlich termingerecht und im vereinbarten Kostenrahmen fertiggestellt.
 		Die dafür notwendigen Kompetenzen sind ein effizient strukturiertes Projektmanagement, zielgenaue Kommunikation und transdisziplinäre Fachkenntnis.`
 	/>
 	<HeaderTextParagraph
 		client:load
 		header="Unsere Leistungen"
 		subheader="alles aus einer Hand"
-		text=`Die möglichen Leistungen bei der erfolgreichen Entwicklung eines Projekts umfassen die Bereiche Strategie, Konzeption, Projektorganisation, Inhalts- und Medienproduktion, Technologieentwicklung, Implementierung, langfristige Betreuung und öffentliche Kommunikation. 
+		text=`Die möglichen Leistungen bei der erfolgreichen Entwicklung eines Projekts umfassen die Bereiche Strategie, Konzeption, Projektorganisation, Inhalts- und Medienproduktion, Technologieentwicklung, Implementierung, langfristige Betreuung und öffentliche Kommunikation.
 		Wir finden praktikable Lösungen für die aktuellen und langfristigen Herausforderungen im Bildungs- und Kulturbereich – sei es Lehrkräftemangel, Inklusion, Medienbildung, Diversität, Bildung für nachhaltige Entwicklung, Kompetenzorientierung oder der Umgang mit künstlicher Intelligenz und virtuellen Realitäten.`
 	/>
 	<HeaderTextParagraph
@@ -52,7 +91,7 @@ import portraitFabi from "../assets/portraits/fabi.jpg";
 		subheader="über 10 Jahre Engagement für digitale Bildung"
 		text=`Das Team der Digitalen Lernwelten prägt seit über zehn Jahren eine von Didaktik und Inhalt motivierte Digitalisierung der Bildung aktiv mit. Unter anderem stehen die Auszeichnungen ‘Schulbuch des Jahres’ und ‘Digital Publishing Award’ für diesen Weg und den damit verbundenen Erfolg. Wir beteiligen uns aktiv und kritisch am aktuellen Bildungsdiskurs. Dafür nutzen wir Formate wie den Podcast ‘EduCouch’ oder die gestaltende Teilnahme an Tagungen und Konferenzen.`
 	/>
-	<TeamSlider 
+	<TeamSlider
 		client:idle
 		headline="Kompetenzen"
 		slides={
@@ -87,5 +126,5 @@ import portraitFabi from "../assets/portraits/fabi.jpg";
 				}
 			]
 		}
-	/>
+	/> -->
 </Layout>
