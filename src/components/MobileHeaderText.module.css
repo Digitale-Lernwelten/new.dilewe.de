@@ -6,14 +6,13 @@
 	margin-top: 2rem;
 }
 .title {
-	text-align: center;
-	width: 100%;
-	margin: 0 0 1rem;
+	text-align: left;
+	margin: 0 2.5rem 1rem;
 	font-size: 1.5rem;
 	font-weight: 350;
 }
 .text {
-	text-align: justify;
+	text-align: left;
 	letter-spacing: 3;
 	word-spacing: 0.1rem;
 	font-size: 1.1rem;
@@ -21,7 +20,7 @@
 }
 
 
-@media only screen and (min-width: 1200px)  {
+@media only screen and (min-width: 1400px)  {
 	.header {
 		visibility: hidden;
 		width: 0;

@@ -25,7 +25,7 @@
 	font-size: 1.2rem;
 }
 
-@media only screen and (max-width: 1200px)  {
+@media only screen and (max-width: 1400px)  {
 	.header {
 		visibility: hidden;
 		width: 0;

@@ -174,7 +174,7 @@
 	margin: 0
 }
 
-@media only screen and (max-width: 1200px)  {
+@media only screen and (max-width: 1400px)  {
 	.wrap {
 		visibility: hidden;
 		width: 0;

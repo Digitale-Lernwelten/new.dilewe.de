@@ -33,11 +33,11 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 	const variantsText = !odd ? variantRight : variantLeft;
 
 	const size = useWindowSize();
-	if(size.width && (size.width <= 900)){
+	if(size.width && (size.width <= 1400)){
 		variantsImage = variantEye;
 	}
 
-	const imageTransition = (size.width && (size.width <= 900))
+	const imageTransition = (size.width && (size.width <= 1400))
 		? ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0, delay: 0.1 })
 		: ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0, delay: 0.1 });
 

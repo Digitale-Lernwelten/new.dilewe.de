@@ -6,7 +6,7 @@
 	margin-top: 1rem;
 }
 .title {
-	text-align: center;
+	text-align: left;
 	margin: 0 2.5rem 0.2rem;
 	font-weight: 350;
 	color: var(--tertiary);
@@ -14,7 +14,7 @@
 	text-transform: none;
 }
 .text {
-	text-align: justify;
+	text-align: left;
 	letter-spacing: 3;
 	word-spacing: 0.1rem;
 	font-size: 1.1rem;
@@ -23,7 +23,7 @@
 
 }
 .subTitle {
-	text-align: center;
+	text-align: left;
 	margin: 0 2.5rem 1rem;
 	text-transform: none;
 	padding: 0;
@@ -34,7 +34,7 @@
 }
 
 
-@media only screen and (min-width: 1200px)  {
+@media only screen and (min-width: 1400px)  {
 	.header {
 		visibility: hidden;
 		width: 0;
