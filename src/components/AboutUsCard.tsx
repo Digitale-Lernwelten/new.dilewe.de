@@ -9,6 +9,7 @@ interface AboutUsCardProps {
 	odd?: boolean;
 	color: "blue" | "yellow" | "pink";
 	children?: ReactNode;
+	isDoublePortrait: boolean
 }
 
 const variantLeft = {
@@ -28,7 +29,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
-	const {image, odd, children, color} = props;
+	const {image, odd, children, color, isDoublePortrait} = props;
 
 	let variantsImage = odd ? variantRight : variantLeft;
 	const variantsText = !odd ? variantRight : variantLeft;
@@ -52,7 +53,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
 					transition={imageTransition}
 					variants={variantsImage}
 				>
-					<img src={image?.src} width={image?.width} height={image?.height} className={color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink} />
+					<img src={image?.src} width={image?.width} height={image?.height} className={` ${isDoublePortrait ? css.doublePortrait : ""} ${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}/>
 
 				</motion.div>
 			</div>

@@ -58,15 +58,15 @@ const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 					:
 						<div className={css.textVariant2Container}>
 							<div className={css.textVariant2Wrapper}>
-								<h2 className={css.textVariant2Header}>Unsere Kernkompetenz</h2>
-								<p className={css.textVariant2}>Ganzheitliche digitale Bildungsprojekte</p>
+								<h2 className={css.textVariant2Header}>Unsere Kompetenz</h2>
+								<p className={css.textVariant2}>ganzheitliche Projekte</p>
 							</div>
 							<div className={css.textVariant2Wrapper}>
 								<h2 className={css.textVariant2Header}>Unsere Leistungen</h2>
 								<p className={css.textVariant2}>alles aus einer Hand</p>
 							</div>
 							<div className={css.textVariant2Wrapper}>
-								<h2 className={css.textVariant2Header}>Unsere Digitalen Lösungen</h2>
+								<h2 className={css.textVariant2Header}>Unsere Lösungen</h2>
 								<p className={css.textVariant2}>als Antwort auf akute Krisen</p>
 							</div>
 							<div className={css.textVariant2Wrapper}>

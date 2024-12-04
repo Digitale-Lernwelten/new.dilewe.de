@@ -32,6 +32,9 @@
 	object-position: 30% 50%;
 	background: var(--background-color);
 }
+.doublePortrait {
+	object-position: 0% 50% !important;
+}
 
 .image img {
 	display: block;
