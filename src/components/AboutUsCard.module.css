@@ -200,6 +200,9 @@
 		object-position: 50% 75%;
 
 	}
+	.doublePortrait {
+		object-position: 50% 50% !important;
+	}
 }
 
 @media only screen and (max-width: 1400px)  {
