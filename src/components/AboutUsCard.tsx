@@ -5,7 +5,7 @@ import type { ImageMetadata } from 'astro';
 import { useWindowSize } from './useWindowSize';
 
 interface AboutUsCardProps {
-	image?: ImageMetadata;
+	image: ImageMetadata;
 	odd?: boolean;
 	color: "blue" | "yellow" | "pink";
 	children?: ReactNode;

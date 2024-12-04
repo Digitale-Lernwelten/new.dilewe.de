@@ -5,7 +5,7 @@ import type { ImageMetadata } from 'astro';
 import { useWindowSize } from './useWindowSize';
 
 interface ReferenceProps {
-	image?: ImageMetadata;
+	image: ImageMetadata;
 	odd?: boolean;
 	children?: ReactNode;
 }
