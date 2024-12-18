@@ -69,7 +69,7 @@
 	margin-left: 6rem;
 }
 .blue {
-	background-color: rgba(2, 122, 173, 0.70);
+	background-color: rgba(2, 122, 173, 1) !important;
 }
 .yellow {
 	background-color: #DCD640;
@@ -154,6 +154,31 @@
 	height: 800px;
 }
 
+@media only screen and (max-width: 1750px) {
+	.doublePortrait {
+		object-position: 0% 90% !important;
+		width: 90% !important;
+		height: 100% !important;
+
+	}
+}
+@media only screen and (max-width: 1672px) {
+	.doublePortrait {
+		object-position: 0% 90% !important;
+		width: 70% !important;
+		height: 100% !important;
+
+	}
+}
+@media only screen and (max-width: 1470px) {
+	.doublePortrait {
+		object-position: 0% 100% !important;
+		width: 75% !important;
+		height: 100% !important;
+
+	}
+}
+
 @media only screen and (max-width: 1400px)  {
 	.textInner :global(h2) {
 		font-size: 1.6rem;
@@ -202,6 +227,8 @@
 	}
 	.doublePortrait {
 		object-position: 50% 50% !important;
+		width: 100% !important;
+		height: 110% !important;
 	}
 }
 

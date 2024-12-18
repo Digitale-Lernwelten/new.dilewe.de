@@ -45,13 +45,14 @@ const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
 
 	return (
 		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
-			<div className={css.image}>
+			<div className={`${css.image}`} >
 				<motion.div
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
 					transition={imageTransition}
 					variants={variantsImage}
+					className={`${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}
 				>
 					<img src={image?.src} width={image?.width} height={image?.height} className={` ${isDoublePortrait ? css.doublePortrait : ""} ${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}/>
 
