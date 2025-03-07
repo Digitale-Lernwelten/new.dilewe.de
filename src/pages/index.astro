@@ -8,7 +8,9 @@ import marcusFlo from "../assets/aboutus/marcus_flo.png"
 import obi from "../assets/aboutus/obi.png"
 import kevin from "../assets/aboutus/kevin.png"
 import fabi from "../assets/aboutus/fabi.png"
-import piera from "../assets/aboutus/piera.png"
+import pieraLaura from "../assets/aboutus/piera_laura.png"
+import chris from "../assets/aboutus/chris.png"
+import felix from "../assets/aboutus/felix.png"
 import AboutUsCard from "../components/AboutUsCardWrap.astro"
 import AboutUsHeaderCard from "../components/AboutUsHeaderCardWrap.astro"
 import { MobileHeaderText } from "../components/MobileHeaderText"
@@ -51,10 +53,20 @@ import { MobileAboutUsHeader } from "../components/MobileAboutUsHeader"
 		<h3>Leitung: Fabian Hell</h3>
 		<p>Die Produktion hochwertiger Lern- und Erklärvideos ist in der heutigen Zeit unabdingbar. Durch die Unterstützung unserer Video- und Audio-Abteilung können wir u.a. maßgeschneidertes Unterrichtsmaterial erstellen. Hierfür betreiben wir ein hauseigenes Greenscreenstudio und ein Tonstudio, in dem wir Podcasts, Sprechertexte und vieles mehr aufnehmen. Vom Script über die Aufnahme bis zur Nachbearbeitung entsteht so alles aus einer Hand.</p>
 	</AboutUsCard>
-	<AboutUsCard image={piera} odd color="yellow"isDoublePortrait={false}>
+	<AboutUsCard image={pieraLaura} odd color="yellow" isDoublePortrait>
 		<h2>grafik & motion</h2>
-		<h3>Leitung: Piera Jelinek</h3>
+		<h3>Piera Jelinek und Laura Fuchs</h3>
 		<p>Durch unsere Grafikabteilung werden Ideen und Konzepte ästhetische Wirklichkeit. Mit hochwertigen Grafiken gewinnen unsere Produktionen an Leben, egal ob Ausstellungen, digitale Bildungsprojekte, App-Oberflächen oder Raumgestaltungen. Auch bei Animation und Motiondesign ist alles möglich, was inhaltlich sinnvoll ist.</p>
+	</AboutUsCard>
+	<AboutUsCard image={chris} color="pink"isDoublePortrait={false}>
+		<h2>Instruktionsdesign</h2>
+		<h3>Chris Liebscher</h3>
+		<p>Didaktische Passgenauigkeit, intuitive Benutzbarkeit und konkrete Anwendung: Wir reflektieren unsere Materialien und fügen sie so in unsere Inhalts-Architektur, dass sie, meist eingebettet in einen lebenspraktischen Kontext, die Kompetenzentwicklung der Lernenden optimal unterstützen.</p>
+	</AboutUsCard>
+	<AboutUsCard image={felix} odd color="blue" isDoublePortrait={false}>
+		<h2>Projektmanagement</h2>
+		<h3>Felix Bornheim</h3>
+		<p>Die reibungslose Organisation innovativer Bildungsprojekte ist in der modernen Lernwelt unersetzbar. Dank der Erfahrung im Bereich Projektleitung und Koordination vernetzen wir  Expertinnen und Experten, damit digitale Inhalte effizient umgesetzt werden. Von der ersten Idee bis zur Finalisierung stellen wir sicher, dass jedes Vorhaben erfolgreich realisiert wird.</p>
 	</AboutUsCard>
 
 	<!-- <HeaderTextParagraph
