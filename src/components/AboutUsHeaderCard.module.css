@@ -15,7 +15,7 @@
 }
 
 .image {
-	width: 50%;
+	width: 45%;
 	height: 750px;
 	display: block;
 	float: right;
@@ -55,7 +55,7 @@
 }
 .textVariant2Container {
 	background-color: #E9E9E9;
-	width: 100%;
+	width: auto;
 	height: 750px;
 	max-width: var(--content-wide-width);
 	padding: 0 var(--content-padding);
@@ -111,6 +111,14 @@
 	clip-path: url(#referenceClipPathLeftHeader);
 	right: auto;
 	left: 0;
+}
+
+@-moz-document url-prefix() {
+	.wrap.even .image > div {
+		clip-path: url(#referenceClipPathLeftHeader);
+		right: auto;
+		left: 5px;
+	}
 }
 
 .wrap.even .textInner {
@@ -171,7 +179,8 @@
 	flex-direction: column;
 	flex: 1;
 	height: 750px;
-	margin: 0
+	margin: 0;
+	padding-bottom: 3rem;
 }
 
 @media only screen and (max-width: 1400px)  {
