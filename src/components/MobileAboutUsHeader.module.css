@@ -10,7 +10,7 @@
 	margin: 0 2.5rem 0.2rem;
 	font-weight: 350;
 	color: var(--tertiary);
-	font-size: 2rem;
+	font-size: 1.3rem;
 	text-transform: none;
 }
 .text {
@@ -29,7 +29,7 @@
 	padding: 0;
 	color: var(--primary);
 	font-weight: 350;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 
 }
 

@@ -7,7 +7,6 @@ import socialFacebook from "../assets/social/facebook.svg?raw";
 import socialLinkedin from "../assets/social/linkedin.svg?raw";
 import socialBluesky from "../assets/social/bluesky.svg?raw";
 import socialInstagram from "../assets/social/instagram.svg?raw";
-import socialTwitter from "../assets/social/twitter.svg?raw";
 ---
 <nav>
 	<span class="site-links">
@@ -20,7 +19,7 @@ import socialTwitter from "../assets/social/twitter.svg?raw";
 		<a href="https://www.linkedin.com/company/digitale-lernwelten-gmbh" target="_blank"><Fragment set:html={socialLinkedin} /></a>
 		<a href="https://bsky.app/profile/digitalelernwelten.bsky.social" target="_blank"><Fragment set:html={socialBluesky} /></a>
 		<a href="https://www.instagram.com/digitalelernwelten/" target="_blank"><Fragment set:html={socialInstagram} /></a>
-		<a href="https://twitter.com/DLernwelten" target="_blank"><Fragment set:html={socialTwitter} /></a>
+		<p>info@dilewe.de</p>
 	</span>
 </nav>
 
@@ -31,6 +30,14 @@ import socialTwitter from "../assets/social/twitter.svg?raw";
 		position: relative;
 		padding: 0rem 0 3rem;
 		background-color: #585858;
+		border-top: 1.5rem solid white;
+	}
+
+	p {
+		display: inline-block;
+		align-items: center;
+		color: var(--nav-text-color);
+		margin: 0;
 	}
 
 	a {

@@ -32,7 +32,6 @@
 	top: 0;
 	object-fit: cover;
 	object-position: 30% 50%;
-	clip-path: url(#referenceClipPathRight);
 	background: var(--background-color);
 }
 
@@ -54,11 +53,10 @@
 	box-sizing: border-box;
 }
 .textVariant2Container {
-	background-color: #E9E9E9;
 	width: auto;
 	height: 750px;
 	max-width: var(--content-wide-width);
-	padding: 0 var(--content-padding);
+	padding: 0 0 0 var(--content-padding);
 	padding-bottom: 3rem;
 	margin: 0 auto;
 	display: flex;
@@ -77,7 +75,7 @@
 }
 
 .textVariant2Header {
-	margin-right: 12rem;
+	margin-right: 0;
 	margin-bottom: 0;
 	padding: 0;
 	color: var(--primary);
@@ -86,7 +84,7 @@
 	text-align: right;
 }
 .textVariant2 {
-	margin-right: 12rem;
+	margin-right: 0;
 	margin-bottom: 0;
 	padding: 0;
 	color: var(--primary);
@@ -108,14 +106,12 @@
 }
 
 .wrap.even .image > div {
-	clip-path: url(#referenceClipPathLeftHeader);
 	right: auto;
 	left: 0;
 }
 
 @-moz-document url-prefix() {
 	.wrap.even .image > div {
-		clip-path: url(#referenceClipPathLeftHeader);
 		right: auto;
 		left: 5px;
 	}

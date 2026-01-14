@@ -12,6 +12,10 @@
 	position:relative;
 }
 
+astro-island:first-of-type > div[class^="_wrap"] {
+	margin-top: 4rem;
+}
+
 .image {
 	width: 50%;
 	height: 100%;
@@ -23,7 +27,7 @@
 
 .image > div {
 	display: block;
-	width: 55%;
+	width: 50%;
 	height: 100%;
 	position: absolute;
 	left: 5%;
@@ -50,7 +54,6 @@
 	display: block;
 	box-sizing: border-box;
 	background-color: white;
-	clip-path: url(#referenceClipPathRight);
 }
 .textInner {
 	display: block;
@@ -73,7 +76,7 @@
 .wrap.even .image > div {
 	right: 0;
 	float: right;
-	margin: 0rem  0rem 0rem calc(40% + 0rem) ;
+	margin: 0rem  0rem 0rem calc(45% + 0rem) ;
 }
 
 .wrap.even .textInner {
@@ -82,7 +85,6 @@
 }
 .wrap.even .text {
 	margin: 0rem  calc(50% + 0rem) 0rem 0;
-	clip-path: url(#referenceClipPathLeft);
 }
 
 .wrap.odd .textInner {
@@ -197,7 +199,6 @@
 	.wrap .image > div {
 		width: 100%;
 		position: relative;
-		clip-path: url(#headerImageClipPathTop) !important;
 	}
 	.wrap.even .image > div {
 		margin: 0;
