@@ -29,21 +29,21 @@ import socialInstagram from "../assets/social/instagram.svg?raw";
 		display: block;
 		position: relative;
 		padding: 0rem 0 3rem;
-		background-color: #585858;
-		border-top: 1.5rem solid white;
+		background-color: white;
+		margin-top: 2rem;
 	}
 
 	p {
 		display: inline-block;
 		align-items: center;
-		color: var(--nav-text-color);
+		color: var(--primary);
 		margin: 0;
 	}
 
 	a {
 		text-transform: uppercase;
 		text-decoration: none;
-		color:var(--nav-text-color);
+		color: var(--primary);
 		margin: 0 0.5rem;
 	}
 
@@ -62,6 +62,20 @@ import socialInstagram from "../assets/social/instagram.svg?raw";
 		width: 2rem;
 		height: 2rem;
 		margin-bottom: -0.5rem;
+	}
+
+	.logo :global(svg) {
+		display: inline-block;
+	}
+
+	/* Swap white to primary color */
+	nav :global(svg) :global(path[fill="white"]) {
+		fill: var(--primary);
+	}
+
+	/* Swap grey (#616161) to white */
+	nav :global(svg) :global(path[fill="#616161"]) {
+		fill: white;
 	}
 
 	:global(svg) :global(path.primaryColor) {
