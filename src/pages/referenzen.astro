@@ -3,11 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Reference from "../components/ReferenceWrap.astro"
 import HeaderImage from "../components/HeaderImage.astro";
 import { headerImages } from "../assets/header";
-import referenceLasub from "../assets/references/lasub.jpg";
+import referenceLasub from "../assets/references/lasub.png";
 import referenceMbookGL from "../assets/references/mbook-gl.jpg";
 import referenceGeoregio from "../assets/references/georegio.jpg";
 import referenceDemokratie from "../assets/references/demokratie.jpg";
-import referenceHamburg from "../assets/references/hamburg.jpg";
+import referenceHamburg from "../assets/references/hamburg.png";
 import referenceDiakonie from "../assets/references/diakonie.jpg";
 import referenceFluchtUndVertreibung from "../assets/references/flucht.jpg";
 import referenceRD from "../assets/references/rd.jpg";
@@ -21,9 +21,9 @@ import referenceAltenburg from "../assets/references/altenburg.jpg";
 import referenceJura from "../assets/references/jura.jpg";
 import referenceMemories from "../assets/references/memories.jpg";
 import referenceMMMMO from "../assets/references/mmmmo.jpg";
-import referenceSpiegelarche from "../assets/references/spiegelarche.jpg";
 import referenceDeutsch from "../assets/references/deutsch.jpg";
-import referenceVielfalt from "../assets/references/vielfalt_religion.jpg";
+import referenceVielfalt from "../assets/references/vielfalt_religion.png";
+import referenceKI from "../assets/references/ki.jpg";
 import TeaserBox from "../components/TeaserBox.astro";
 
 ---
@@ -95,17 +95,27 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://www.bildung.sachsen.de/blog/index.php/2022/12/13/digitale-module-unterstuetzen-lehrkraefte-beim-unterrichten/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceGeoregio} odd>
+	<Reference image={referenceKI} odd>
+		<h3>KI-Module für Niedersachsen</h3>
+		<h4>Niedersächsisches Landesinstitut für schulische Qualitätsentwicklung</h4>
+
+		<p>Neukonzeption, Produktion und Umsetzung einer modularen Moodle-OER-Sammlung zum Thema „Lernen mit KI". Die Module bieten praxisnahe schulische Anwendungsszenarien (über 130 Prompt-Beispiele), verständlich aufbereitete Grundlagen der KI-Technologie mit optionalen Vertiefungen sowie eine strukturierte Auseinandersetzung mit gesellschaftlichen, philosophischen und rechtlichen Fragen.</p>
+
+		<span class="links">
+			<a href="https://openelec.moodle-nds.de/course/view.php?id=465" target="_blank">Mehr Informationen | Link</a>
+		</span>
+	</Reference>
+	<Reference image={referenceGeoregio}>
 		<h3>GeoRegio - das Geografiebuch<br/>über die Euregio Maas-Rhein</h3>
 		<h4>Euregio Maas-Rhein</h4>
 
-		<p>Konzeption, Produktion und Implementierung eines digitalen Geografie-Lehrwerks für die Euregio Maas-Rhein. Dieses richtet sich an alle Lehrenden und Lernenden in der Euregio, weswegen es durchgehend dreisprachig (Französisch, Niederländisch, Deutsch) und binnendifferenziert ist. Im Geografiebuch werden Datendienste, z. B. von Katasterämtern, live abfragt – somit bleibt das Unterrichtsmaterial stets aktuell.</p>
+		<p>Konzeption, Produktion und Implementierung eines digitalen Geografie-Lehrwerks für die Euregio Maas-Rhein. Dieses richtet sich an alle Lehrenden und Lernenden in der Euregio, weswegen es durchgehend dreisprachig (Französisch, Niederländisch, Deutsch) und binnendifferenziert ist. Im Geografiebuch werden Datendienste, z. B. von Katasterämtern, live angezeigt – somit bleibt das Unterrichtsmaterial stets aktuell.</p>
 
 		<span class="links">
 			<a href="https://euregio-mr.info/de/Projekte/emrlingua.php" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceDemokratie}>
+	<Reference image={referenceDemokratie} odd>
 		<h3>Demokratie - Medien - Persönlichkeit</h3>
 		<h4>Hessisches Ministerium des Inneren und für Sport</h4>
 
@@ -115,37 +125,47 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://innen.hessen.de/presse/digitales-demokratieprojekt-an-richard-mueller-schule-in-fulda-gestartet" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceHamburg} odd>
+	<Reference image={referenceHamburg}>
 		<h3>Einblicke<br/>Hamburgs politisches System</h3>
-		<h4>Konzeption, Produktion und Implementierung der Bildungsplattform ‘Einblicke’.</h4>
+		<h4>Landeszentrale für politische Bildung Hamburg</h4>
 
-		<p>Die multimediale Plattform richtet sich an alle, die das politische System Hamburgs verstehen möchten – ob aus persönlichem Interesse oder für den Unterricht. Grundlage bildet die Hamburgische Verfassung. Lehrkräfte finden auf der Plattform Unterrichtsmaterialien, die sich an den Hamburger Bildungsplänen orientieren und direkt im Unterricht eingesetzt werden können.</p>
+		<p>Konzeption, Produktion und Implementierung der Bildungsplattform 'Einblicke'. Die multimediale Plattform richtet sich an alle, die das politische System Hamburgs verstehen möchten – ob aus persönlichem Interesse oder für den Unterricht. Grundlage bildet die Hamburgische Verfassung. Lehrkräfte finden auf der Plattform Unterrichtsmaterialien, die sich an den Hamburger Bildungsplänen orientieren und direkt im Unterricht eingesetzt werden können.</p>
 
 		<span class="links">
 			<a href="https://einblicke-hamburg.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceDiakonie}>
+	<Reference image={referenceDiakonie} odd>
 		<h3>Verachtet - verfolgt - vergessen:<br/>Die Opfer der NS-'Gesundheitspolitik</h3>
-		<h4>Konzeption, Produktion und Implementierung einer interaktiv-digitalen Lernplattform, die zeitgeschichtliches Lernen mit innovativen Vermittlungsformen verbindet.</h4>
+		<h4>Diakonie Herzogsägmühle gGmbH</h4>
 
-		<p>Im Mittelpunkt stehen multimediale Zugänge zur Erinnerungskultur: Nutzerinnen und Nutzer erkunden historische Orte, Biografien und Ereignisse durch Videos, Audiobeiträge, Bildmaterial und interaktive Elemente. Die Plattform ermöglicht selbstgesteuertes Lernen und bietet vielfältige Anknüpfungspunkte für den Schulunterricht und die außerschulische Bildungsarbeit. Die modulare Struktur ermöglicht den flexiblen Einsatz einzelner Inhalte oder ganzer Themenblöcke. Durch den digitalen Zugang wird historisches Lernen orts- und zeitunabhängig möglich.</p>
+		<p>Konzeption, Produktion und Implementierung einer interaktiv-digitalen Lernplattform, die zeitgeschichtliches Lernen mit innovativen Vermittlungsformen verbindet. Im Mittelpunkt stehen multimediale Zugänge zur Erinnerungskultur: Nutzerinnen und Nutzer erkunden historische Orte, Biografien und Ereignisse durch Videos, Audiobeiträge, Bildmaterial und interaktive Elemente. Die Plattform ermöglicht selbstgesteuertes Lernen und bietet vielfältige Anknüpfungspunkte für den Schulunterricht und die außerschulische Bildungsarbeit. Die modulare Struktur ermöglicht den flexiblen Einsatz einzelner Inhalte oder ganzer Themenblöcke. Durch den digitalen Zugang wird historisches Lernen orts- und zeitunabhängig möglich.</p>
 
 		<span class="links">
 			<a href="http://gegen-das-vergessen.dilewe.de" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceFluchtUndVertreibung} odd>
-		<h3>Flucht und Vertreibung</h3>
+	<Reference image={referenceFluchtUndVertreibung}>
+		<h3>Flucht und Vertreibung - Eine deutsche Geschichte über Leid und Neuanfang</h3>
 		<h4>Hessisches Ministerium des Inneren und für Sport &amp; Bund der Vertriebenen Hessen</h4>
 
-		<p>Flucht und Vertreibung - Eine deutsche Geschichte über Leid und Neuanfang. Konzeption, Produktion und Implementierung der ersten multimedialen und interaktiven Gesamtdarstellung der deutschen Flucht-, Vertreibungs- und Integrationsgeschichte am Ende des Zweiten Weltkriegs. Das Projekt zeigt diese Geschichte im Kontext ihrer kurz- und langfristigen Ursachen. Dabei wird deutlich, wie wertvoll die Suche nach Gerechtigkeit und Aussöhnungsbereitschaft für die Gestaltung der europäischen Zukunft ist.</p>
+		<p>Konzeption, Produktion und Implementierung der ersten multimedialen und interaktiven Gesamtdarstellung der deutschen Flucht-, Vertreibungs- und Integrationsgeschichte am Ende des Zweiten Weltkriegs. Das Projekt zeigt diese Geschichte im Kontext ihrer kurz- und langfristigen Ursachen. Dabei wird deutlich, wie wertvoll die Suche nach Gerechtigkeit und Aussöhnungsbereitschaft für die Gestaltung der europäischen Zukunft ist.</p>
 
 		<span class="links">
 			<a href="https://fluchtundvertreibung.dilewe.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceRD} >
+	<Reference image={referenceRonneburg} odd>
+		<h3>mGuide Ronneburg</h3>
+		<h4>Universität Regensburg</h4>
+
+		<p>Für die europaweit einzigartige, ca. 60 ha umfassende Bergbau(folge-)landschaft um Ronneburg in Thüringen haben wir zusammen mit der Professur für Public History an der Universität Regensburg den "AudioWALK Neue Landschaft Ronneburg" realisiert. Er geht Spuren und Folgen des bis zum Ende der DDR in dieser Gegend betriebenen Uranbergbau nach. Aufwändige Audio-Inszenierungen vermitteln die Themen anschaulich und fesselnd. Die Stationen werden vor Ort über QR-Codes aufgerufen. Vielfältige Kontextinformationen und ein Geoinformationssystem machen die räumliche Orientierung in dem nach 1990 sanierten und durch die Bundesgartenschau 1997 neu geprägten Gelände möglich.</p>
+
+		<span class="links">
+			<a href="https://ronneburg.dilewe.de/" target="_blank">Mehr Informationen | Link</a>
+		</span>
+	</Reference>
+	<Reference image={referenceRD}>
 		<h3>Infoportal Russlanddeutsche in Hessen</h3>
 		<h4>Hessisches Ministerium des Inneren und für Sport &amp; Interessengemeinschaft der Deutschen aus Russland in Hessen</h4>
 
@@ -155,27 +175,17 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://innen.hessen.de/Presse/Infoportal-Russlanddeutsche-in-Hessen-geht-online" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceRonneburg} odd>
-		<h3>mGuide RonneburgS</h3>
-		<h4>Universität Regensburg</h4>
-
-		<p>Für die europaweit einzigartige, ca. 60 ha umfassende Bergbau(folge-)landschaft um Ronneburg in Thüringen haben wir zusammen mit der Professur für Public History an der Universität Regensburg den “AudioWALK Neue Landschaft Ronneburg” realisiert. Vielfältige Kontextinformationen und ein Geoinformationssystem machen die räumliche Orientierung in dem nach 1990 sanierten und durch die Bundesgartenschau 1997 neu geprägten Gelände möglich.</p>
-
-		<span class="links">
-			<a href="https://ronneburg.dilewe.de/" target="_blank">Mehr Informationen | Link</a>
-		</span>
-	</Reference>
-	<Reference image={referenceInklusion}>
+	<Reference image={referenceInklusion} odd>
 		<h3>Digitales Unterrichts&shy;material zur Inklusion</h3>
 		<h4>Christoffel Blindenmission</h4>
 
 		<p>Dieses Unterrichtsmaterial ermöglicht Schülerinnen und Schülern, sich mit dem Thema Inklusion aus verschiedenen Blickwinkeln zu beschäftigen. Sie versetzen sich in die Perspektive von Menschen mit Behinderungen, sprechen über Barrieren sowie Teilhabechancen und lernen die Bedeutung von Inklusion als Menschenrecht kennen.</p>
 
 		<span class="links">
-
+			<a href="https://mpublish.cbm.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceLeipzig} odd>
+	<Reference image={referenceLeipzig}>
 		<h3>mPublish Archiv Bürgerbewegung Leipzig</h3>
 		<h4>Archiv Bürgerbewegung Leipzig e.V.</h4>
 
@@ -185,34 +195,24 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://dieanderejugend.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referencePerspektiven} >
+	<Reference image={referencePerspektiven} odd>
 		<h3>Wir und die anderen - globale Perspektiven auf Behinderung</h3>
 		<h4>Missio</h4>
 
-		<p>Das Thema Behinderung ist in unserer Gesellschaft nach wie vor wenig präsent. Die Norm des vermeintlich gesunden Menschen ohne Behinderung ist allgegenwärtig in Serien und Filmen, in Schulbüchern und in der Werbung. ‘Wir und die anderen’ will Menschen mit Behinderung zu mehr Sichtbarkeit verhelfen. Der Blick nach Tansania erweitert dabei die deutsche Sichtweise und zeigt auf, wie Menschen im Globalen Süden mit Behinderungen umgehen.</p>
+		<p>Das Thema Behinderung ist in unserer Gesellschaft nach wie vor wenig präsent. Die Norm des vermeintlich gesunden Menschen ohne Behinderung ist allgegenwärtig in Serien und Filmen, in Schulbüchern und in der Werbung. 'Wir und die anderen' will Menschen mit Behinderung zu mehr Sichtbarkeit verhelfen. Der Blick nach Tansania erweitert dabei die deutsche Sichtweise und zeigt auf, wie Menschen im Globalen Süden mit Behinderungen umgehen.</p>
 
 		<span class="links">
 			<a href="https://missioforlife.de/unterrichtsmaterial/details/globale-perspektiven-auf-behinderung/wir-und-die-anderen-%E2%80%93-globale-perspektiven-auf-behinderung" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceSoulchat} odd>
+	<Reference image={referenceSoulchat}>
 		<h3>Soul Chat - der Krisenchat für Jugendliche</h3>
 		<h4>Pädagogisch-Theologisches Zentrum der Evangelischen Landeskirche in Württemberg</h4>
 
-		<p>‘Einfach mal offen reden’ – das ist der Grundgedanke von Soul Chat. Das Tool bietet Jugendlichen die Möglichkeit, im Netz unkompliziert und sicher mit geschultem Personal über ihre Probleme und Krisen zu sprechen.</p>
+		<p>'Einfach mal offen reden' – das ist der Grundgedanke von Soul Chat. Das Tool bietet Jugendlichen die Möglichkeit, im Netz unkompliziert und sicher mit geschultem Personal über ihre Probleme und Krisen zu sprechen.</p>
 
 		<span class="links">
 			<a href="https://soul-chat.de/" target="_blank">Mehr Informationen | Link</a>
-		</span>
-	</Reference>
-	<Reference image={referenceAltenburg} >
-		<h3>mGuide Altenburg - interaktive Stadt- und Kulturführung</h3>
-		<h4>Stadt Altenburg; Sparkassenstiftung Altenburger Land</h4>
-
-		<p>Der mGuide ist ein kulturhistorischer Stadtführer, der sich in ein analoges touristisches Leitsystem integriert und unter Nutzung aller Mediengenres über die bedeutenden Orte, Bau- und Naturdenkmäler, Museen und kulturellen Einrichtungen der Stadt informiert. Als App bietet der mGuide ein umfassendes interaktives Medienangebot, einen Veranstaltungskalender, kartenbasierte Erkundungstouren durch die Stadt und eine GPS-gesteuerte Navigation. 360-Grad-Aufnahmen und Drohnenfilme machen Lust auf die Vergangenheit und vielgestaltige Gegenwart einer tausendjährigen Stadt.</p>
-
-		<span class="links">
-			<a href="https://mguidealtenburg.dilewe.app/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
 	<Reference image={referenceMVet} odd>
@@ -225,7 +225,17 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://m-vet.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceJura}>
+	<Reference image={referenceAltenburg}>
+		<h3>mGuide Altenburg - interaktive Stadt- und Kulturführung</h3>
+		<h4>Stadt Altenburg; Sparkassenstiftung Altenburger Land</h4>
+
+		<p>Der mGuide ist ein kulturhistorischer Stadtführer, der sich in ein analoges touristisches Leitsystem integriert und unter Nutzung aller Mediengenres über die bedeutenden Orte, Bau- und Naturdenkmäler, Museen und kulturellen Einrichtungen der Stadt informiert. Als App bietet der mGuide ein umfassendes interaktives Medienangebot, einen Veranstaltungskalender, kartenbasierte Erkundungstouren durch die Stadt und eine GPS-gesteuerte Navigation. 360-Grad-Aufnahmen und Drohnenfilme machen Lust auf die Vergangenheit und vielgestaltige Gegenwart einer tausendjährigen Stadt.</p>
+
+		<span class="links">
+			<a href="https://mguidealtenburg.dilewe.app/" target="_blank">Mehr Informationen | Link</a>
+		</span>
+	</Reference>
+	<Reference image={referenceJura} odd>
 		<h3>mGuide Jura Museum - digitaler Museumsführer</h3>
 		<h4>Staatliche Naturwissenschaftliche Sammlungen Bayerns, Staatliche Schlösser und Seen; Bayerische Schlösserverwaltung; Universität Eichstätt-Ingolstadt</h4>
 
@@ -235,18 +245,18 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://mguide-jura-museum.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceMemories} odd>
-		<h3>Lernplattform “Keeping Memories”</h3>
+	<Reference image={referenceMemories}>
+		<h3>Lernplattform "Keeping Memories"</h3>
 		<h4>KZ-Gedenkstätte Flossenbürg / Stiftung Bayerische Gedenkstätten</h4>
 
-		<p>Didaktische Beratung und Planung eines konstruktionssensiblen Ansatzes biografischer Arbeit bezogen auf ehemalige Gefangene des Konzentrationslagers Flossenbürg.<br/><br/>Das innerhalb des Think Tanks „Digital Memorial Lab“ entstandene Projekt soll Schülerinnen und Schüler dazu anregen, Eigen- und Fremdperspektiven auf Lebensläufe und Lebenserfahrungen zu reflektieren und sich ausgehend von der Kenntnis narrativer Erwartungen aktiv mit biografischen Erzählungen auseinanderzusetzen. Das Projekt besteht aus einer digitalen Lernplattform, didaktischen Hinweisen für Lehrende sowie Social-Media-Angeboten.</p>
+		<p>Didaktische Beratung und Planung eines konstruktionssensiblen Ansatzes biografischer Arbeit bezogen auf ehemalige Gefangene des Konzentrationslagers Flossenbürg.<br/><br/>Das innerhalb des Think Tanks „Digital Memorial Lab" entstandene Projekt soll Schülerinnen und Schüler dazu anregen, Eigen- und Fremdperspektiven auf Lebensläufe und Lebenserfahrungen zu reflektieren und sich ausgehend von der Kenntnis narrativer Erwartungen aktiv mit biografischen Erzählungen auseinanderzusetzen. Das Projekt besteht aus einer digitalen Lernplattform, didaktischen Hinweisen für Lehrende sowie Social-Media-Angeboten.</p>
 
 		<span class="links">
 			<a href="https://www.gedenkstaette-flossenbuerg.de/de/bildung/keeping-memories-lernplattform" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceMMMMO} >
-		<h3>Mechthild’s Medieval Mystical Manuscripts Online (MMMMO) – Interaktive Datenvisualisierung</h3>
+	<Reference image={referenceMMMMO} odd>
+		<h3>Mechthild's Medieval Mystical Manuscripts Online (MMMMO) – Interaktive Datenvisualisierung</h3>
 		<h4>Universität Oxford, Faculty of Medieval and Modern Languages</h4>
 
 		<p>MMMMO ist ein wissenschaftliches Datenvisualisierungs- und Auswertungsinstrument: Europaweit erhobene Informationen der literaturwissenschaftlichen Grundlagenforschung über mittelalterliche Handschriften werden, zusammen mit den über sie verfügbaren Metadaten, in ein technisches System übertragen und in einer dynamischen Kartendarstellung zusammengeführt – Datenvisualisierung in Raum und Zeit auf dem Stand der technischen Möglichkeiten.</p>
@@ -255,21 +265,12 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://www.helftamysticism.org/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceSpiegelarche} odd>
-		<h3>Kosmos SpiegelArche – VR-Ausstellung</h3>
-		<h4>Der Grüne Salon e.V., gefördert vom Bundesministerium für Bildung und Forschung</h4>
-
-		<p>Den Kern der Ausstellung bilden VR-Szenarien: die Realität löst sich vor den Augen der Besucher in Partikel auf, sie finden sich in einem anderen Universum wieder. Alles fließt, alles ist veränderbar, alles ist Projektionsfläche. Vier unterschiedliche Szenarien entfalten sich: eine utopische und eine dystopische Version der Vergangenheit und eine utopische und eine dystopische Version der Zukunft. Danach ist eigene Gestaltung gefragt, ein eigener Menschentyp wird in den endlosen Spiegelwelten erschaffen, inszeniert und fotografiert und mit anderen Besuchern geteilt.</p>
-
-		<span class="links">
-			<a href="https://www.spiegelarche.de/" target="_blank">Mehr Informationen | Link</a>
-		</span>
-	</Reference>
-	<Reference image={referenceVielfalt} >
+	<Reference image={referenceVielfalt}>
 		<h3>Ausstellung Vielfalt der Religionen</h3>
 		<h4>Sächsische Landeszentrale für politische Bildung</h4>
 
-		<p>Schon mal von den eritreisch-orthodoxen Tewahedo-Gemeinden gehört, den polnisch-katholischen Gemeinden oder von den vietnamesischen Buddhisten in Bad-Gottleuba-Berggießhübel? Wir entwickeln das Konzept einer hybriden (Wander-)Ausstellung zum Thema “Vielfalt der Religionen in Sachsen” und setzen dieses auch um. Dabei wird die Vielfalt der religiösen Gemeinschaften deutlich. Wir integrieren alle Mediengenres und verknüpfen beide Ausstellungsteile mit QR-Codes. Zugleich wird für jede Religionsgemeinschaft ein digital-multimediales Unterrichtsmaterial gestaltet, das über die sächsischen Bildungsplattformen erreichbar ist.</p>
+		<p>Schon mal von den eritreisch-orthodoxen Tewahedo-Gemeinden gehört, den polnisch-katholischen Gemeinden oder von den vietnamesischen Buddhisten in Bad-Gottleuba-Berggießhübel? Wir entwickeln das Konzept einer hybriden (Wander-)Ausstellung zum Thema "Vielfalt der Religionen in Sachsen" und setzen dieses auch um. Dabei wird die Vielfalt der religiösen Gemeinschaften deutlich. Wir integrieren alle Mediengenres und verknüpfen beide Ausstellungsteile mit QR-Codes. Zugleich wird für jede Religionsgemeinschaft ein digital-multimediales Unterrichtsmaterial gestaltet, das über die sächsischen Bildungsplattformen erreichbar ist.</p>
+
 		<span class="links">
 			<a href="https://religionen-in-sachsen.slpb.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
@@ -284,11 +285,11 @@ import TeaserBox from "../components/TeaserBox.astro";
 			<a href="https://netbook-deutsch.de/" target="_blank">Mehr Informationen | Link</a>
 		</span>
 	</Reference>
-	<Reference image={referenceMbookGL} >
+	<Reference image={referenceMbookGL}>
 		<h3>Plattform Digitale Schule<br/>NRW &amp; mBook GL</h3>
 		<h4>Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen</h4>
 
-		<p>Konzeption, Produktion und Implementierung eines lehrplankonformen und zugelassenen digitalen Schulbuchs für das Fach Geschichte mit Erweiterungen für inklusives Lernen in der Sekundarstufe I. Das Angebot wird über eine von den Digitalen Lernwelten entwickelte Zugangsverwaltung über die Seite digitale-schule.nrw zur Verfügung gestellt und ist darüber hinaus eines der Pilotangebote der landeseigenen Lösung logineo.nrw.</p>
+		<p>Konzeption, Produktion und Implementierung eines lehrplankonformen und zugelassenen digitalen Schulbuchs für das Fach Geschichte mit Erweiterungen für inklusives Lernen in der Sekundarstufe I. Das Angebot wird über eine von den Digitalen Lernwelten entwickelte Zugangsverwaltung über die Plattform digitale-schule.nrw zur Verfügung gestellt und ist darüber hinaus eines der Pilotangebote der landeseigenen Lösung logineo.nrw.</p>
 
 		<span class="links">
 			<a href="https://www.schulministerium.nrw/mbook-gemeinsames-lernen-unterstuetzungsangebot-fuer-lehrerinnen-und-lehrer" target="_blank">Mehr Informationen | Link</a>
