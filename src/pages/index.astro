@@ -15,6 +15,8 @@ import AboutUsCard from "../components/AboutUsCardWrap.astro"
 import AboutUsHeaderCard from "../components/AboutUsHeaderCardWrap.astro"
 import { MobileHeaderText } from "../components/MobileHeaderText"
 import { MobileAboutUsHeader } from "../components/MobileAboutUsHeader"
+import { AboutUsGalleryCard } from "../components/AboutUsGalleryCard"
+import { galleryImages } from "../assets/gallery"
 ---
 
 
@@ -68,6 +70,10 @@ import { MobileAboutUsHeader } from "../components/MobileAboutUsHeader"
 		<h3>Felix Bornheim</h3>
 		<p>Die reibungslose Organisation innovativer Bildungsprojekte ist in der modernen Lernwelt unersetzbar. Dank der Erfahrung im Bereich Projektleitung und Koordination vernetzen wir  Expertinnen und Experten, damit digitale Inhalte effizient umgesetzt werden. Von der ersten Idee bis zur Finalisierung stellen wir sicher, dass jedes Vorhaben erfolgreich realisiert wird.</p>
 	</AboutUsCard>
+	<AboutUsGalleryCard 
+		client:only="react"
+		images={galleryImages} 
+	/>
 
 	<!-- <HeaderTextParagraph
 		client:load

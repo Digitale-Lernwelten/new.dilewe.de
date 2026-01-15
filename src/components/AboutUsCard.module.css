@@ -3,6 +3,7 @@
 	display: block;
 	width: 100%;
 	overflow: hidden;
+	min-height: 28vw; /* Ensures roughly 16:9 for the 50% width image area */
 }
 
 .wrap::after {
@@ -34,7 +35,7 @@
 }
 
 .doublePortrait {
-	object-position: 0% 50% !important;
+	object-position: 0% 55% !important;
 }
 
 .image img {
@@ -182,6 +183,10 @@
 }
 
 @media only screen and (max-width: 1400px)  {
+	.wrap {
+		min-height: unset;
+	}
+
 	.textInner :global(h2) {
 		font-size: 1.3rem;
 		text-align: left;

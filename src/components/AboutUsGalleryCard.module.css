@@ -1,0 +1,442 @@
+.wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	min-height: 28vw; /* Ensures roughly 16:9 for the 50% width image area */
+}
+
+.wrap::after {
+	content: '';
+	display: block;
+	clear: both;
+	position: relative;
+}
+
+.galleryContainer {
+	width: 50%;
+	height: 100%;
+	display: block;
+	float: right;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.galleryInner {
+	display: block;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #DCD640;
+}
+
+.text {
+	width: auto;
+	height: 100%;
+	max-width: var(--content-wide-width);
+	padding: 0 var(--content-padding);
+	margin: 0rem calc(50% + 0rem) 0rem 0;
+	display: block;
+	box-sizing: border-box;
+}
+
+.textInner {
+	display: block;
+	position: relative;
+	width: 80%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 5rem 0;
+	margin-left: 6rem;
+	padding-right: 0;
+	padding-left: 2rem;
+	text-align: left;
+}
+
+.textInner h2 {
+	color: var(--primary);
+	font-weight: 350;
+	font-size: 2rem;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.textInner h3 {
+	font-size: 1.25rem;
+	font-weight: 200;
+	text-transform: none;
+	margin: 0 0 1rem;
+}
+
+.textInner p {
+	margin: 0 0 0rem;
+	font-size: 1.2rem;
+	color: var(--text-color);
+}
+
+/* Gallery styles - embedded version */
+.gallery {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 450px;
+	overflow: hidden;
+	background: #DCD640;
+}
+
+.imageContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.image.active {
+	opacity: 1;
+}
+
+.counter {
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+	font-size: 1rem;
+	font-weight: 400;
+	color: white;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 0.4rem 0.8rem;
+	border-radius: 4px;
+	z-index: 10;
+	letter-spacing: 0.05em;
+}
+
+.navButton {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 48px;
+	height: 48px;
+	border: none;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.9);
+	cursor: pointer;
+	z-index: 10;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navButton::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 12px;
+	height: 12px;
+	border-top: 3px solid #027AAD;
+	border-right: 3px solid #027AAD;
+}
+
+.navButton:hover {
+	background: white;
+	transform: translateY(-50%) scale(1.1);
+}
+
+.navButton:active {
+	transform: translateY(-50%) scale(0.95);
+}
+
+.prevButton {
+	left: 1.5rem;
+}
+
+.prevButton::before {
+	transform: translate(-35%, -50%) rotate(-135deg);
+}
+
+.nextButton {
+	right: 1.5rem;
+}
+
+.nextButton::before {
+	transform: translate(-65%, -50%) rotate(45deg);
+}
+
+.fullscreenButton {
+	position: absolute;
+	bottom: 1rem;
+	right: 1.5rem;
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 4px;
+	background: rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	z-index: 10;
+	transition: all 0.2s ease;
+}
+
+.fullscreenButton:hover {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.fullscreenButton::before,
+.fullscreenButton::after {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-color: white;
+	border-style: solid;
+}
+
+.fullscreenButton::before {
+	top: 8px;
+	left: 8px;
+	border-width: 2px 0 0 2px;
+}
+
+.fullscreenButton::after {
+	bottom: 8px;
+	right: 8px;
+	border-width: 0 2px 2px 0;
+}
+
+.fullscreenButton.expanded::before {
+	top: auto;
+	left: auto;
+	bottom: 8px;
+	right: 8px;
+	border-width: 0 2px 2px 0;
+}
+
+.fullscreenButton.expanded::after {
+	bottom: auto;
+	right: auto;
+	top: 8px;
+	left: 8px;
+	border-width: 2px 0 0 2px;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.9);
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	box-sizing: border-box;
+}
+
+.expandedGallery {
+	position: relative;
+	width: 100%;
+	max-width: 1400px;
+	aspect-ratio: 16 / 9;
+	background: black;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.expandedGallery .image {
+	object-fit: contain;
+}
+
+.expandedGallery .counter {
+	top: 1.5rem;
+	right: 2rem;
+	font-size: 1.1rem;
+}
+
+.expandedGallery .navButton {
+	width: 56px;
+	height: 56px;
+}
+
+.expandedGallery .navButton::before {
+	width: 14px;
+	height: 14px;
+	border-width: 3px;
+}
+
+.expandedGallery .prevButton {
+	left: 2rem;
+}
+
+.expandedGallery .nextButton {
+	right: 2rem;
+}
+
+.expandedGallery .fullscreenButton {
+	bottom: 1.5rem;
+	right: 2rem;
+	width: 44px;
+	height: 44px;
+}
+
+@media only screen and (max-width: 1400px) {
+	.wrap {
+		min-height: unset;
+	}
+
+	.textInner h2 {
+		font-size: 1.3rem;
+		text-align: left;
+	}
+
+	.textInner h3 {
+		font-size: 1.2rem;
+		text-align: left;
+	}
+
+	.textInner p {
+		font-size: 1.1rem;
+		text-align: left;
+	}
+
+	.textInner {
+		padding: 2rem 0 1rem;
+		margin: 0;
+		width: 100%;
+	}
+
+	.text {
+		margin: 0;
+		background-color: white;
+	}
+
+	.text,
+	.galleryContainer {
+		width: 100%;
+		float: none;
+	}
+
+	.galleryInner {
+		width: 100%;
+		position: relative;
+	}
+
+	.gallery {
+		min-height: 400px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.navButton {
+		width: 40px;
+		height: 40px;
+	}
+
+	.navButton::before {
+		width: 10px;
+		height: 10px;
+		border-width: 2.5px;
+	}
+
+	.prevButton {
+		left: 1rem;
+	}
+
+	.nextButton {
+		right: 1rem;
+	}
+
+	.counter {
+		font-size: 0.875rem;
+		padding: 0.3rem 0.6rem;
+		right: 1rem;
+	}
+
+	.fullscreenButton {
+		right: 1rem;
+		width: 36px;
+		height: 36px;
+	}
+
+	.fullscreenButton::before,
+	.fullscreenButton::after {
+		width: 8px;
+		height: 8px;
+	}
+
+	.fullscreenButton::before {
+		top: 7px;
+		left: 7px;
+	}
+
+	.fullscreenButton::after {
+		bottom: 7px;
+		right: 7px;
+	}
+
+	.gallery {
+		min-height: 350px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.navButton {
+		width: 36px;
+		height: 36px;
+	}
+
+	.navButton::before {
+		width: 8px;
+		height: 8px;
+		border-width: 2px;
+	}
+
+	.prevButton {
+		left: 0.75rem;
+	}
+
+	.nextButton {
+		right: 0.75rem;
+	}
+
+	.fullscreenButton {
+		right: 0.75rem;
+		bottom: 0.75rem;
+		width: 32px;
+		height: 32px;
+	}
+
+	.fullscreenButton::before,
+	.fullscreenButton::after {
+		width: 7px;
+		height: 7px;
+	}
+
+	.fullscreenButton::before {
+		top: 6px;
+		left: 6px;
+	}
+
+	.fullscreenButton::after {
+		bottom: 6px;
+		right: 6px;
+	}
+
+	.gallery {
+		min-height: 280px;
+	}
+}
+
