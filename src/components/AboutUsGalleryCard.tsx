@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styles from './AboutUsGalleryCard.module.css';
-import { useWindowSize } from './useWindowSize';
 
 interface AboutUsGalleryCardProps {
 	images: ImageMetadata[];
@@ -15,24 +14,15 @@ const variantRight = {
 	visible: { opacity: 1, transform: "translateX(0%)" },
 	hidden: { opacity: 0.5, transform: "translateX(-10%)" }
 };
-const variantEye = {
-	visible: { opacity: 1, transform: "scaleY(1)" },
-	hidden: { opacity: 0.01, transform: "scaleY(0.1)" }
-};
 
 export function AboutUsGalleryCard({ images }: AboutUsGalleryCardProps) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isExpanded, setIsExpanded] = useState(false);
 	const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 	const scrollPosRef = useRef(0);
-	const size = useWindowSize();
 
-	let variantsGallery = variantLeft;
+	const variantsGallery = variantLeft;
 	const variantsText = variantRight;
-
-	if (size.width && size.width <= 1400) {
-		variantsGallery = variantEye;
-	}
 
 	const resetTimer = useCallback(() => {
 		if (intervalRef.current) {
@@ -138,7 +128,7 @@ export function AboutUsGalleryCard({ images }: AboutUsGalleryCardProps) {
 					<motion.div
 						initial="hidden"
 						whileInView="visible"
-						viewport={{ once: true }}
+						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.6, ease: 'easeOut', type: "tween", bounce: 0, delay: 0.1 }}
 						variants={variantsGallery}
 						className={styles.galleryInner}
@@ -153,7 +143,7 @@ export function AboutUsGalleryCard({ images }: AboutUsGalleryCardProps) {
 						<motion.div
 							initial="hidden"
 							whileInView="visible"
-							viewport={{ once: true }}
+							viewport={{ once: true, amount: 0.3 }}
 							transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
 							variants={variantsText}
 						>

@@ -2,7 +2,6 @@ import React, { type ReactNode } from 'react';
 import css from './Reference.module.css';
 import { motion } from 'framer-motion';
 import type { ImageMetadata } from 'astro';
-import { useWindowSize } from './useWindowSize';
 
 interface ReferenceProps {
 	image: ImageMetadata;
@@ -18,10 +17,6 @@ const variantRight = {
 	visible: { opacity: 1, transform: "translateX(0%)" },
 	hidden: { opacity: 0.5, transform: "translateX(-10%)" }
 };
-const variantEye = {
-	visible: { opacity: 1, transform: "scaleY(1)" },
-	hidden: { opacity: 0.01, transform: "scaleY(0.1)" }
-}
 
 const Reference: React.FC<ReferenceProps> = (props) => {
 	if(!props){
@@ -29,17 +24,10 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 	}
 	const {image, odd, children} = props;
 
-	let variantsImage = odd ? variantRight : variantLeft;
+	const variantsImage = odd ? variantRight : variantLeft;
 	const variantsText = !odd ? variantRight : variantLeft;
 
-	const size = useWindowSize();
-	if(size.width && (size.width <= 1400)){
-		variantsImage = variantEye;
-	}
-
-	const imageTransition = (size.width && (size.width <= 1400))
-		? ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0, delay: 0.1 })
-		: ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0, delay: 0.1 });
+	const imageTransition = { duration: 0.6, ease:'easeOut', type: "tween", bounce: 0, delay: 0.1 };
 
 	return (
 		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
@@ -47,7 +35,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 				<motion.div
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: true }}
+					viewport={{ once: true, amount: 0.3 }}
 					transition={imageTransition}
 					variants={variantsImage}
 				>
@@ -60,7 +48,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 						<motion.div
 							initial="hidden"
 							whileInView="visible"
-							viewport={{ once: true }}
+							viewport={{ once: true, amount: 0.3 }}
 							transition={{ duration: 0.6, ease:'easeOut', delay: 0.1 }}
 							variants={variantsText}
 						>
