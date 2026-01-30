@@ -1,9 +1,10 @@
-name: GH Pages CI
+name: GH Pages CI for live env
 
 on:
   push:
     branches:
       - main
+
 
 jobs:
   build:
@@ -20,22 +21,17 @@ jobs:
         run: npm run check
       - name: Build
         run: npm run build
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
 
+ 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    if: github.ref == 'refs/heads/main'
+    needs: build
+    if: ${{ success() }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Workflow Webhook Action Live
+      uses: distributhor/workflow-webhook@v2.0.3
+      env:
+        webhook_type: 'json-extended'
+        webhook_url: ${{ secrets.WEBHOOK_URL_LIVE }}/redeploy_dilewe
+        webhook_secret: ${{ secrets.WEBHOOK_SECRET_DEV }}
+        verbose: true
