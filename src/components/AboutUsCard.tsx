@@ -13,11 +13,11 @@ interface AboutUsCardProps {
 
 const variantLeft = {
 	visible: { opacity: 1, transform: "translateX(0%)" },
-	hidden: { opacity: 0.5, transform: "translateX(30%)" }
+	hidden: { opacity: 0.5, transform: "translateX(29%)" }
 };
 const variantRight = {
 	visible: { opacity: 1, transform: "translateX(0%)" },
-	hidden: { opacity: 0.5, transform: "translateX(-30%)" }
+	hidden: { opacity: 0.5, transform: "translateX(-29%)" }
 };
 
 const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
