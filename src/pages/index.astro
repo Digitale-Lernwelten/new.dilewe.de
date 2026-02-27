@@ -20,7 +20,7 @@ import { galleryImages } from "../assets/gallery"
 ---
 
 
-<Layout title="Über uns" bodyClass="index">
+<Layout title="Digitale Lernwelten" bodyClass="index">
 	<HeaderImage images={headerImages}>
 		<HeaderText client:load/>
 		<Logo client:load />
@@ -137,4 +137,350 @@ import { galleryImages } from "../assets/gallery"
 			]
 		}
 	/> -->
+	<script type="application/ld+json" is:inline>
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": "https://dilewe.de/#organization",
+				"name": "Digitale Lernwelten GmbH",
+				"alternateName": ["DLW", "Digitale Lernwelten"],
+				"url": "https://dilewe.de",
+				"logo": "https://dilewe.de/_astro/logo-dilewe-logo.Dd0X2fuR.svg",
+				"description": "Die Digitale Lernwelten GmbH konzipiert und produziert digital-multimediale Lösungen für Bildung, Wissenschaft und Kultur. Kernprodukte sind mPublish (digitale Bildungsmedien) und mGuide (multimediale Museumsführungen).",
+				"foundingDate": "2018-01-16",
+				"legalName": "Digitale Lernwelten GmbH",
+				"vatID": "DE316654672",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Dominikanergasse 2",
+					"addressLocality": "Eichstätt",
+					"postalCode": "85072",
+					"addressRegion": "Bayern",
+					"addressCountry": "DE"
+				},
+				"telephone": "+49-8421-9862153",
+				"email": "info@dilewe.de",
+				"founder": [
+					{
+						"@type": "Person",
+						"name": "Marcus Ventzke",
+						"honorificPrefix": "apl. Prof. Dr.",
+						"jobTitle": "Geschäftsführer"
+					},
+					{
+						"@type": "Person",
+						"name": "Florian Sochatzy",
+						"honorificPrefix": "Dr.",
+						"jobTitle": "Geschäftsführer"
+					},
+					{
+						"@type": "Person",
+						"name": "Johannes Grapentin",
+						"jobTitle": "Geschäftsführer"
+					}
+				],
+				"knowsAbout": [
+					"Digitale Bildungsmedien",
+					"E-Learning",
+					"Digitale Schulbücher",
+					"Multimediale Museumsführungen",
+					"Wissenschaftskommunikation",
+					"Erinnerungskultur",
+					"Politische Bildung",
+					"VR-Anwendungen",
+					"Kartenbasierte Informationssysteme",
+					"Podcast-Produktion",
+					"KI-gestützte Lernwerkzeuge"
+				],
+				"areaServed": ["DE", "BE", "AT", "CH"],
+				"numberOfEmployees": {
+					"@type": "QuantitativeValue",
+					"minValue": 20,
+					"maxValue": 50
+				},
+				"award": [
+					"Digital Publishing Award 2015",
+					"Schulbuch des Jahres 2016 (Georg-Eckert-Institut)",
+					"Digital Publishing Award 2017",
+					"Schulbuch des Jahres 2018 (Georg-Eckert-Institut)",
+					"Comenius EduMedia Award 2019",
+					"Nominierung Grimme Online Award 2023"
+				],
+				"brand": [
+					{
+						"@type": "Brand",
+						"name": "Institut für digitales Lernen",
+						"alternateName": "IdL",
+						"description": "Gegründet 2011 an der Katholischen Universität Eichstätt-Ingolstadt, seit 2026 Marke der DLW"
+					}
+				],
+				"makesOffer": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "SoftwareApplication",
+							"@id": "https://dilewe.de/#mpublish",
+							"name": "mPublish",
+							"applicationCategory": "EducationalApplication",
+							"description": "Plattform für digitale Bildungsmedien: digitale Schulbücher, Lernportale, Wissensplattformen und interaktive Online-Publikationen. Einsatzbereiche: schulische Bildung, politische Bildung, Erinnerungskultur, Wissenschaftskommunikation.",
+							"operatingSystem": "Web"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "SoftwareApplication",
+							"@id": "https://dilewe.de/#mguide",
+							"name": "mGuide",
+							"applicationCategory": "TravelApplication",
+							"description": "System für multimediale Führungen in Museen, Gedenkstätten und Kultureinrichtungen. Selbstgesteuerte Besucherführungen mit Text, Audio, Video, Bild und interaktiven Elementen auf mobilen Endgeräten.",
+							"operatingSystem": "Web"
+						}
+					}
+				],
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Leistungen",
+					"itemListElement": [
+						"Strategieberatung",
+						"Didaktische Konzeption",
+						"Projektorganisation",
+						"Inhaltsproduktion (Text, Bild, Audio, Video, Animation)",
+						"UX/UI-Design",
+						"Softwareentwicklung",
+						"Implementierung",
+						"Langfristiger Betrieb"
+					]
+				},
+				"member": [
+					{
+						"@type": "OrganizationRole",
+						"member": {
+							"@type": "Person",
+							"name": "Marcus Ventzke",
+							"honorificPrefix": "apl. Prof. Dr."
+						},
+						"roleName": "Geschäftsführung & Strategie"
+					},
+					{
+						"@type": "OrganizationRole",
+						"member": {
+							"@type": "Person",
+							"name": "Florian Sochatzy",
+							"honorificPrefix": "Dr."
+						},
+						"roleName": "Geschäftsführung & Strategie"
+					},
+					{
+						"@type": "OrganizationRole",
+						"member": {
+							"@type": "Person",
+							"name": "Johannes Grapentin"
+						},
+						"roleName": "Geschäftsführer"
+					}
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://dilewe.de/#website",
+				"url": "https://dilewe.de",
+				"name": "Digitale Lernwelten",
+				"publisher": { "@id": "https://dilewe.de/#organization" }
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "mBook Geschichte Belgien",
+				"description": "Digitales Schulbuch für den Geschichtsunterricht in der Deutschsprachigen Gemeinschaft Belgiens",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Ministerium der Deutschsprachigen Gemeinschaft Belgiens"
+				},
+				"award": "Schulbuch des Jahres 2016 (Georg-Eckert-Institut)",
+				"genre": ["Schulische Bildung", "Geschichtsunterricht"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "E-Learning-Module Sachsen",
+				"url": "https://module-sachsen.dilewe.de/",
+				"description": "Lehrplankonforme digitale Lernmodule für alle Schularten und viele Fächer in Sachsen, mit Nutzergruppenverwaltung und Anbindung an die sächsische Lehrplandatenbank",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": [
+					{
+						"@type": "Organization",
+						"name": "Landesamt für Schule und Bildung Sachsen (LaSuB)"
+					},
+					{
+						"@type": "Organization",
+						"name": "Sächsisches Staatsministerium für Kultus"
+					}
+				],
+				"genre": ["Schulische Bildung", "E-Learning"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Flucht und Vertreibung im europäischen Kontext",
+				"url": "https://fluchtundvertreibung.dilewe.de/",
+				"description": "Erste multimediale und interaktive Gesamtdarstellung der deutschen Flucht-, Vertreibungs- und Integrationsgeschichte am Ende des Zweiten Weltkriegs",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": [
+					{
+						"@type": "Organization",
+						"name": "Hessisches Ministerium des Innern und für Sport"
+					},
+					{
+						"@type": "Organization",
+						"name": "Bund der Vertriebenen Hessen"
+					}
+				],
+				"genre": ["Erinnerungskultur", "Politische Bildung"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Einblicke – Hamburgs politisches System",
+				"url": "https://einblicke-hamburg.de/",
+				"description": "Multimediale Bildungsplattform zum politischen System Hamburgs mit Unterrichtsmaterialien auf Basis der Hamburgischen Verfassung",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Landeszentrale für politische Bildung Hamburg"
+				},
+				"genre": ["Politische Bildung"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Demokratie – Medien – Persönlichkeit",
+				"description": "Digital-multimediales Lehr- und Lernmittel für politische und medienkritische Bildung mit Analyse- und Simulationstools",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Hessisches Ministerium des Innern und für Sport"
+				},
+				"genre": ["Politische Bildung", "Medienkompetenz"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "GeoRegio – Geografiebuch Euregio Maas-Rhein",
+				"description": "Dreisprachiges (Französisch, Niederländisch, Deutsch) digitales Geografie-Lehrwerk mit Live-Datendiensten für die Euregio Maas-Rhein",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Euregio Maas-Rhein"
+				},
+				"inLanguage": ["de", "fr", "nl"],
+				"genre": ["Schulische Bildung", "Geografie"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Die andere DDR-Jugend",
+				"url": "https://dieanderejugend.de/",
+				"description": "Interaktives Portal zur unangepassten Jugendkultur in der DDR und Transformationszeit",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Archiv Bürgerbewegung Leipzig e.V."
+				},
+				"genre": ["Erinnerungskultur", "Politische Bildung"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Sichtbare Vielfalt: Religionen in Sachsen",
+				"url": "https://religionen-in-sachsen.slpb.de/",
+				"description": "Hybride Wanderausstellung zur Vielfalt religiöser Gemeinschaften in Sachsen mit digitalen Begleitmedien und Unterrichtsmaterialien",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Sächsische Landeszentrale für politische Bildung"
+				},
+				"genre": ["Politische Bildung", "Ausstellung"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Keeping Memories",
+				"description": "Digitale Lernplattform zur biografischen Arbeit mit Lebensgeschichten ehemaliger Gefangener des KZ Flossenbürg",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "KZ-Gedenkstätte Flossenbürg / Stiftung Bayerische Gedenkstätten"
+				},
+				"genre": ["Erinnerungskultur", "Gedenkstättenpädagogik"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Kosmos – die Kraft des Staunens",
+				"url": "https://www.spiegelarche.de/",
+				"description": "VR-Ausstellung in der Spiegelarche mit vier Szenarien zu utopischen und dystopischen Versionen von Vergangenheit und Zukunft",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Der Grüne Salon e.V., gefördert vom Bundesministerium für Bildung und Forschung"
+				},
+				"genre": ["VR-Ausstellung", "Wissenschaftskommunikation"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Infoportal Russlanddeutsche in Hessen",
+				"description": "Interaktives Portal zur Geschichte und Gegenwart der Russlanddeutschen mit Redaktionssystem für partizipative Inhaltserstellung",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Hessisches Ministerium des Innern und für Sport"
+				},
+				"genre": ["Politische Bildung", "Wissenschaftskommunikation"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "mBook Gemeinsames Lernen NRW",
+				"description": "Lehrplankonformes und zugelassenes digitales Schulbuch für das Fach Geschichte mit Erweiterungen für inklusives Lernen in der Sekundarstufe I",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen"
+				},
+				"genre": ["Schulische Bildung", "Inklusion", "Geschichtsunterricht"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "KI-Module für Niedersachsen",
+				"description": "Modulare Moodle-OER-Sammlung zum Thema Lernen mit KI mit über 130 Prompt-Beispielen, KI-Grundlagen und Auseinandersetzung mit gesellschaftlichen Fragen",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Niedersächsisches Landesinstitut für schulische Qualitätsentwicklung"
+				},
+				"genre": ["Schulische Bildung", "Künstliche Intelligenz"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "netBook Deutsch",
+				"url": "https://netbook-deutsch.de/",
+				"description": "Multimediales und adaptives digitales Lehrwerk für das Fach Deutsch der 5. und 6. Klasse, entwickelt von Lehrkräften und erprobt an Schulen",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"genre": ["Schulische Bildung", "Deutschunterricht"]
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Verachtet – verfolgt – vergessen: Die Opfer der NS-Gesundheitspolitik",
+				"url": "https://gegen-das-vergessen.dilewe.de",
+				"description": "Interaktiv-digitale Lernplattform zu den Opfern der nationalsozialistischen Gesundheitspolitik mit multimedialen Zugängen zur Erinnerungskultur",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"funder": {
+					"@type": "Organization",
+					"name": "Diakonie Herzogsägmühle gGmbH"
+				},
+				"genre": ["Erinnerungskultur", "Gedenkstättenpädagogik"]
+			},
+			{
+				"@type": "PodcastSeries",
+				"name": "EduCouch",
+				"description": "Bildungs-Podcast an der Schnittstelle von Bildung, Digitalisierung und Gesellschaft. Gewählt unter die zehn einflussreichsten deutschsprachigen Bildungs-Podcasts.",
+				"creator": { "@id": "https://dilewe.de/#organization" },
+				"genre": ["Bildung", "Digitalisierung"]
+			}
+		]
+	}
+	</script>
 </Layout>
