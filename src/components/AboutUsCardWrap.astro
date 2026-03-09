@@ -11,6 +11,6 @@ const {image, odd, color, isDoublePortrait} = Astro.props;
 
 ---
 
-<AboutUsCard image={image} odd={odd ? true : false} color={color} isDoublePortrait={isDoublePortrait} client:only>
+<AboutUsCard image={image} odd={odd ? true : false} color={color} isDoublePortrait={isDoublePortrait} client:only="react">
 	<slot />
 </AboutUsCard>

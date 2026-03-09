@@ -9,6 +9,6 @@ const {image, odd} = Astro.props;
 
 ---
 
-<Reference image={image} odd={odd ? true : false} client:only>
+<Reference image={image} odd={odd ? true : false} client:only="react">
 	<slot />
 </Reference>
