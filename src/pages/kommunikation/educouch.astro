@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import HeaderImage from "../../components/HeaderImage.astro";
 
 import { headerImages } from "../../assets/header";
-import logo from "../../assets/logo-dilewe-small.svg?raw";
 
 const res = await fetch("https://educouch.podigee.io/feed/mp3");
 const xml = await res.text();
