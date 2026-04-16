@@ -1,0 +1,535 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeaderImage from "../../components/HeaderImage.astro";
+
+import { headerImages } from "../../assets/header";
+import logo from "../../assets/logo-dilewe-small.svg?raw";
+
+const res = await fetch("https://educouch.podigee.io/feed/mp3");
+const xml = await res.text();
+
+// Parse all episodes from RSS
+const items = xml.split('<item>').slice(1);
+const channelImageMatch = xml.match(/<itunes:image\s+href="([^"]+)"/);
+const fallbackImage = channelImageMatch?.[1] ?? "";
+
+type Episode = {
+	title: string;
+	desc: string;
+	audio: string;
+	date: string;
+	image: string;
+	duration: string;
+	url: string;
+	episodeNumber: string;
+};
+
+function decodeEntities(str: string): string {
+	return str
+		.replace(/&amp;/g, '&')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+		.replace(/&quot;/g, '"')
+		.replace(/&#39;/g, "'")
+		.replace(/&apos;/g, "'")
+		.replace(/&nbsp;/g, ' ')
+		.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
+		.replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCharCode(parseInt(n, 16)));
+}
+
+// Load transcripts from markdown files
+const transcriptFiles = import.meta.glob('../../content/transcripts/*.md', { query: '?raw', import: 'default' });
+const transcripts: Record<string, string> = {};
+for (const [path, loader] of Object.entries(transcriptFiles)) {
+	const num = path.match(/\/(\d+)\.md$/)?.[1];
+	if (num) {
+		transcripts[num] = await loader() as string;
+	}
+}
+
+const episodes: Episode[] = items.map(item => {
+	const t = item.match(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/);
+	const d = item.match(/<description>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/);
+	const a = item.match(/<enclosure[^>]+url="([^"]+)"/);
+	const p = item.match(/<pubDate>(.*?)<\/pubDate>/);
+	const link = item.match(/<link>(.*?)<\/link>/);
+	const img = item.match(/<itunes:image\s+href="([^"]+)"/);
+	const dur = item.match(/<itunes:duration>(.*?)<\/itunes:duration>/);
+
+	const rawDesc = decodeEntities(d?.[1]?.replace(/<[^>]+>/g, '').trim() ?? "");
+	const rawDur = dur?.[1] ?? "";
+	// Format duration: "3154" (seconds) or "52:17" or "1:02:30"
+	let formattedDur = rawDur;
+	if (rawDur && !rawDur.includes(':')) {
+		const secs = parseInt(rawDur);
+		const m = Math.floor(secs / 60);
+		const s = secs % 60;
+		formattedDur = `${m}m ${s.toString().padStart(2, '0')}s`;
+	} else if (rawDur && rawDur.includes(':')) {
+		const parts = rawDur.split(':');
+		if (parts.length === 3) {
+			formattedDur = `${parseInt(parts[0] ?? '0')}h ${parseInt(parts[1] ?? '0')}m`;
+		} else {
+			formattedDur = `${parseInt(parts[0] ?? '0')}m ${parseInt(parts[1] ?? '0')}s`;
+		}
+	}
+
+	return {
+		title: decodeEntities(t?.[1] ?? ""),
+		desc: rawDesc,
+		audio: a?.[1] ?? "",
+		date: p?.[1] ? new Date(p[1]).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }) : "",
+		image: img?.[1] ?? fallbackImage,
+		duration: formattedDur,
+		url: link?.[1]?.trim() ?? "https://educouch.podigee.io/",
+		episodeNumber: link?.[1]?.trim().match(/\/(\d+)-/)?.[1] ?? "",
+	};
+});
+
+const latest = episodes[0]!;
+const moreEpisodes = episodes.slice(1);
+---
+
+<Layout title="Podcast EduCouch" bodyClass="communication">
+	<HeaderImage images={headerImages}>
+	</HeaderImage>
+	<div class="content">
+		<div class="intro">
+			<h2 class="intro-title">Die EduCouch — Der Bildungspodcast</h2>
+			<p class="intro-text">Seit 2017 reden wir in der EduCouch mit den Köpfen, die Bildung prägen — aus Wissenschaft, Praxis, Politik, Kunst und Kultur Über 180 Folgen zu digitalem Lernen, Schulentwicklung und der Frage, was Bildung und Wissen eigentlich ausmacht. Die EduCouch ist unser Gespräch mit der Bildungswelt — offen, neugierig und manchmal auch unbequem.</p>
+			<div class="subscribe-buttons">
+				<span class="subscribe-label">Abonnieren:</span>
+				<a href="https://podcasts.apple.com/podcast/id1309465326" target="_blank" class="subscribe-btn">Apple Podcasts</a>
+				<a href="https://open.spotify.com/show/4kZh9f3CX56BRshoaIyVqu?si=jac_dK_yRQ6EC62ehX_sag" target="_blank" class="subscribe-btn">Spotify</a>
+				<a href="https://share.podimo.com/podcast/3074e978-a58a-48b0-b1e7-74aacce12620" target="_blank" class="subscribe-btn">Podimo</a>
+				<a href="https://www.deezer.com/show/406522" target="_blank" class="subscribe-btn">Deezer</a>
+				<a href="https://plus.rtl.de/podcast/educouch-der-bildungspodcast-nxyhax3ko0vbj" target="_blank" class="subscribe-btn">RTL+</a>
+			</div>
+		</div>
+		<div class="latest-episode">
+			{latest.image && <img class="episode-image" src={latest.image} alt={latest.title} />}
+			<div class="episode-info">
+				<h2 class="episode-label-heading">Aktuelle Folge</h2>
+				<h3 class="episode-title">{latest.title}</h3>
+				{latest.date && <p class="episode-date">{latest.date}</p>}
+				{latest.audio && <audio controls preload="none" src={latest.audio}></audio>}
+				{latest.desc && (
+					<div class="episode-desc-wrap">
+						<p class="episode-desc">{latest.desc}</p>
+						<button class="read-more" id="readMoreBtn">mehr lesen</button>
+					</div>
+				)}
+				<details class="transcript">
+					<summary>Transkript der Folge</summary>
+					<div class="transcript-content">
+						{transcripts[latest.episodeNumber] ? <Fragment set:html={transcripts[latest.episodeNumber]} /> : <p>Transkript folgt.</p>}
+					</div>
+				</details>
+			</div>
+		</div>
+
+		<section class="episodes-section">
+			<h2 class="episodes-heading">Ältere Folgen</h2>
+			<div class="episodes-list">
+				{moreEpisodes.map((ep, i) => (
+					<article class="episode-item" style={i >= 5 ? "display:none" : ""}>
+						<a href={ep.url} target="_blank"><img class="episode-item-image" src={ep.image} alt={ep.title} /></a>
+						<div class="episode-item-info">
+							<h3 class="episode-item-title"><a href={ep.url} target="_blank">{ep.title}</a></h3>
+							<div class="episode-item-meta">
+								<span>{ep.date}</span>
+								{ep.duration && <><span class="meta-sep">&middot;</span><span>{ep.duration}</span></>}
+							</div>
+							<div class="episode-item-desc-wrap">
+								<p class="episode-item-desc">{ep.desc}</p>
+								<button class="read-more">mehr lesen</button>
+							</div>
+							<details class="transcript">
+								<summary>Transkript der Folge</summary>
+								<div class="transcript-content">
+									{transcripts[ep.episodeNumber] ? <Fragment set:html={transcripts[ep.episodeNumber]} /> : <p>Transkript folgt.</p>}
+								</div>
+							</details>
+						</div>
+					</article>
+				))}
+			</div>
+			{moreEpisodes.length > 5 && <button class="load-more" id="loadMoreBtn">Weitere Folgen anzeigen</button>}
+		</section>
+	</div>
+</Layout>
+
+<style>
+	:global(.communication) {
+		--primary: #027AAD;
+	}
+
+	h2 {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 3rem;
+		color: var(--primary);
+		font-weight: 100;
+		letter-spacing: 3px;
+	}
+
+	.logo :global(svg) {
+		width: 25vw;
+		height: 25vw;
+		display: block;
+		position: absolute;
+		left: -8vw;
+		bottom: -2vw;
+		z-index:0;
+	}
+
+	.logo :global(svg) :global(path) {
+		fill: #0002;
+	}
+
+	.content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	h1 {
+		color: var(--primary);
+		font-weight: 300;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.intro {
+		margin-bottom: 2rem;
+	}
+
+	.intro-title {
+		position: static;
+		transform: none;
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: var(--primary);
+		letter-spacing: normal;
+		margin: 0 0 0.75rem;
+	}
+
+	.intro-text {
+		font-size: 1rem;
+		color: #555;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	.subscribe-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		align-items: center;
+		margin-top: 1rem;
+	}
+
+	.subscribe-label {
+		font-size: 0.8rem;
+		color: #999;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-right: 0.25rem;
+	}
+
+	.subscribe-btn {
+		display: inline-block;
+		font-size: 0.8rem;
+		font-weight: 500;
+		color: var(--primary);
+		text-decoration: none;
+		border: 1px solid var(--primary);
+		border-radius: 3px;
+		padding: 0.3rem 0.7rem;
+		text-transform: none;
+	}
+
+	.subscribe-btn:hover {
+		background: var(--primary);
+		color: white;
+	}
+
+	/* === Latest episode === */
+	.latest-episode {
+		background: #f7f7f7;
+		border-radius: 6px;
+		padding: 2rem;
+		display: flex;
+		gap: 2rem;
+		align-items: flex-start;
+	}
+
+	.episode-image {
+		width: 200px;
+		min-width: 200px;
+		border-radius: 4px;
+	}
+
+	.episode-info {
+		flex: 1;
+	}
+
+	@media (max-width: 600px) {
+		.latest-episode {
+			flex-direction: column;
+		}
+		.episode-image {
+			width: 100%;
+			min-width: unset;
+		}
+	}
+
+	.episode-label-heading {
+		position: static;
+		transform: none;
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: var(--primary);
+		letter-spacing: normal;
+		margin: 0 0 0.5rem;
+	}
+
+	.episode-title {
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: var(--primary);
+		margin: 0 0 0.5rem;
+	}
+
+	.episode-date {
+		font-size: 0.85rem;
+		color: #999;
+		margin: 0 0 1rem;
+	}
+
+	.episode-desc-wrap {
+		margin: 1rem 0 0;
+	}
+
+	.episode-desc {
+		font-size: 0.95rem;
+		color: #555;
+		line-height: 1.6;
+		margin: 0;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.episode-desc.expanded {
+		display: block;
+		-webkit-line-clamp: unset;
+		overflow: visible;
+	}
+
+	.read-more {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-family: inherit;
+		font-size: 0.85rem;
+		color: var(--primary);
+		padding: 0;
+		margin-top: 0.4rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.read-more:hover {
+		text-decoration: underline;
+	}
+
+	audio {
+		width: 100%;
+		margin: 0;
+	}
+
+	.transcript {
+		margin-top: 1rem;
+		border: 1px solid #e0e0e0;
+		border-radius: 4px;
+	}
+
+	.transcript summary {
+		cursor: pointer;
+		padding: 0.75rem 1rem;
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--primary);
+		list-style: none;
+	}
+
+	.transcript summary::before {
+		content: '▸ ';
+	}
+
+	.transcript[open] summary::before {
+		content: '▾ ';
+	}
+
+	.transcript summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.transcript-content {
+		padding: 0 1rem 1rem;
+		font-size: 0.9rem;
+		color: #555;
+		line-height: 1.7;
+	}
+
+	/* === Episodes list === */
+	.episodes-section {
+		margin-top: 3rem;
+	}
+
+	.episodes-heading {
+		position: static;
+		transform: none;
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: var(--primary);
+		letter-spacing: normal;
+		margin: 0 0 1.5rem;
+		text-align: center;
+	}
+
+	.episodes-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.episode-item {
+		display: flex;
+		gap: 1.5rem;
+		align-items: flex-start;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid #eee;
+	}
+
+	.episode-item:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.episode-item-image {
+		width: 120px;
+		min-width: 120px;
+		border-radius: 4px;
+	}
+
+	.episode-item-info {
+		flex: 1;
+	}
+
+	.episode-item-title {
+		font-size: 1.1rem;
+		font-weight: 500;
+		margin: 0 0 0.3rem;
+	}
+
+	.episode-item-title a {
+		color: var(--primary);
+		text-decoration: none;
+	}
+
+	.episode-item-title a:hover {
+		text-decoration: underline;
+	}
+
+	.episode-item-meta {
+		font-size: 0.8rem;
+		color: #999;
+		margin-bottom: 0.5rem;
+	}
+
+	.meta-sep {
+		margin: 0 0.4rem;
+	}
+
+	.episode-item-desc-wrap {
+		margin-top: 0.3rem;
+	}
+
+	.episode-item-desc {
+		font-size: 0.85rem;
+		color: #666;
+		line-height: 1.5;
+		margin: 0;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.episode-item-desc.expanded {
+		display: block;
+		-webkit-line-clamp: unset;
+		overflow: visible;
+	}
+
+	.load-more {
+		display: block;
+		margin: 2rem auto 0;
+		background: none;
+		border: 1px solid var(--primary);
+		border-radius: 4px;
+		cursor: pointer;
+		font-family: inherit;
+		font-size: 0.9rem;
+		color: var(--primary);
+		padding: 0.6rem 1.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.load-more:hover {
+		background: var(--primary);
+		color: white;
+	}
+
+	@media (max-width: 600px) {
+		.episode-item {
+			flex-direction: column;
+			gap: 1rem;
+		}
+		.episode-item-image {
+			width: 100%;
+			min-width: unset;
+		}
+	}
+</style>
+
+<script>
+	document.querySelectorAll('.read-more').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const desc = btn.previousElementSibling;
+			const expanded = desc?.classList.toggle('expanded');
+			(btn as HTMLElement).textContent = expanded ? 'weniger lesen' : 'mehr lesen';
+		});
+	});
+
+	const loadMoreBtn = document.getElementById('loadMoreBtn');
+	loadMoreBtn?.addEventListener('click', () => {
+		const hidden = document.querySelectorAll('.episode-item[style*="display:none"]');
+		let shown = 0;
+		hidden.forEach(el => {
+			if (shown < 5) {
+				(el as HTMLElement).style.display = '';
+				shown++;
+			}
+		});
+		if (document.querySelectorAll('.episode-item[style*="display:none"]').length === 0) {
+			loadMoreBtn.remove();
+		}
+	});
+</script>

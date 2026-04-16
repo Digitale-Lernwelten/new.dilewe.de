@@ -129,7 +129,7 @@ export function AboutUsGalleryCard({ images }: AboutUsGalleryCardProps) {
 						initial="hidden"
 						whileInView="visible"
 						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.6, ease: 'easeOut', type: "tween", bounce: 0, delay: 0.1 }}
+						transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const, type: "tween", bounce: 0, delay: 0 }}
 						variants={variantsGallery}
 						className={styles.galleryInner}
 					>
@@ -144,7 +144,7 @@ export function AboutUsGalleryCard({ images }: AboutUsGalleryCardProps) {
 							initial="hidden"
 							whileInView="visible"
 							viewport={{ once: true, amount: 0.3 }}
-							transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+							transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const, delay: 0.05 }}
 							variants={variantsText}
 						>
 							<h2>Team</h2>

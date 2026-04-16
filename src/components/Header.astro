@@ -1,148 +1,307 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
+import logo from "../assets/logo-dilewe-fett.svg?raw";
 type DropdownItem = {
   label: string;
   href: string;
-  className: string;
 };
 const productItems: DropdownItem[] = [
-  { label: 'netBook Deutsch', href: 'https://netbook-deutsch.de/', className: "blue"  },
-  { label: 'eLearning Module', href: 'https://module.dilewe.de/', className: "pink" },
+  { label: 'netBook Deutsch', href: 'https://netbook-deutsch.de/' },
+  { label: 'eLearning Module', href: 'https://module.dilewe.de/' },
+];
+const kommunikationItems: DropdownItem[] = [
+  { label: 'Podcast EduCouch', href: '/kommunikation/educouch/' },
+  { label: 'GDM', href: '/kommunikation/gdm/' },
+  { label: 'Buch: Bildung digital gestalten', href: 'https://bildung-digital-gestalten.institut-fuer-digitales-lernen.de/' },
 ];
 
 ---
 
 <nav>
-	<a class={currentPath === "" ? "active" : ""} href="/">Digitale Lernwelten</a>
-	<a class={currentPath === "referenzen/" ? "active" : ""} href="/referenzen/">Referenzen</a>
-	<!-- <a href="https://netbook-deutsch.de/" target="_blank">Produkte</a> -->
-	<div class="dropdown">
-		<button class="dropdown-trigger">
-		  Produkte
+	<div class="nav-top">
+		<button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
 		</button>
-		<ul class="dropdown-menu">
-		  {productItems.map((item) => (
-			<li>
-			  <a href={item.href} class={item.className} target="_blank">{item.label}</a>
-			</li>
-		  ))}
-		</ul>
-	  </div>
-	{ /* <a class={currentPath === "produkte/" ? "active" : ""} href="/produkte/">Produkte</a> */ }
+		<a class={`brand ${currentPath === "" ? "active" : ""}`} href="/" aria-label="Digitale Lernwelten"><Fragment set:html={logo} /></a>
+	</div>
+	<div class="nav-links" id="nav-links">
+		<a class={`desktop-brand ${currentPath === "" ? "active" : ""}`} href="/" aria-label="Digitale Lernwelten"><Fragment set:html={logo} /></a>
+		<a class={currentPath === "referenzen/" ? "active" : ""} href="/referenzen/">Referenzen</a>
+		<a class={currentPath === "geschichte/" ? "active" : ""} href="/geschichte/">Geschichte</a>
+		<div class="dropdown">
+			<button class="dropdown-trigger">
+			  Kommunikation
+			</button>
+			<ul class="dropdown-menu">
+			  {kommunikationItems.map((item) => (
+				<li>
+				  <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined}>{item.label}</a>
+				</li>
+			  ))}
+			</ul>
+		</div>
+		<div class="dropdown">
+			<button class="dropdown-trigger">
+			  Produkte
+			</button>
+			<ul class="dropdown-menu">
+			  {productItems.map((item) => (
+				<li>
+				  <a href={item.href} target="_blank">{item.label}</a>
+				</li>
+			  ))}
+			</ul>
+		</div>
+	</div>
 </nav>
 
+<script>
+	const nav = document.querySelector('nav')!;
+	const hamburger = document.getElementById('hamburger')!;
+	const navLinks = document.getElementById('nav-links')!;
+
+	hamburger.addEventListener('click', () => {
+		const isOpen = navLinks.classList.toggle('open');
+		hamburger.setAttribute('aria-expanded', String(isOpen));
+		hamburger.classList.toggle('active');
+	});
+
+	function checkOverflow() {
+		nav.classList.remove('mobile');
+		navLinks.classList.remove('open');
+		hamburger.classList.remove('active');
+		hamburger.setAttribute('aria-expanded', 'false');
+
+		// Check if content wider than available space
+		if (navLinks.scrollWidth > navLinks.clientWidth + 1) {
+			nav.classList.add('mobile');
+		}
+	}
+
+	checkOverflow();
+	window.addEventListener('resize', checkOverflow);
+
+	// Dropdown click handling
+	document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+		trigger.addEventListener('click', (e) => {
+			e.stopPropagation();
+			const dropdown = trigger.closest('.dropdown');
+			if (!dropdown) return;
+			const wasOpen = dropdown.classList.contains('open');
+			document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+			if (!wasOpen) dropdown.classList.add('open');
+		});
+	});
+
+	document.addEventListener('click', (e) => {
+		if (!(e.target as HTMLElement).closest('.dropdown')) {
+			document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+		}
+	});
+</script>
+
 <style>
-	.dropdown {
-  		position: relative;
-  		display: inline-block;
-
-  	}
-
-  	.dropdown-trigger {
-  		background: none;
-  		border: none;
-  		cursor: pointer;
-  		font-size: inherit;
-  		color: inherit;
-		font-weight: 300;
-		z-index: -1;
-  	}
-
-  	.dropdown-menu {
-  		display: none;
-  		position: absolute;
-  		background-color: var(--nav-background);
-		border-radius: 0 0 0.5rem 0.5rem;
-  		list-style: none;
-  		padding: 1rem 0 0 0;
-  		margin: 0rem 0rem 0 0rem;
-  		z-index: -2;
-  	}
-
-  	.dropdown:hover .dropdown-menu {
-  		display: block;
-  	}
-
-  	.dropdown-menu li {
-  		padding: 1rem 0.75rem 0 0rem;
-		background-color: white;
-  	}
-	.dropdown-menu li:last-child {
-		border-radius: 0 0 0.5rem 0.5rem;
-		padding-bottom: 1rem;
-  	}
-
-  	.dropdown-menu li a {
-  		text-decoration: none;
-  		color: black;
-  		display: block;
-  	}
-
-	.blue:hover {
-		color: #2caed4 !important;
-	}
-	.pink:hover {
-		color: #FF5579 !important;
-	}
-
-
-
-
-
 	nav {
-		background: var(--nav-background);
-		position: fixed;
+		background: white;
+		position: relative;
 		left: 0;
 		top: 0;
 		padding: 1rem 1rem;
-		border-radius: 0 0 0.5rem 0;
 		z-index: 100;
+	}
+
+	.nav-top {
+		display: none;
+	}
+
+	.hamburger {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+		z-index: 101;
+	}
+
+	.hamburger span {
+		display: block;
+		width: 24px;
+		height: 2px;
+		background: #027AAD;
+		margin: 5px 0;
+		transition: transform 0.3s, opacity 0.3s;
+	}
+
+	.hamburger.active span:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+	.hamburger.active span:nth-child(2) {
+		opacity: 0;
+	}
+	.hamburger.active span:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -5px);
+	}
+
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	.dropdown-trigger {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: inherit;
+		color: inherit;
+		font-weight: 300;
+	}
+
+	.dropdown-menu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: white;
+		border-radius: 0 0 0.5rem 0.5rem;
+		list-style: none;
+		padding: 1rem 0 0 0;
+		margin: 0;
+		z-index: 200;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+	}
+
+	.dropdown:hover .dropdown-menu,
+	.dropdown.open .dropdown-menu {
+		display: block;
+	}
+
+	.dropdown-menu li {
+		padding: 1rem 0.75rem 0 0;
+		background-color: white;
+	}
+	.dropdown-menu li:last-child {
+		border-radius: 0 0 0.5rem 0.5rem;
+		padding-bottom: 1rem;
+	}
+
+	.dropdown-menu li a {
+		text-decoration: none;
+		color: #027AAD;
+		display: block;
+		font-size: 0.9rem;
+	}
+
+	.dropdown-menu li a:hover {
+		color: black;
 	}
 
 	a, .dropdown-trigger {
 		text-decoration: none;
-		color: var(--nav-text-color);
+		color: #027AAD;
 		text-transform: uppercase;
-		padding:0 32px;
+		padding: 0 32px;
 		font-size: 1.2rem;
 		font-weight: 300;
 	}
 	a.active {
-		text-decoration: underline;;
+		text-decoration: underline;
 		text-underline-offset: 5px;
 		z-index: 100;
 	}
 
-	@media only screen and (max-width: 1000px)  {
-		nav {
-			width: 100%;
-			border-radius: 0;
-			text-align: center;
-			padding: 2rem 0 1rem;
-		}
+	nav.mobile .nav-top {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
 	}
 
-	@media only screen and (max-width: 600px)  {
-		nav {
-			width: 100%;
-			border-radius: 0;
-			text-align: center;
-			padding: 2rem 0 0.5rem;
-		}
-		a, .dropdown-trigger {
-			padding: 0 16px;
-			font-size: 1rem;
-		}
-		.dropdown-menu {
-			padding: 0.5rem 0 0 0;
-		}
+	nav.mobile .hamburger {
+		display: block;
 	}
 
-	@media only screen and (max-width: 500px)  {
-		a, .dropdown-trigger {
-			padding: 0 12px;
-			font-size: 1rem;
-		}
+	nav.mobile .brand {
+		display: inline !important;
+		padding: 0;
+	}
+
+	nav.mobile .desktop-brand {
+		display: none !important;
+	}
+
+	.brand :global(svg),
+	.desktop-brand :global(svg) {
+		height: 2rem;
+		width: auto;
+		display: block;
+	}
+
+	.desktop-brand {
+		padding: 0 1rem 0 0;
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+
+	/* Transparent background (st0 = background rectangles) */
+	.brand :global(svg) :global(.st0),
+	.desktop-brand :global(svg) :global(.st0) {
+		fill: transparent !important;
+	}
+
+	/* Logo shape in DLW-blue (st1 = logo shape, formerly white) */
+	.brand :global(svg) :global(path),
+	.brand :global(svg) :global(.cls-1),
+	.brand :global(svg) :global(.st1),
+	.desktop-brand :global(svg) :global(path),
+	.desktop-brand :global(svg) :global(.cls-1),
+	.desktop-brand :global(svg) :global(.st1) {
+		fill: #027AAD !important;
+	}
+
+	.brand.active,
+	.desktop-brand.active {
+		text-decoration: none;
+	}
+
+	nav.mobile .nav-links {
+		display: none;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1rem 0 0 1rem;
+	}
+
+	nav.mobile .nav-links.open {
+		display: flex;
+	}
+
+	nav.mobile a, nav.mobile .dropdown-trigger {
+		padding: 0.4rem 0;
+		font-size: 1.1rem;
+		display: block;
+	}
+
+	nav.mobile .dropdown {
+		display: block;
+	}
+
+	nav.mobile .dropdown-menu {
+		position: static;
+		border-radius: 0;
+		padding: 0 0 0 1rem;
+		z-index: auto;
+	}
+
+	nav.mobile .dropdown-menu li {
+		padding: 0.4rem 0 0 0;
+	}
+	nav.mobile .dropdown-menu li:last-child {
+		border-radius: 0;
+		padding-bottom: 0;
 	}
 </style>

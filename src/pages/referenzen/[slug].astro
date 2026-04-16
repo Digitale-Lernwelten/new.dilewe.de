@@ -1,0 +1,60 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+	const projects = [
+		{ slug: "inklusion", title: "Digitales Unterrichtsmaterial zur Inklusion", client: "Christoffel Blindenmission" },
+		{ slug: "perspektiven-behinderung", title: "Wir und die anderen – globale Perspektiven auf Behinderung", client: "Missio" },
+		{ slug: "netbook-deutsch", title: "netBook Deutsch", client: "Digitale Lernwelten" },
+		{ slug: "mbook-gl-nrw", title: "Plattform Digitale Schule NRW & mBook GL", client: "Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen" },
+	];
+	return projects.map(p => ({ params: { slug: p.slug }, props: p }));
+}
+
+const { title, client } = Astro.props;
+---
+
+<Layout title={title} bodyClass="references" hideHeader>
+	<div class="project-detail">
+		<h1>{title}</h1>
+		<h2>{client}</h2>
+		<p class="placeholder">Produktbeschreibung folgt.</p>
+		<a href="/referenzen/" class="back-link">Zurück zu den Referenzen</a>
+	</div>
+</Layout>
+
+<style>
+	.project-detail {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 6rem 2rem 4rem;
+	}
+	h1 {
+		color: var(--primary);
+		font-size: 2rem;
+		font-weight: 300;
+		margin-bottom: 0.5rem;
+	}
+	h2 {
+		font-size: 1.1rem;
+		font-weight: 200;
+		color: var(--text-color);
+		text-transform: none;
+		margin-bottom: 2rem;
+	}
+	.placeholder {
+		color: var(--text-color);
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+	}
+	.back-link {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: var(--tertiary, #027AAD);
+		font-size: 0.9rem;
+		letter-spacing: 0.04em;
+	}
+	.back-link:hover {
+		text-decoration: underline;
+	}
+</style>

@@ -1,0 +1,217 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeaderImage from "../../components/HeaderImage.astro";
+import { Image } from "astro:assets";
+
+import { headerImages } from "../../assets/header";
+import logo from "../../assets/logo-dilewe-small.svg?raw";
+import poster2015 from "../../assets/gdm/gdm poster 2015.png";
+import poster2016 from "../../assets/gdm/gdm poster 2016.png";
+import poster2017 from "../../assets/gdm/gdm poster 2017.png";
+import poster2026 from "../../assets/gdm/gdm poster 2026.png";
+import gdmKino from "../../assets/gdm/gdm kino.png";
+import gdmVortrag from "../../assets/gdm/gdm vortrag marcus.png";
+---
+
+<Layout title="GdM – Gesellschaft und digitale Medien" bodyClass="communication">
+	<HeaderImage images={headerImages}>
+	</HeaderImage>
+	<div class="content">
+		<div class="intro">
+			<h1>Tagung 'Gesellschaft und digitale Medien'</h1>
+			<p>Zur Tagung 'Gesellschaft und digitale Medien' laden wir Referenten aus der Bildungspraxis, der Wirtschaft und der Wissenschaft ein: Medienschaffende und Entwickler, die ihre konkreten Projekte vorstellen, Wissenschaftler und Vordenker, die sich analytisch mit dem Thema auseinandersetzen und Lehrende, die im Schulkontext mit den Technologien arbeiten. Die interdisziplinäre Ausrichtung der GdM ist uns ein großes Anliegen, da wir überzeugt sind, dass der branchen- und professionsübergreifende Austausch zu großen Lern- und Synergieeffekten führt.</p>
+		</div>
+
+		<section class="edition edition-with-image">
+			<div class="edition-text">
+				<h2>GdM 2026: „Gesellschaft unter Druck – Digitale Bildung zu den Themen unserer Zeit"</h2>
+				<p>Am 3. Dezember 2026 veranstalten wir in Eichstätt die GdM26 unter dem Titel „Gesellschaft unter Druck – Digitale Bildung zu den Themen unserer Zeit". Die Tagung bringt Akteure aus Ministerien, Landesinstituten, Landeszentralen, Wissenschaft und Bildungspraxis zusammen, um eine Frage zu diskutieren, die uns alle beschäftigt: Wie sehen digitale Bildungsangebote aus, die politisch und gesellschaftlich relevante Themen verständlich, differenziert und wirksam vermitteln?</p>
+			</div>
+			<div class="edition-poster">
+				<Image src={poster2026} alt="GdM 2026 Poster" />
+			</div>
+		</section>
+
+		<section class="edition">
+			<h3>Rückblick auf unsere Tagungen:</h3>
+		</section>
+
+		<section class="edition edition-with-image">
+			<div class="edition-poster">
+				<Image src={poster2017} alt="GdM 2017 Poster" />
+			</div>
+			<div class="edition-text">
+				<h2>GdM 2017: Mixed Reality und die Zukunft des Lernens — Zukunftstechnologie für Bildungskontexte</h2>
+				<p>Im Jahr 2017 beschäftigten wir uns mit den Potenzialen der Zukunftstechnologien Mixed Reality, 360 Grad Video und Virtual Reality für Bildung und Lernen. Dabei wurden Ideen, Strategien und Best Practices demonstriert und diskutiert.</p>
+			</div>
+		</section>
+
+		<section class="edition edition-with-image">
+			<div class="edition-text">
+				<h2>GdM 2016: Corporate History und die digitale Revolution</h2>
+				<p>Hochkarätige Referenten berichteten über ihre Erfahrungen mit Geschichtsvermittlung im Unternehmensbereich.</p>
+			</div>
+			<div class="edition-poster">
+				<Image src={poster2016} alt="GdM 2016 Poster" />
+			</div>
+		</section>
+
+		<section class="edition edition-with-image">
+			<div class="edition-poster">
+				<Image src={poster2015} alt="GdM 2015 Poster" />
+			</div>
+			<div class="edition-text">
+				<h2>GdM 2015: Geschichte und digitale Medien?</h2>
+				<p>Diskutiert wurden die Möglichkeiten und Potenziale von digitalen Medien (Vor- und Nachteile unterschiedlicher Formate) und Web 2.0 (Facebook, Twitter, Blogs etc.) für historische Themen in Museen, Archiven, Publikationen und in der Schule.</p>
+			</div>
+		</section>
+
+		<div class="carousel" id="gdmCarousel">
+			<img src={gdmKino.src} alt="GdM Kino" class="carousel-img active" />
+			<img src={gdmVortrag.src} alt="GdM Vortrag" class="carousel-img" />
+		</div>
+	</div>
+</Layout>
+
+<style>
+	:global(.communication) {
+		--primary: #027AAD;
+	}
+
+	.logo :global(svg) {
+		width: 25vw;
+		height: 25vw;
+		display: block;
+		position: absolute;
+		left: -8vw;
+		bottom: -2vw;
+		z-index:0;
+	}
+
+	.logo :global(svg) :global(path) {
+		fill: #0002;
+	}
+
+	.content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.intro p {
+		font-size: 1rem;
+		color: #555;
+		line-height: 1.7;
+		margin: 0 0 2rem;
+	}
+
+	.edition {
+		margin-bottom: 2.5rem;
+	}
+
+	.edition h2 {
+		font-size: 1.3rem;
+		font-weight: 500;
+		color: var(--primary);
+		margin: 0 0 0.75rem;
+	}
+
+	.edition p {
+		font-size: 1rem;
+		color: #555;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	.edition-with-image {
+		display: flex;
+		gap: 2rem;
+		align-items: flex-start;
+	}
+
+	.edition-text {
+		flex: 1;
+	}
+
+	.edition-poster {
+		width: 200px;
+		min-width: 200px;
+	}
+
+	.edition-poster :global(img) {
+		width: 100%;
+		height: auto;
+		border-radius: 4px;
+	}
+
+	@media (max-width: 600px) {
+		.edition-with-image {
+			flex-direction: column;
+		}
+		.edition-poster {
+			width: 100%;
+			min-width: unset;
+		}
+	}
+
+	.carousel {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16/9;
+		border-radius: 6px;
+		overflow: hidden;
+		margin-top: 1rem;
+	}
+
+	.carousel-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+	}
+
+	.carousel-img.active {
+		opacity: 1;
+	}
+
+	.edition-poster :global(img),
+	.carousel-img {
+		cursor: pointer;
+	}
+</style>
+
+<script>
+	const imgs = document.querySelectorAll('#gdmCarousel .carousel-img');
+	let current = 0;
+	setInterval(() => {
+		imgs[current]?.classList.remove('active');
+		current = (current + 1) % imgs.length;
+		imgs[current]?.classList.add('active');
+	}, 4000);
+
+	// Lightbox for all images
+	document.querySelectorAll('.edition-poster img, .carousel-img').forEach(img => {
+		img.addEventListener('click', () => {
+			const overlay = document.createElement('div');
+			Object.assign(overlay.style, {
+				position: 'fixed', top: '0', left: '0', right: '0', bottom: '0',
+				zIndex: '99999', background: 'rgba(0,0,0,0.9)',
+				display: 'flex', alignItems: 'center', justifyContent: 'center',
+				cursor: 'pointer'
+			});
+			const clone = document.createElement('img');
+			clone.src = (img as HTMLImageElement).src;
+			clone.alt = (img as HTMLImageElement).alt;
+			Object.assign(clone.style, {
+				maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', borderRadius: '4px'
+			});
+			overlay.appendChild(clone);
+			overlay.addEventListener('click', () => overlay.remove());
+			document.body.appendChild(overlay);
+		});
+	});
+</script>

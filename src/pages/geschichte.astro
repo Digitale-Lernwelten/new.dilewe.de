@@ -1,0 +1,771 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderImage from "../components/HeaderImage.astro";
+import { headerImages } from "../assets/header";
+import geschichteGruendung from "../assets/geschichte/geschichte 1.png";
+import geschichteEbookAward from "../assets/geschichte/geschichte ebook award.png";
+import geschichteCornelsen from "../assets/geschichte/geschichte cornelsen.png";
+import geschichteAwards from "../assets/geschichte/geschichte awards.png";
+import geschichteBuero from "../assets/geschichte/geschichte buero dominikanergasse.png";
+import geschichteNRW1 from "../assets/geschichte/geschichte_mbook_nrw1.png";
+import geschichteNRW2 from "../assets/geschichte/geschichte_mbook_nrw2.png";
+import geschichteNRW3 from "../assets/geschichte/geschichte_mbook_nrw3.png";
+import geschichteNeueProjekte from "../assets/geschichte/geschichte_neue projekte.png";
+import geschichteLasubVideo from "../assets/geschichte/geschichte lasub.mp4";
+import geschichteLasubPoster from "../assets/geschichte/geschichte lasub posterframe.png";
+import geschichteTeam2021 from "../assets/geschichte/geschichte team 2021.png";
+import geschichtePodcast from "../assets/geschichte/geschichte podcast.png";
+import geschichteBelgien from "../assets/geschichte/geschichte mbook belgien.png";
+---
+
+<Layout title="Geschichte – Digitale Lernwelten GmbH" bodyClass="history">
+
+<div class="progress" id="progress"></div>
+
+<div class="tl-nav" id="tlNav">
+	<div class="tl-year-display" id="tlYear">
+		<div class="tl-year-item" data-year="s2011">20<br>11</div>
+		<div class="tl-year-item" data-year="s2013">20<br>13</div>
+		<div class="tl-year-item" data-year="s2014">20<br>14</div>
+		<div class="tl-year-item" data-year="s2015">20<br>15</div>
+		<div class="tl-year-item" data-year="s2017">20<br>17</div>
+		<div class="tl-year-item" data-year="s2018">20<br>18</div>
+		<div class="tl-year-item" data-year="s2019">20<br>19</div>
+		<div class="tl-year-item" data-year="s2020">20<br>20</div>
+		<div class="tl-year-item" data-year="s2021">20<br>21</div>
+		<div class="tl-year-item" data-year="s2024">20<br>24</div>
+	</div>
+</div>
+
+<HeaderImage images={headerImages}>
+</HeaderImage>
+
+<div class="hero-below">
+	<div class="hero-content">
+		<h1>Der Weg von der Forschung<br>zu einem<br>führenden digitalen Bildungsunternehmen</h1>
+		<p class="hero-sub">Wie aus didaktischer Forschung in Eichstätt ein führender Produzent digitaler Bildungsmedien in Deutschland wurde.</p>
+	</div>
+</div>
+
+<!-- ===== 2011 ===== -->
+<article class="ch" id="s2011">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2011 · Eichstätt</span>
+			<h3>Gründung des Instituts für digitales Lernen</h3>
+			<p>An der Universität Eichstätt-Ingolstadt stellen Florian Sochatzy und Marcus Ventzke eine grundlegende Frage: Warum sehen digitale Schulbücher aus wie eingescannte Papierseiten?</p>
+			<p>Aus der Professur für Theorie und Didaktik der Geschichte heraus gründen sie das Institut für digitales Lernen (IdL) — ein akademisches Spin-off, das Forschung und Produktentwicklung verbindet. Ihr Ziel: das erste browserbasierte, multimediale Schulbuch, das digitale Neuwerte schafft, statt analoge Grenzen zu reproduzieren.</p>
+			<div class="callout">
+				<p>„Neue Schulbücher dürfen nicht aus alten Schulbüchern entstehen." <br>— Leitgedanke des mBook-Projekts, frei nach Erich Kästner</p>
+			</div>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div class="mstack">
+				<div>
+					<img src={geschichteGruendung.src} alt="Universität Eichstätt / Gründungsteam IdL" class="ch-img" />
+					<p class="cap">Der klassische Startup-Gründungsmythos verlangt eine Garage. Im Falle des Instituts für digitales Lernen war es aber eine ehemalige Metzgerei.</p>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2013 ===== -->
+<article class="ch" id="s2013">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2013 · Ostbelgien</span>
+			<h3>Das mBook entsteht für Belgien</h3>
+			<p>Im September 2013 passiert Beispielloses: Alle Gymnasien der Deutschsprachigen Gemeinschaft in Belgien führen das mBook Geschichte als offizielles Schulbuch ein — fünf Bände von der Antike bis zur Zeitgeschichte, finanziert vom belgischen Unterrichtsministerium.</p>
+			<p>Es ist weltweit eines der ersten browserbasierten, multimedialen Schulbücher im Regelbetrieb einer ganzen Region. Das mBook vereint geschriebenen Text mit Film- und Tondokumenten, interaktiven Aufgaben.</p>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div class="mstack">
+				<div>
+					<img src={geschichteBelgien.src} alt="mBook Belgien — Kapitelansicht" class="ch-img" />
+					<p class="cap">Das mBook Belgien – seit 2013 das offizielle digitale Geschichtsbuch der Deutschsprachigen Gemeinschaft Belgiens.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2014 ===== -->
+<article class="ch" id="s2014">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2014 · Nordrhein-Westfalen</span>
+			<h3>Ein weiteres mBook für Nordrhein-Westfalen</h3>
+			<p>Der Sprung nach Deutschland: Nordrhein-Westfalen startet mit dem mBook Geschichte einen Pilotversuch an über 40 Gymnasien — in Kooperation mit der Medienberatung NRW und dem Schulministerium.</p>
+			<p>Das Projekt wird wissenschaftlich begleitet. Partner wie das Deutsche Institut für Internationale Pädagogische Forschung und das Leibniz-Institut für Wissensmedien liefern erstmals empirisch belastbare Daten zur Nutzung digitaler Schulbücher im Unterricht.</p>
+			<div class="callout">
+				<p>Ministerpräsidentin Hannelore Kraft nennt das mBook in ihrer Regierungserklärung als Teil der Digitalisierungsstrategie des Landes NRW.</p>
+			</div>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div>
+				<div class="ch-slider" id="sliderNRW">
+					<img src={geschichteNRW1.src} alt="mBook NRW 1" class="ch-slider-img active" />
+					<img src={geschichteNRW2.src} alt="mBook NRW 2" class="ch-slider-img" />
+					<img src={geschichteNRW3.src} alt="mBook NRW 3" class="ch-slider-img" />
+				</div>
+				<p class="cap">Das mBook NRW – 2018 von Schulministerin Gebauer auf der „Digitaloffensive Schule NRW” vorgestellt.</p>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2015 ===== -->
+<article class="ch" id="s2015">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2015–2016 · Frankfurt · Leipzig</span>
+			<h3>Ausgezeichnet</h3>
+			<p>2015 gewinnt das mBook den Deutschen eBook Award auf der Frankfurter Buchmesse — als erstes Schulbuch überhaupt. 2016 folgt der Sonderpreis „Schulbuch des Jahres" des Georg-Eckert-Instituts in Zusammenarbeit mit der Bundeszentrale für politische Bildung.</p>
+			<p>Ebenfalls 2016 gewinnt das Institut die Wildcard der Frankfurter Buchmesse für einen eigenen Messeauftritt. Das mBook steht ab August 2016 über ein eigenes Lizenzsystem allen Lehrkräften in Deutschland zur Verfügung.</p>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div class="mstack">
+				<div>
+					<img src={geschichteEbookAward.src} alt="Preisverleihung Frankfurter Buchmesse — Deutscher eBook Award 2015" class="ch-img" />
+				</div>
+				<div>
+					<img src={geschichteAwards.src} alt="Sonderpreis Schulbuch des Jahres 2016 — Georg-Eckert-Institut" class="ch-img" />
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2017 ===== -->
+<article class="ch" id="s2017">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2017 · Cornelsen</span>
+			<h3>Cornelsen kauft das mBook</h3>
+			<p>Im Juli 2017 übernimmt der Cornelsen Verlag — einer der drei größten Bildungsmedienverlage Deutschlands — das mBook-Schulbuchprogramm. Cornelsen gründet dafür die Cornelsen mBook GmbH mit Sitz in Eichstätt und macht Florian Sochatzy zum Geschäftsführer.</p>
+			<p>Das Institut für digitales Lernen bleibt als eigenständiges Unternehmen bestehen und wird in dieser Zeit von Marcus Ventzke geleitet.</p>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div>
+				<img src={geschichteCornelsen.src} alt="Team Eichstätt / Cornelsen-Übernahme" class="ch-img" />
+				<p class="cap">Das Schulbuchprogramm geht an Cornelsen — das Institut bleibt weiterhin unabhängig.</p>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2018 ===== -->
+<article class="ch" id="s2018">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2018 · Neugründung</span>
+			<h3>Gründung der Digitale Lernwelten GmbH</h3>
+			<p>2018 wird die Digitale Lernwelten GmbH gegründet — als Tochter des Instituts für digitales Lernen, aber mit breitem Auftrag. DLW übersetzt die jahrelange Forschungs- und Entwicklungsarbeit in Produkte und Dienstleistungen für den gesamten Bildungs-, Kultur- und Wissenschaftsbereich.</p>
+			<p>Das Spektrum reicht über Schulbücher hinaus: digitale Lernplattformen, multimediale Museumsguides, VR-Ausstellungen, politische Bildungsportale und E-Learning-Module für Landesregierungen. Der Sitz bleibt Eichstätt.</p>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div class="mstack">
+				<div>
+					<img src={geschichteBuero.src} alt="Büro Dominikanergasse / Team DLW" class="ch-img" />
+					<p class="cap">Schon sehr früh wurde mit immersiven Formaten experimentiert – vom Museumsrundgang bis zur VR-Ausstellung.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2019 ===== -->
+<article class="ch" id="s2019">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2018–2019 · Erste Projekte</span>
+			<h3>Erste Projekte</h3>
+			<p>Die ersten Jahre der DLW bringen sofort Projekte auf Landesebene: das mBook Gemeinsames Lernen — das erste für inklusives Lernen entwickelte digitale Schulbuch — geht über digitale-schule.nrw an alle Schulen in Nordrhein-Westfalen.</p>
+			<p>Parallel entstehen multimediale Museumsguides für das Jura Museum Eichstätt, Plattformen für politische Bildung und erste Aufträge in der Gedenkstättenpädagogik für die KZ-Gedenkstätte Flossenbürg. Das hauseigene Greenscreen- und Tonstudio wird aufgebaut. Erste VR-Projekte werden initiiert.</p>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div>
+				<img src={geschichteNeueProjekte.src} alt="Erste Projekte der Digitale Lernwelten GmbH" class="ch-img" />
+				<p class="cap">Am Anfang jedes Projekts steht bei uns die inhaltliche Erarbeitung – bevor eine Zeile Code geschrieben wird, klären Didaktiker, Fachwissenschaftler und Auftraggeber gemeinsam, was gelernt werden soll und warum.</p>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2020 DARK ===== -->
+<article class="ch ch--dark" id="s2020">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2020 · Pandemie</span>
+			<h3>Schulen schließen — DLW liefert</h3>
+			<p>Als im Frühjahr 2020 die Schulen schließen, kann die DLW sofort reagieren. Im Auftrag des sächsischen Landesamts für Schule und Bildung beginnt die Produktion von E-Learning-Modulen für den Distanz- und Präsenzunterricht.</p>
+			<p>Ein Projekt, das bis heute andauert und über 67 multimediale Unterrichtseinheiten in mehr als 20 Fächern für alle Schularten in Sachsen umfasst. Dafür entwickelt DLW ein eigenes, DSGVO-konformes Publikationssystem, das keinerlei personenbezogene Daten erhebt.</p>
+			<div class="callout">
+				<p>67+ Module · 20+ Fächer · Alle Schularten · Null personenbezogene Daten</p>
+			</div>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div>
+				<video controls preload="none" class="ch-video" src={geschichteLasubVideo} poster={geschichteLasubPoster.src}></video>
+				<p class="cap">Die E-Learning-Module für das Landesamt für Schule und Bildung Sachsen.</p>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== MOSAIK ===== -->
+<article class="ch ch--full" id="s2021">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">2020–2024 · Wachstum</span>
+			<h3>Wachstum in alle Richtungen</h3>
+			<p>VR-Ausstellungen, Audiowalks, Infoportale, Bildungsplattformen, KI-Module, dreisprachige Lehrwerke, hybride Wanderausstellungen. Das Team wächst auf über 20 Mitarbeitende.</p>
+		</div>
+		<div style="max-width:700px;margin:0 auto;">
+			<img src={geschichteTeam2021.src} alt="Das Team der Digitale Lernwelten GmbH" class="ch-img" />
+			<p class="cap">Das Team der Digitalen Lernwelten – Didaktiker, Entwickler, Designer, Video- und Audioproduzenten unter einem Dach in Eichstätt.</p>
+		</div>
+	</div>
+</article>
+
+<!-- ===== 2024 ===== -->
+<article class="ch" id="s2024">
+	<div class="ch-inner">
+		<div class="ch-text" data-reveal>
+			<span class="year">Seit 2024</span>
+			<h3>Die Zukunft</h3>
+			<p>Die Digitale Lernwelten GmbH arbeitet auch in Zukunft an der Schnittstelle von Didaktik, Technologie, Medien und Gestaltung — für Ministerien, Museen, Stiftungen, Vereine und Verlage. <br>Warum? <br>Weil wir sehr viel Freude daran haben.</p>
+		</div>
+		<div class="ch-media" data-reveal>
+			<div class="mstack">
+				<div>
+					<img src={geschichtePodcast.src} alt="EduCouch-Podcast — Aufnahme im Studio" class="ch-img" />
+					<p class="cap">Die EduCouch – einer der bedeutendsten Podcasts im deutschsprachigen Bildungsdiskurs.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+
+<!-- ===== OUTRO ===== -->
+<section class="outro">
+	<div class="outro-inner" data-reveal>
+		<p class="outro-quote">Über fünfzehn Jahre Erfahrung.<br>Über hundert Projekte.<br><strong>Und immer noch neugierig.</strong></p>
+		<div class="cta-row">
+			<a href="/referenzen/" class="btn btn--fill">Unsere Referenzen</a>
+			<a href="mailto:info@dilewe.de" class="btn btn--line">Kontakt aufnehmen</a>
+		</div>
+	</div>
+</section>
+
+</Layout>
+
+<style is:global>
+	/* Geschichte page: override body styles */
+	body.history {
+		-webkit-font-smoothing: antialiased;
+	}
+</style>
+
+<style>
+	/* ===== CI VARIABLES ===== */
+	:root {
+		--dlw-white: #FFFFFF;
+		--dlw-gray-50: #F7F7F7;
+		--dlw-gray-100: #EDEDED;
+		--dlw-gray-200: #D9D9D9;
+		--dlw-gray-400: #999999;
+		--dlw-gray-600: #666666;
+		--dlw-gray-800: #333333;
+		--dlw-dark: #1C1C1C;
+		--dlw-petrol: #3D8EA0;
+		--dlw-petrol-light: #5AACBD;
+		--dlw-petrol-dark: #2D7080;
+		--dlw-petrol-bg: rgba(61,142,160,0.07);
+	}
+
+	/* ===== PROGRESS ===== */
+	.progress {
+		position: fixed; top: 0; left: 0; height: 2px;
+		background: var(--dlw-petrol); z-index: 200; width: 0%;
+	}
+
+	/* ===== TIMELINE NAV ===== */
+	.tl-nav {
+		position: fixed; left: 2rem; top: 50%;
+		transform: translateY(-50%); z-index: 150;
+		display: flex; align-items: center; gap: 1.5rem;
+		opacity: 0; transition: opacity 0.4s;
+	}
+	.tl-nav.visible { opacity: 1; }
+
+	.tl-year-display {
+		width: 10rem; height: 12rem;
+		position: relative;
+		overflow: hidden;
+	}
+	.tl-year-item {
+		position: absolute; left: 0; top: 0;
+		width: 100%; height: 100%;
+		display: flex; align-items: center; justify-content: flex-start;
+		font-size: 6rem; font-weight: 700;
+		letter-spacing: 0.06em;
+		color: var(--dlw-petrol-light);
+		line-height: 0.9;
+		opacity: 0;
+		transform: translateY(100%);
+		transition: opacity 0.4s ease, transform 0.4s ease;
+		pointer-events: none;
+	}
+	.tl-year-item.no-transition {
+		transition: none !important;
+	}
+	.tl-year-item.active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	.tl-year-item.exiting-up {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	.tl-year-item.exiting-down {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	.tl-dots {
+		display: flex; flex-direction: column; gap: 0;
+	}
+	.tl-dot {
+		width: 28px; height: 28px;
+		display: flex; align-items: center; justify-content: center;
+		cursor: pointer; position: relative;
+	}
+	.tl-dot::before {
+		content: ''; width: 5px; height: 5px; border-radius: 50%;
+		background: var(--dlw-gray-200);
+		transition: background 0.3s, transform 0.3s;
+	}
+	.tl-dot.active::before {
+		background: var(--dlw-petrol); transform: scale(1.6);
+	}
+
+	/* ===== HERO ===== */
+	.hero-below {
+		display: flex; flex-direction: column;
+		padding: 3rem 2.5rem 2rem 14rem;
+		position: relative;
+	}
+	.hero-content { position: relative; z-index: 2; max-width: 780px; }
+	.hero-below h1 {
+		font-size: clamp(1.4rem, 3.8vw, 2.8rem);
+		font-weight: 700;
+		color: var(--dlw-petrol);
+		line-height: 1.2;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		margin: 0 0 1rem;
+	}
+	.hero-sub {
+		font-size: clamp(0.9rem, 2vw, 1.1rem);
+		font-weight: 400;
+		color: var(--dlw-gray-600);
+		max-width: 560px;
+		line-height: 1.6;
+		margin: 0;
+	}
+	.scroll-cue {
+		position: absolute; bottom: 2rem; left: 50%;
+		transform: translateX(-50%); z-index: 2;
+		opacity: 0; animation: up 0.5s 0.9s forwards;
+	}
+	.scroll-cue span {
+		display: block; width: 1px; height: 44px;
+		background: rgba(255,255,255,0.15);
+		margin: 0 auto; position: relative; overflow: hidden;
+	}
+	.scroll-cue span::after {
+		content: ''; position: absolute; top: -100%; left: 0;
+		width: 100%; height: 100%;
+		background: var(--dlw-petrol-light);
+		animation: pulse 2.2s infinite;
+	}
+
+	/* ===== CHAPTER ===== */
+	.ch {
+		padding: 6rem 2.5rem 6rem 14rem;
+		position: relative;
+	}
+	.ch:nth-child(even of .ch) { background: var(--dlw-gray-50); }
+	.ch-inner {
+		max-width: 1060px; margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3.5rem; align-items: start;
+	}
+	.ch:nth-child(even of .ch) .ch-inner { direction: rtl; }
+	.ch:nth-child(even of .ch) .ch-inner > * { direction: ltr; }
+
+	.year {
+		display: block;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--dlw-petrol);
+		margin-bottom: 0.5rem;
+	}
+
+	.ch-text {
+		opacity: 0; transform: translateY(32px);
+		transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+	}
+	.ch-text.visible { opacity: 1; transform: translateY(0); }
+
+	.ch-text h3 {
+		font-size: 1.4rem;
+		font-weight: 350;
+		text-transform: none;
+		color: var(--dlw-petrol);
+		letter-spacing: normal;
+		line-height: 1.3;
+		margin: 0 0 1rem;
+	}
+	.ch-text p {
+		font-size: 1.1rem;
+		color: var(--text-color);
+		margin: 0 0 1rem;
+	}
+	.ch-text p:last-child { margin-bottom: 0; }
+
+	.callout {
+		background: var(--dlw-petrol-bg);
+		border-left: 3px solid var(--dlw-petrol);
+		padding: 0.8rem 1rem; margin-top: 1rem;
+		border-radius: 0 3px 3px 0;
+	}
+	.callout p {
+		font-size: 1.1rem !important;
+		color: var(--text-color) !important;
+		margin: 0 !important;
+		font-style: italic;
+	}
+
+	/* Media column */
+	.ch-media {
+		opacity: 0; transform: translateY(40px);
+		transition: opacity 0.8s 0.12s ease-out, transform 0.8s 0.12s ease-out;
+	}
+	.ch-media.visible { opacity: 1; transform: translateY(0); }
+	.slot {
+		aspect-ratio: 4/3;
+		background: var(--dlw-gray-50);
+		border-radius: 3px;
+		display: flex; flex-direction: column;
+		align-items: center; justify-content: center;
+		gap: 0.5rem;
+		border: 1px solid var(--dlw-gray-100);
+	}
+	.slot.wide { aspect-ratio: 16/9; }
+	.slot svg {
+		width: 24px; height: 24px;
+		stroke: var(--dlw-gray-400);
+		fill: none; stroke-width: 1.5;
+	}
+	.slot .sl {
+		font-size: 0.65rem; font-weight: 500;
+		color: var(--dlw-gray-400);
+		text-align: center; padding: 0 1rem; line-height: 1.5;
+	}
+	.cap {
+		font-size: 0.88rem; color: var(--dlw-gray-400);
+		margin-top: 0.4rem;
+	}
+	.ch-img {
+		width: 100%;
+		border-radius: 3px;
+		display: block;
+	}
+	.ch-video {
+		width: 100%;
+		border-radius: 3px;
+		display: block;
+	}
+	.ch-slider {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16/9;
+		border-radius: 3px;
+		overflow: hidden;
+	}
+	.ch-slider-img {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+	}
+	.ch-slider-img.active {
+		opacity: 1;
+	}
+	.mstack { display: flex; flex-direction: column; gap: 1rem; }
+
+	/* ===== DARK CHAPTER ===== */
+	.ch--dark { background: var(--dlw-dark) !important; }
+	.ch--dark .year { color: var(--dlw-petrol-light); }
+	.ch--dark .ch-text h3 { color: var(--dlw-petrol-light); }
+	.ch--dark .ch-text p { color: rgba(255,255,255,0.5); }
+	.ch--dark .slot {
+		background: rgba(255,255,255,0.03);
+		border-color: rgba(255,255,255,0.07);
+	}
+	.ch--dark .slot svg { stroke: rgba(255,255,255,0.2); }
+	.ch--dark .slot .sl { color: rgba(255,255,255,0.25); }
+	.ch--dark .cap { color: rgba(255,255,255,0.7); }
+	.ch--dark .callout {
+		background: rgba(255,255,255,0.04);
+		border-left-color: var(--dlw-petrol-light);
+	}
+	.ch--dark .callout p { color: rgba(255,255,255,0.85) !important; }
+
+	/* ===== MOSAIC ===== */
+	.ch--full { text-align: center; }
+	.ch--full .ch-inner { grid-template-columns: 1fr; }
+	.ch--full .ch-text { max-width: 620px; margin: 0 auto 2.5rem; }
+	.mosaic {
+		display: grid; grid-template-columns: repeat(3, 1fr);
+		gap: 0.7rem; max-width: 700px; margin: 0 auto;
+	}
+	.mtile {
+		aspect-ratio: 1;
+		background: var(--dlw-gray-50);
+		border-radius: 3px;
+		display: flex; align-items: center; justify-content: center;
+		border: 1px solid var(--dlw-gray-100);
+		padding: 0.5rem;
+		opacity: 0; transform: translateY(18px);
+		transition: opacity 0.4s, transform 0.4s, background 0.2s;
+		cursor: default;
+	}
+	.mtile.visible { opacity: 1; transform: translateY(0); }
+	.mtile:hover { background: var(--dlw-petrol-bg); }
+	.mtile span {
+		font-size: 0.6rem; font-weight: 600;
+		color: var(--dlw-gray-600);
+		text-align: center; line-height: 1.5;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	/* ===== OUTRO ===== */
+	.outro {
+		min-height: 50vh;
+		display: flex; align-items: center; justify-content: center;
+		text-align: center; padding: 5rem 2.5rem;
+		background: var(--dlw-dark);
+	}
+	.outro-inner {
+		max-width: 640px;
+		opacity: 0; transform: translateY(28px);
+		transition: opacity 0.8s, transform 0.8s;
+	}
+	.outro-inner.visible { opacity: 1; transform: translateY(0); }
+	.outro-quote {
+		font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+		font-weight: 700; color: var(--dlw-white);
+		line-height: 1.4; letter-spacing: 0.04em;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+	}
+	.outro-quote strong {
+		color: var(--dlw-petrol-light); font-weight: 700;
+	}
+	.cta-row { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+	.btn {
+		font-size: 0.78rem; font-weight: 600;
+		letter-spacing: 0.06em; text-transform: uppercase;
+		text-decoration: none;
+		padding: 0.7rem 1.5rem;
+		border-radius: 2px;
+		transition: background 0.2s, color 0.2s;
+	}
+	.btn--fill { background: var(--dlw-petrol); color: var(--dlw-white); }
+	.btn--fill:hover { background: var(--dlw-petrol-dark); }
+	.btn--line {
+		background: transparent; color: rgba(255,255,255,0.6);
+		border: 1px solid rgba(255,255,255,0.2);
+	}
+	.btn--line:hover { color: var(--dlw-white); border-color: rgba(255,255,255,0.5); }
+
+	/* ===== ANIMATIONS ===== */
+	@keyframes up { to { opacity: 1; transform: translateY(0); } }
+	@keyframes pulse { 0%{top:-100%} 45%{top:100%} 100%{top:100%} }
+
+	/* ===== RESPONSIVE ===== */
+	@media (max-width: 900px) {
+		.ch-inner { grid-template-columns: 1fr !important; gap: 2rem; }
+		.ch:nth-child(even of .ch) .ch-inner { direction: ltr; }
+		.ch { padding: 4rem 1.5rem; }
+		.hero-below { padding: 2rem 1.5rem; }
+		.mosaic { grid-template-columns: repeat(2, 1fr); }
+
+		.tl-nav {
+			left: 0; right: 0; top: 0;
+			transform: none;
+			justify-content: center;
+			padding: 0.6rem 1rem;
+			background: rgba(255,255,255,0.92);
+			backdrop-filter: blur(8px);
+			border-bottom: 1px solid var(--dlw-gray-100);
+		}
+
+		.tl-year-display {
+			width: 100%; height: 2.4rem;
+		}
+
+		.tl-year-item {
+			font-size: 1.4rem;
+			line-height: 1;
+			justify-content: center;
+			transform: translateY(100%);
+		}
+		.tl-year-item br { display: none; }
+
+		.tl-year-item.active {
+			transform: translateY(0);
+		}
+		.tl-year-item.exiting-up {
+			transform: translateY(-100%);
+		}
+		.tl-year-item.exiting-down {
+			transform: translateY(100%);
+		}
+	}
+	@media (max-width: 500px) {
+		.mosaic { gap: 0.5rem; }
+		.cta-row { flex-direction: column; align-items: center; }
+		.btn { width: 100%; max-width: 260px; text-align: center; }
+	}
+</style>
+
+<script>
+(function(){
+	const els = document.querySelectorAll('[data-reveal]');
+	const tiles = document.querySelectorAll('.mtile');
+	const prog = document.getElementById('progress');
+	const tl = document.getElementById('tlNav');
+	const dots = document.querySelectorAll('.tl-dot');
+	const yearItems = document.querySelectorAll('.tl-year-item');
+	const chs = document.querySelectorAll('.ch[id]');
+	if (!prog || !tl) return;
+
+	let currentYear: string | null = null;
+	let lastScrollY = window.scrollY;
+	let scrollDir: 'down' | 'up' = 'down';
+
+	const io = new IntersectionObserver(e => {
+		e.forEach(x => {
+			if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); }
+		});
+	}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+	els.forEach(e => io.observe(e));
+
+	const mio = new IntersectionObserver(e => {
+		e.forEach(x => {
+			if (x.isIntersecting) {
+				setTimeout(() => x.target.classList.add('visible'), +(x.target as HTMLElement).dataset.d! || 0);
+				mio.unobserve(x.target);
+			}
+		});
+	}, { threshold: 0.06 });
+	tiles.forEach(e => mio.observe(e));
+
+	dots.forEach(d => d.addEventListener('click', () => {
+		const t = document.getElementById((d as HTMLElement).dataset.t!);
+		if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}));
+
+	let raf = false;
+	window.addEventListener('scroll', () => { if (!raf) { requestAnimationFrame(tick); raf = true; } });
+
+	function tick() {
+		raf = false;
+		const sy = window.scrollY;
+		const dh = document.documentElement.scrollHeight - window.innerHeight;
+		prog!.style.width = (dh > 0 ? (sy / dh) * 100 : 0) + '%';
+
+		if (sy !== lastScrollY) {
+			scrollDir = sy > lastScrollY ? 'down' : 'up';
+			lastScrollY = sy;
+		}
+
+		if (sy > window.innerHeight * 0.4) tl!.classList.add('visible');
+		else tl!.classList.remove('visible');
+
+		let aid: string | null = null;
+		chs.forEach(c => {
+			const r = c.getBoundingClientRect();
+			if (r.top < window.innerHeight * 0.45 && r.bottom > window.innerHeight * 0.25) aid = c.id;
+		});
+
+		// Animate year display
+		if (aid !== currentYear) {
+			const exitClass = scrollDir === 'down' ? 'exiting-up' : 'exiting-down';
+			const startTransform = scrollDir === 'down' ? 'translateY(100%)' : 'translateY(-100%)';
+			yearItems.forEach(item => {
+				const el = item as HTMLElement;
+				if (el.dataset.year === aid) {
+					// Instantly jump to start position (no transition)
+					el.classList.remove('active', 'exiting-up', 'exiting-down');
+					el.classList.add('no-transition');
+					el.style.transform = startTransform;
+					el.style.opacity = '0';
+					el.offsetHeight; // force reflow
+					// Re-enable transition and animate to active
+					el.classList.remove('no-transition');
+					el.style.transform = '';
+					el.style.opacity = '';
+					el.classList.add('active');
+				} else if (el.dataset.year === currentYear) {
+					el.classList.remove('active');
+					el.classList.add(exitClass);
+					const cls = exitClass;
+					setTimeout(() => el.classList.remove(cls), 400);
+				} else {
+					el.classList.remove('active', 'exiting-up', 'exiting-down');
+				}
+			});
+			currentYear = aid;
+		}
+	}
+	tick();
+
+
+	// Play/pause video on click (ignore clicks on bottom 40px where controls are)
+	document.querySelectorAll('.ch-video').forEach(video => {
+		video.addEventListener('click', (e) => {
+			const v = video as HTMLVideoElement;
+			const rect = v.getBoundingClientRect();
+			const clickY = (e as MouseEvent).clientY - rect.top;
+			if (clickY > rect.height - 40) return; // let native controls handle it
+			e.preventDefault();
+			if (v.paused) v.play();
+			else v.pause();
+		});
+	});
+
+	// Auto-rotate sliders
+	document.querySelectorAll('.ch-slider').forEach(slider => {
+		const imgs = slider.querySelectorAll('.ch-slider-img');
+		let current = 0;
+		setInterval(() => {
+			imgs[current]?.classList.remove('active');
+			current = (current + 1) % imgs.length;
+			imgs[current]?.classList.add('active');
+		}, 4000);
+	});
+})();
+</script>

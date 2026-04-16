@@ -1,15 +1,17 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import './fonts.css';
 // import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
 	bodyClass: string;
+	hideHeader?: boolean;
 }
 
-const { title, bodyClass } = Astro.props;
+const { title, bodyClass, hideHeader } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,30 +23,9 @@ const { title, bodyClass } = Astro.props;
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="720ff314-0104-4f02-a4a9-ba066852f34c" type="text/javascript" async></script> -->
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9684N5JFL0"></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-			gtag('config', 'G-9684N5JFL0');
-		</script>
-		<!-- Google Tag Manager -->
-		<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f?.parentNode?.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-N6M72RC');</script> -->
-		<!-- End Google Tag Manager -->
+		<!-- Google Analytics wird erst nach Cookie-Consent geladen (siehe CookieBanner) -->
 	</head>
 	<body class={bodyClass}>
-		<!-- Google Tag Manager (noscript) -->
-		<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6M72RC"
-			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-		<!-- End Google Tag Manager (noscript) -->
 		<svg height="0" width="0" style={{position:'absolute'}}>
 			<defs>
 				<clipPath id="referenceClipPathLeftHeader" clipPathUnits="objectBoundingBox">
@@ -61,15 +42,16 @@ const { title, bodyClass } = Astro.props;
 				</clipPath>
 			</defs>
 		</svg>
-		<header>
+		{!hideHeader && <header>
 			<Header />
-		</header>
+		</header>}
 		<main>
 			<slot />
 		</main>
 		<footer>
 			<Footer />
 		</footer>
+		<CookieBanner />
 	</body>
 </html>
 
@@ -78,8 +60,6 @@ const { title, bodyClass } = Astro.props;
 		--primary: #3DA98F;
 		--secondary: #D58337;
 		--tertiary: #027AAD;
-		--nav-background: var(--primary);
-		--nav-text-color: #FBFBFB;
 		--content-width: 1200px;
 		--content-wide-width: 1600px;
 		--content-padding: 32px;
@@ -98,25 +78,24 @@ const { title, bodyClass } = Astro.props;
 
 	body.references {
 		--primary: #027AAD;
-		--nav-background: #616161;
 	}
 	body.index {
 		--primary: #027AAD;
-		--nav-background: #616161;
 	}
 
 	body.imprint,
 	body.privacy {
 		--primary: #D58337;
 		--secondary: #3DA98F;
-		--nav-background: #D58337;
 	}
 
 	body.products {
 		--primary: #616161;
 		--secondary: #d9d9d9;
-		--nav-background: #FBFBFB;
-		--nav-text-color: #616161;
+	}
+
+	body.history {
+		--primary: #5AACBD;
 	}
 
 	* {

@@ -37,9 +37,7 @@ const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 		variantsImage = variantEye;
 	}
 
-	const imageTransition = (size.width && (size.width <= 1400))
-		? ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0 })
-		: ({ duration: 0.6, ease:'easeOut', type: "tween", bounce: 0 });
+	const imageTransition = { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const, type: "tween" as const, bounce: 0 };
 
 	return (
 		<div className={odd ? `${css.wrap} ${css.odd}` : `${css.wrap} ${css.even}`}>
@@ -84,7 +82,7 @@ const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 							initial="hidden"
 							whileInView="visible"
 							viewport={{ once: true }}
-							transition={{ duration: 0.3, ease:'easeOut' }}
+							transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const, delay: 0.05 }}
 							variants={variantsText}
 						>
 						{children}
