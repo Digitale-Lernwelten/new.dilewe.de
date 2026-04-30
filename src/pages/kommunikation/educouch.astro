@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import HeaderImage from "../../components/HeaderImage.astro";
+import { createPodcastEpisodeSchemas, createPodcastSeriesSchema } from "../../lib/schema";
 
 import { headerImages } from "../../assets/header";
 
@@ -17,8 +18,10 @@ type Episode = {
 	desc: string;
 	audio: string;
 	date: string;
+	datePublished: string;
 	image: string;
 	duration: string;
+	schemaDuration: string;
 	url: string;
 	episodeNumber: string;
 };
@@ -34,6 +37,22 @@ function decodeEntities(str: string): string {
 		.replace(/&nbsp;/g, ' ')
 		.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)))
 		.replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCharCode(parseInt(n, 16)));
+}
+
+function createSchemaDuration(duration: string): string {
+	if (!duration) return "";
+	if (!duration.includes(':')) return `PT${parseInt(duration, 10)}S`;
+
+	const parts = duration.split(':').map((part) => parseInt(part, 10));
+	if (parts.some((part) => Number.isNaN(part))) return "";
+
+	if (parts.length === 3) {
+		const [hours, minutes, seconds] = parts;
+		return `PT${hours}H${minutes}M${seconds}S`;
+	}
+
+	const [minutes, seconds] = parts;
+	return `PT${minutes}M${seconds}S`;
 }
 
 // Load transcripts from markdown files
@@ -54,6 +73,7 @@ const episodes: Episode[] = items.map(item => {
 	const link = item.match(/<link>(.*?)<\/link>/);
 	const img = item.match(/<itunes:image\s+href="([^"]+)"/);
 	const dur = item.match(/<itunes:duration>(.*?)<\/itunes:duration>/);
+	const publishedAt = p?.[1] ? new Date(p[1]) : undefined;
 
 	const rawDesc = decodeEntities(d?.[1]?.replace(/<[^>]+>/g, '').trim() ?? "");
 	const rawDur = dur?.[1] ?? "";
@@ -77,9 +97,11 @@ const episodes: Episode[] = items.map(item => {
 		title: decodeEntities(t?.[1] ?? ""),
 		desc: rawDesc,
 		audio: a?.[1] ?? "",
-		date: p?.[1] ? new Date(p[1]).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }) : "",
+		date: publishedAt ? publishedAt.toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }) : "",
+		datePublished: publishedAt?.toISOString() ?? "",
 		image: img?.[1] ?? fallbackImage,
 		duration: formattedDur,
+		schemaDuration: createSchemaDuration(rawDur),
 		url: link?.[1]?.trim() ?? "https://educouch.podigee.io/",
 		episodeNumber: link?.[1]?.trim().match(/\/(\d+)-/)?.[1] ?? "",
 	};
@@ -87,9 +109,26 @@ const episodes: Episode[] = items.map(item => {
 
 const latest = episodes[0]!;
 const moreEpisodes = episodes.slice(1);
+const podcastSchema = createPodcastSeriesSchema();
+const podcastEpisodeSchemas = createPodcastEpisodeSchemas(episodes.slice(0, 6).map((episode) => ({
+	title: episode.title,
+	description: episode.desc,
+	url: episode.url,
+	datePublished: episode.datePublished,
+	duration: episode.schemaDuration,
+	image: episode.image,
+	audio: episode.audio,
+	episodeNumber: episode.episodeNumber,
+})));
 ---
 
-<Layout title="Podcast EduCouch" bodyClass="communication">
+<Layout
+	title="Podcast EduCouch"
+	bodyClass="communication"
+	description="Die EduCouch ist der Bildungspodcast der Digitalen Lernwelten zu digitalem Lernen, Schulentwicklung und Bildung."
+	schema={[podcastSchema, ...podcastEpisodeSchemas]}
+	mainEntity={{ '@id': podcastSchema['@id'] }}
+>
 	<HeaderImage images={headerImages}>
 	</HeaderImage>
 	<div class="content">

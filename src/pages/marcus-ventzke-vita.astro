@@ -1,9 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import marcus from "../assets/aboutus/marcus.png";
+import { createPersonSchema } from "../lib/schema";
+
+const description = "Lebenslauf und Publikationen von apl. Prof. Dr. Marcus Ventzke, Geschäftsführer der Digitalen Lernwelten GmbH.";
+const marcusSchema = createPersonSchema({
+	name: "Marcus Ventzke",
+	pathname: "/marcus-ventzke-vita/",
+	description,
+	honorificPrefix: "apl. Prof. Dr.",
+	jobTitle: "Geschäftsführer",
+	image: new URL(marcus.src, Astro.site ?? "https://dilewe.de").toString(),
+	knowsAbout: ["Geschichtsdidaktik", "Digitale Bildung", "Digitale Schulbücher"],
+});
 ---
 
-<Layout title="apl. Prof. Dr. Marcus Ventzke – Lebenslauf und Publikationen" bodyClass="index">
+<Layout
+	title="apl. Prof. Dr. Marcus Ventzke – Lebenslauf und Publikationen"
+	bodyClass="index"
+	description={description}
+	pageType="ProfilePage"
+	schema={marcusSchema}
+	mainEntity={{ '@id': marcusSchema['@id'] }}
+>
 	<div class="vita-detail">
 
 		<h1>apl. Prof. Dr. Marcus Ventzke</h1>

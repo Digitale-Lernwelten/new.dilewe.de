@@ -2,27 +2,64 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import {
+	createBreadcrumbSchema,
+	createProjectPageSchema,
+	createReferencesCollectionSchema,
+	createWebPageSchema,
+	getProjectByPathname,
+	organizationSchema,
+	serializeJsonLd,
+	websiteSchema,
+	type JsonLd,
+} from '../lib/schema';
 import './fonts.css';
 // import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
 	bodyClass: string;
+	description?: string;
 	hideHeader?: boolean;
+	pageType?: string;
+	schema?: JsonLd | JsonLd[];
+	mainEntity?: JsonLd;
 }
 
-const { title, bodyClass, hideHeader } = Astro.props;
+const { title, bodyClass, description, hideHeader, pageType, schema, mainEntity } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const canonical = new URL(pathname, Astro.site ?? 'https://dilewe.de').toString();
+const metaDescription = description ?? 'Digitale Lernwelten - Manufaktur für digitale Bildung';
+const additionalSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const project = getProjectByPathname(pathname);
+const pageSchemas = pathname === '/referenzen/'
+	? [createReferencesCollectionSchema()]
+	: project
+		? createProjectPageSchema(project)
+		: [
+				createWebPageSchema({
+					title,
+					pathname,
+					description: metaDescription,
+					type: pageType ?? (pathname === '/' ? 'AboutPage' : 'WebPage'),
+					mainEntity,
+				}),
+			];
+const breadcrumbSchema = createBreadcrumbSchema(pathname, title);
+const schemas = [organizationSchema, websiteSchema, ...pageSchemas, breadcrumbSchema, ...additionalSchemas].filter(Boolean) as JsonLd[];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Digitale Lernwelten - Manufaktur für digitale Bildung"/>
+		<meta name="description" content={metaDescription}/>
 		<meta name="viewport" content="width=device-width" />
+		<link rel="canonical" href={canonical} />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script type="application/ld+json" is:inline set:html={serializeJsonLd(schemas)} />
 		<!-- Google Analytics wird erst nach Cookie-Consent geladen (siehe CookieBanner) -->
 	</head>
 	<body class={bodyClass}>

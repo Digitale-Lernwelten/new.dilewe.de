@@ -1,9 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import flo from "../assets/aboutus/flo.png";
+import { createPersonSchema } from "../lib/schema";
+
+const description = "Lebenslauf und Publikationen von Dr. Florian Sochatzy, Geschäftsführer der Digitalen Lernwelten GmbH.";
+const florianSchema = createPersonSchema({
+	name: "Florian Sochatzy",
+	pathname: "/florian-sochatzy-vita/",
+	description,
+	honorificPrefix: "Dr.",
+	jobTitle: "Geschäftsführer",
+	image: new URL(flo.src, Astro.site ?? "https://dilewe.de").toString(),
+	knowsAbout: ["Digitale Bildung", "Digitale Schulbücher", "Bildungsmedien"],
+});
 ---
 
-<Layout title="Dr. Florian Sochatzy – Lebenslauf und Publikationen" bodyClass="index">
+<Layout
+	title="Dr. Florian Sochatzy – Lebenslauf und Publikationen"
+	bodyClass="index"
+	description={description}
+	pageType="ProfilePage"
+	schema={florianSchema}
+	mainEntity={{ '@id': florianSchema['@id'] }}
+>
 	<div class="vita-detail">
 
 		<h1>Dr. Florian Sochatzy</h1>

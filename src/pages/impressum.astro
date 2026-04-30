@@ -7,7 +7,13 @@ import logo from "../assets/logo-dilewe-small.svg?raw";
 import PageContent from "../components/PageContent.astro";
 ---
 
-<Layout title="Impressum" bodyClass="imprint">
+<Layout
+	title="Impressum"
+	bodyClass="imprint"
+	description="Impressum der Digitalen Lernwelten GmbH."
+	pageType="ContactPage"
+	mainEntity={{ '@id': 'https://dilewe.de/#organization' }}
+>
 	<HeaderImage images={headerImages}>
 		<h2>Impressum</h2>
 		<span class="logo"><Fragment set:html={logo} /></span>
