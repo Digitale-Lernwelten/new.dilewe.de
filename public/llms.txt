@@ -1,0 +1,54 @@
+# Digitale Lernwelten
+
+> Digitale Lernwelten GmbH konzipiert und produziert digitale Bildungsmedien, E-Learning-Angebote und multimediale Lösungen für Bildung, Wissenschaft und Kultur.
+
+Digitale Lernwelten arbeitet für öffentliche und private Auftraggeber, darunter Kultusministerien, Landesämter, Bundesbehörden, Stiftungen, Vereine, Museen und Kultureinrichtungen. Das Leistungsspektrum umfasst Strategie, Konzeption, Projektorganisation, Content-Produktion, Technologie, Implementierung, langfristige Betreuung und öffentliche Kommunikation.
+
+Die Website ist deutschsprachig. Wichtige Themen sind digitale Bildung, digitale Schulbücher, E-Learning, politische Bildung, Museumsguides, Apps, VR-Ausstellungen, Erinnerungskultur, Medienbildung, Diversität, Inklusion, Bildung für nachhaltige Entwicklung, Kompetenzorientierung und Lernen mit KI.
+
+## Company
+
+- Name: Digitale Lernwelten GmbH
+- Website: https://dilewe.de/
+- Location: Eichstätt, Germany; office in Weimar, Germany
+- Contact: info@dilewe.de
+- Management: Prof. Dr. Marcus Ventzke; Dr. Florian Sochatzy
+
+## Key Pages
+
+- [Home](https://dilewe.de/): Company overview, services, competencies and team areas.
+- [References](https://dilewe.de/referenzen/): Portfolio of selected current projects in culture, education and science.
+- [History](https://dilewe.de/geschichte/): Company history from the Institut für digitales Lernen and the mBook to Digitale Lernwelten GmbH.
+- [Products](https://dilewe.de/produkte/): Product area.
+- [Prof. Dr. Marcus Ventzke](https://dilewe.de/marcus-ventzke-vita/): CV and publications.
+- [Dr. Florian Sochatzy](https://dilewe.de/florian-sochatzy-vita/): CV and publications.
+- [Imprint](https://dilewe.de/impressum/): Legal notice and contact details.
+- [Privacy](https://dilewe.de/datenschutz/): Data protection information.
+
+## Selected References
+
+- [E-Learning-Module für den Freistaat Sachsen](https://dilewe.de/referenzen/e-learning-module-sachsen/): Lehrplankonforme E-Learning-Module für alle Schularten und viele Fächer in Sachsen.
+- [KI-Module für Niedersachsen](https://dilewe.de/referenzen/ki-module-niedersachsen/): Moodle-OER-Sammlung zum Thema Lernen mit KI.
+- [GeoRegio](https://dilewe.de/referenzen/georegio/): Dreisprachiges digitales Geografie-Lehrwerk für die Euregio Maas-Rhein.
+- [Demokratie - Medien - Persönlichkeit](https://dilewe.de/referenzen/demokratie-medien-persoenlichkeit/): Digital-multimediales Lehr- und Lernmittel für politische und medienkritische Bildung.
+- [Einblicke Hamburg](https://dilewe.de/referenzen/einblicke-hamburg/): Bildungsplattform zu Hamburgs politischem System.
+- [NS-Gesundheitspolitik](https://dilewe.de/referenzen/ns-gesundheitspolitik/): Interaktive Lernplattform zu Opfern der NS-"Gesundheitspolitik".
+- [Flucht und Vertreibung](https://dilewe.de/referenzen/flucht-und-vertreibung/): Multimediale Darstellung deutscher Flucht-, Vertreibungs- und Integrationsgeschichte.
+- [mGuide Ronneburg](https://dilewe.de/referenzen/mguide-ronneburg/): AudioWALK und digitaler Guide zur Bergbaufolgelandschaft Ronneburg.
+- [Infoportal Russlanddeutsche in Hessen](https://dilewe.de/referenzen/infoportal-russlanddeutsche/): Infoportal mit Forschung, Video-Interviews und Lebensberichten.
+- [mPublish Archiv Bürgerbewegung Leipzig](https://dilewe.de/referenzen/archiv-buergerbewegung-leipzig/): Lehr- und Lernplattform zu Jugendkulturen in DDR und Transformationszeit.
+- [Soul Chat](https://dilewe.de/referenzen/soul-chat/): Krisenchat für Jugendliche.
+- [Kosmos SpiegelArche](https://dilewe.de/referenzen/spiegelarche/): VR-Ausstellung mit utopischen und dystopischen Szenarien.
+- [Vielfalt der Religionen](https://dilewe.de/referenzen/vielfalt-der-religionen/): Hybride Ausstellung und digitale Unterrichtsmaterialien zu Religionen in Sachsen.
+- [mVet](https://dilewe.de/referenzen/mvet/): Informations- und Weiterbildungsplattform für Exotenmedizin.
+- [mGuide Altenburg](https://dilewe.de/referenzen/mguide-altenburg/): Interaktive Stadt- und Kulturführung.
+- [mGuide Jura Museum](https://dilewe.de/referenzen/mguide-jura-museum/): Digitaler Museumsführer für das Jura Museum.
+- [Keeping Memories](https://dilewe.de/referenzen/keeping-memories/): Lernplattform für biografische Arbeit in der Gedenkstättenpädagogik.
+- [MMMMO](https://dilewe.de/referenzen/mmmmo/): Interaktive Datenvisualisierung zu mittelalterlichen Handschriften.
+
+## Crawling Notes
+
+- Canonical domain: https://dilewe.de/
+- Sitemap: https://dilewe.de/sitemap.xml
+- Robots policy: https://dilewe.de/robots.txt
+- The site allows general crawling and explicitly allows GPTBot, ClaudeBot, Google-Extended and PerplexityBot in robots.txt. Bytespider is disallowed.
