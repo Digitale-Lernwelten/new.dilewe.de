@@ -417,7 +417,6 @@ function breadcrumbNameForSegment(segment: string): string {
 		educouch: 'Podcast EduCouch',
 		gdm: 'GdM',
 		'marcus-ventzke-vita': 'Prof. Dr. Marcus Ventzke',
-		produkte: 'Produkte',
 		referenzen: 'Referenzen',
 	};
 
