@@ -14,9 +14,31 @@ import felix from "../assets/aboutus/felix.png"
 import AboutUsCard from "../components/AboutUsCardWrap.astro"
 import AboutUsHeaderCard from "../components/AboutUsHeaderCardWrap.astro"
 import { MobileHeaderText } from "../components/MobileHeaderText"
-import { MobileAboutUsHeader } from "../components/MobileAboutUsHeader"
 import { AboutUsGalleryCard } from "../components/AboutUsGalleryCard"
 import { galleryImages } from "../assets/gallery"
+
+const aboutUsHeaderSections = [
+	{
+		title: "Unsere Kompetenz",
+		subTitle: "ganzheitliche Projekte",
+		text: "Wir kennen die Bedürfnisse öffentlicher und privater Auftraggeber – seit Jahren arbeiten wir erfolgreich mit Kultusministerien, Landesämtern, Bundesbehörden, Stiftungen und Vereinen zusammen. Unsere Projekte werden in diesen Kooperationen grundsätzlich termingerecht und im vereinbarten Kostenrahmen fertiggestellt.",
+	},
+	{
+		title: "Unsere Leistungen",
+		subTitle: "alles aus einer Hand",
+		text: "Die möglichen Leistungen bei der erfolgreichen Entwicklung eines Projekts umfassen die Bereiche Strategie, Konzeption, Projektorganisation, Content-Produktion, Technologie, Implementierung, langfristige Betreuung und öffentliche Kommunikation. Wir finden praktikable Lösungen im Bildungs- und Kulturbereich – sei es Lehrkräftemangel, Inklusion, Medienbildung, Diversität, Bildung für nachhaltige Entwicklung, Kompetenzorientierung, künstliche Intelligenz oder virtuellen Realitäten.",
+	},
+	{
+		title: "Unsere Lösungen",
+		subTitle: "als Antwort auf akute Krisen",
+		text: "Corona, Ukraine, Lehrermangel – drei Krisen aus der letzten Zeit, auf die wir schnell und kreativ mit spezifischen digitalen Lösungen antworten konnten. So entstanden z. B. Lerneinheiten für den Distanzunterricht, digitale Alphabetisierungs-Materialien (DaZ) und Selbstlern-Module mit integrierten Videolehrkräften.",
+	},
+	{
+		title: "Unsere Geschichte",
+		subTitle: "über 10 Jahre Engagement für digitale Bildung",
+		text: "Das Team der Digitalen Lernwelten prägt seit über zehn Jahren eine von Didaktik und Inhalt motivierte Digitalisierung der Bildung aktiv mit. Unter anderem stehen die Auszeichnungen ‘Schulbuch des Jahres’ und ‘Digital Publishing Award’ für diesen Weg und den damit verbundenen Erfolg. Wir beteiligen uns aktiv und kritisch am aktuellen Bildungsdiskurs.",
+	},
+];
 ---
 
 
@@ -30,15 +52,7 @@ import { galleryImages } from "../assets/gallery"
 		<Logo client:load />
 	</HeaderImage>
 	<MobileHeaderText client:load/>
-	<AboutUsHeaderCard>
-		<div class="alignedWrapper">
-			<p class="aligned">Wir kennen die Bedürfnisse öffentlicher und privater Auftraggeber – seit Jahren arbeiten wir erfolgreich mit Kultusministerien, Landesämtern, Bundesbehörden, Stiftungen und Vereinen zusammen. Unsere Projekte werden in diesen Kooperationen grundsätzlich termingerecht und im vereinbarten Kostenrahmen fertiggestellt.</p>
-			<p class="aligned">Die möglichen Leistungen bei der erfolgreichen Entwicklung eines Projekts umfassen die Bereiche Strategie, Konzeption, Projektorganisation, Content-Produktion, Technologie, Implementierung, langfristige Betreuung und öffentliche Kommunikation. Wir finden praktikable Lösungen im Bildungs- und Kulturbereich – sei es Lehrkräftemangel, Inklusion, Medienbildung, Diversität, Bildung für nachhaltige Entwicklung, Kompetenzorientierung, künstliche Intelligenz oder virtuellen Realitäten.</p>
-			<p class="aligned">Corona, Ukraine, Lehrermangel – drei Krisen aus der letzten Zeit, auf die wir schnell und kreativ mit spezifischen digitalen Lösungen antworten konnten. So entstanden z. B. Lerneinheiten für den Distanzunterricht, digitale Alphabetisierungs-Materialien (DaZ) und Selbstlern-Module mit integrierten Videolehrkräften.</p>
-			<p class="aligned">Das Team der Digitalen Lernwelten prägt seit über zehn Jahren eine von Didaktik und Inhalt motivierte Digitalisierung der Bildung aktiv mit. Unter anderem stehen die Auszeichnungen ‘Schulbuch des Jahres’ und ‘Digital Publishing Award’ für diesen Weg und den damit verbundenen Erfolg. Wir beteiligen uns aktiv und kritisch am aktuellen Bildungsdiskurs.</p>
-		</div>
-	</AboutUsHeaderCard>
-	<MobileAboutUsHeader client:load/>
+	<AboutUsHeaderCard sections={aboutUsHeaderSections} />
 	<AboutUsCard image={marcusFlo} alt="Prof. Dr. Marcus Ventzke und Dr. Florian Sochatzy" odd color="blue" isDoublePortrait>
 		<h2>Geschäftsführung & Strategie</h2>
 		<h3><a href="/marcus-ventzke-vita/">Prof. Dr. Marcus Ventzke</a> & </br> <a href="/florian-sochatzy-vita/">Dr. Florian Sochatzy</a></h3>

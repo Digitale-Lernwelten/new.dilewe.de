@@ -1,14 +1,15 @@
-import React, { type ReactNode } from 'react';
+import React from 'react';
 import css from './AboutUsHeaderCard.module.css';
 import { motion } from 'framer-motion';
 import type { ImageMetadata } from 'astro';
 import { useWindowSize } from './useWindowSize';
+import { MobileAboutUsHeader, type AboutUsHeaderSection } from './MobileAboutUsHeader';
 
 interface ReferenceProps {
 	image?: ImageMetadata | undefined;
 	alt?: string | undefined;
 	odd?: boolean;
-	children?: ReactNode;
+	sections: AboutUsHeaderSection[];
 }
 
 const variantLeft = {
@@ -19,23 +20,18 @@ const variantRight = {
 	visible: { opacity: 1, transform: "translateX(0%)" },
 	hidden: { opacity: 0.5, transform: "translateX(-10%)" }
 };
-const variantEye = {
-	visible: { opacity: 1, transform: "scaleY(1)" },
-	hidden: { opacity: 0.01, transform: "scaleY(0.1)" }
-}
-
 const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
-	const {image, alt, odd, children} = props;
+	const {image, alt, odd, sections} = props;
 
 	let variantsImage = odd ? variantLeft : variantRight;
 	const variantsText = !odd ? variantLeft : variantRight;
 
 	const size = useWindowSize();
 	if(size.width && (size.width <= 1400)){
-		variantsImage = variantEye;
+		return <MobileAboutUsHeader sections={sections} />;
 	}
 
 	const imageTransition = { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const, type: "tween" as const, bounce: 0 };
@@ -56,22 +52,12 @@ const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 						<img src={image?.src} width={image?.width} height={image?.height} alt={alt ?? ""} />
 					:
 						<div className={css.textVariant2Container}>
-							<div className={css.textVariant2Wrapper}>
-								<h2 className={css.textVariant2Header}>Unsere Kompetenz</h2>
-								<p className={css.textVariant2}>ganzheitliche Projekte</p>
-							</div>
-							<div className={css.textVariant2Wrapper}>
-								<h2 className={css.textVariant2Header}>Unsere Leistungen</h2>
-								<p className={css.textVariant2}>alles aus einer Hand</p>
-							</div>
-							<div className={css.textVariant2Wrapper}>
-								<h2 className={css.textVariant2Header}>Unsere Lösungen</h2>
-								<p className={css.textVariant2}>als Antwort auf akute Krisen</p>
-							</div>
-							<div className={css.textVariant2Wrapper}>
-								<h2 className={css.textVariant2Header}>Unsere Geschichte</h2>
-								<p className={css.textVariant2}>über 10 Jahre Engagement für digitale Bildung</p>
-							</div>
+							{sections.map((section) => (
+								<div className={css.textVariant2Wrapper} key={section.title}>
+									<h2 className={css.textVariant2Header}>{section.title}</h2>
+									<p className={css.textVariant2}>{section.subTitle}</p>
+								</div>
+							))}
 						</div>
 					}
 
@@ -86,7 +72,11 @@ const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 							transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const, delay: 0.05 }}
 							variants={variantsText}
 						>
-						{children}
+						<div className="alignedWrapper">
+							{sections.map((section) => (
+								<p className="aligned" key={section.title}>{section.text}</p>
+							))}
+						</div>
 					</motion.div>
 				</div>
 			</div>

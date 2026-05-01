@@ -1,16 +1,16 @@
 ---
 import AboutUsHeaderCard from './AboutUsHeaderCard'
+import type { AboutUsHeaderSection } from './MobileAboutUsHeader'
 
 interface Props {
 	image?: ImageMetadata;
 	alt?: string;
 	odd?: boolean;
+	sections: AboutUsHeaderSection[];
 }
 
-const {image, alt, odd} = Astro.props;
+const {image, alt, odd, sections} = Astro.props;
 
 ---
 
-<AboutUsHeaderCard image={image} alt={alt} odd={odd ? true : false} client:only="react">
-	<slot />
-</AboutUsHeaderCard>
+<AboutUsHeaderCard image={image} alt={alt} odd={odd ? true : false} sections={sections} client:only="react" />
