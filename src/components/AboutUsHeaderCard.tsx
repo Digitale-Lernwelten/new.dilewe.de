@@ -6,6 +6,7 @@ import { useWindowSize } from './useWindowSize';
 
 interface ReferenceProps {
 	image?: ImageMetadata | undefined;
+	alt?: string | undefined;
 	odd?: boolean;
 	children?: ReactNode;
 }
@@ -27,7 +28,7 @@ const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
-	const {image, odd, children} = props;
+	const {image, alt, odd, children} = props;
 
 	let variantsImage = odd ? variantLeft : variantRight;
 	const variantsText = !odd ? variantLeft : variantRight;
@@ -52,7 +53,7 @@ const AboutUsHeaderCard: React.FC<ReferenceProps> = (props) => {
 					{
 					image
 					?
-						<img src={image?.src} width={image?.width} height={image?.height} />
+						<img src={image?.src} width={image?.width} height={image?.height} alt={alt ?? ""} />
 					:
 						<div className={css.textVariant2Container}>
 							<div className={css.textVariant2Wrapper}>

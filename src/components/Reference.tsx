@@ -5,6 +5,7 @@ import type { ImageMetadata } from 'astro';
 
 interface ReferenceProps {
 	images: ImageMetadata[];
+	imageAlt: string;
 	odd?: boolean;
 	children?: ReactNode;
 }
@@ -22,7 +23,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
-	const {images, odd, children} = props;
+	const {images, imageAlt, odd, children} = props;
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const touchStartX = useRef(0);
 	const touchEndX = useRef(0);
@@ -72,6 +73,7 @@ const Reference: React.FC<ReferenceProps> = (props) => {
 								src={image?.src}
 								width={image?.width}
 								height={image?.height}
+								alt={index === 0 ? imageAlt : ""}
 								className={`${css.carouselImg} ${index === currentIndex ? css.carouselActive : ''}`}
 							/>
 						))}

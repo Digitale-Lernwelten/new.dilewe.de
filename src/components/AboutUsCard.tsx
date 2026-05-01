@@ -5,6 +5,7 @@ import type { ImageMetadata } from 'astro';
 
 interface AboutUsCardProps {
 	image: ImageMetadata;
+	alt: string;
 	odd?: boolean;
 	color: "blue" | "yellow" | "pink";
 	children?: ReactNode;
@@ -24,7 +25,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
 	if(!props){
 		return <></>;
 	}
-	const {image, odd, children, color, isDoublePortrait} = props;
+	const {image, alt, odd, children, color, isDoublePortrait} = props;
 
 	const variantsImage = odd ? variantRight : variantLeft;
 	const variantsText = !odd ? variantRight : variantLeft;
@@ -42,7 +43,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
 					variants={variantsImage}
 					className={`${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}
 				>
-					<img src={image?.src} width={image?.width} height={image?.height} className={` ${isDoublePortrait ? css.doublePortrait : ""} ${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}/>
+					<img src={image?.src} width={image?.width} height={image?.height} alt={alt} className={` ${isDoublePortrait ? css.doublePortrait : ""} ${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}/>
 
 				</motion.div>
 			</div>

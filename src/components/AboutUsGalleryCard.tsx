@@ -94,7 +94,7 @@ export function AboutUsGalleryCard({ images }: AboutUsGalleryCardProps) {
 					<img
 						key={index}
 						src={image.src}
-						alt={`Team image ${index + 1}`}
+						alt={index === 0 ? "Team der Digitale Lernwelten" : ""}
 						className={`${styles.image} ${index === currentIndex ? styles.active : ''}`}
 					/>
 				))}

@@ -4,9 +4,10 @@ import type { ImageMetadata } from 'astro';
 
 interface ImageShowProps {
 	images: ImageMetadata[];
+	imageAlt?: string | undefined;
 }
 
-export const ImageShow: React.FC<ImageShowProps> = ({images}) => {
+export const ImageShow: React.FC<ImageShowProps> = ({images, imageAlt = "Impression der Digitalen Lernwelten"}) => {
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
@@ -22,6 +23,6 @@ export const ImageShow: React.FC<ImageShowProps> = ({images}) => {
 	}, []);
 
 	return (<div className={css.show}>
-		{images.map((image, i) => (<img key={i} className={i === index  ? `${css.img} ${css.active}` : css.img} src={image.src} width={image.width} height={image.height} />))}
+		{images.map((image, i) => (<img key={i} className={i === index  ? `${css.img} ${css.active}` : css.img} src={image.src} width={image.width} height={image.height} alt={i === 0 ? imageAlt : ""} />))}
 	</div>);
 };

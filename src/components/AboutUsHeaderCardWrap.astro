@@ -3,13 +3,14 @@ import AboutUsHeaderCard from './AboutUsHeaderCard'
 
 interface Props {
 	image?: ImageMetadata;
+	alt?: string;
 	odd?: boolean;
 }
 
-const {image, odd} = Astro.props;
+const {image, alt, odd} = Astro.props;
 
 ---
 
-<AboutUsHeaderCard image={image} odd={odd ? true : false} client:only="react">
+<AboutUsHeaderCard image={image} alt={alt} odd={odd ? true : false} client:only="react">
 	<slot />
 </AboutUsHeaderCard>

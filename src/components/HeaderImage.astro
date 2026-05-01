@@ -1,6 +1,7 @@
 ---
 interface Props {
 	images: ImageMetadata[];
+	imageAlt?: string;
 	fox?: boolean;
 	foxReferences?: boolean;
 }
@@ -8,7 +9,7 @@ interface Props {
 import imageFox from "../assets/header-fox.png";
 import imageFoxReferences from "../assets/header-fox-reference.png";
 import { ImageShow } from "./ImageShow";
-const { images, fox, foxReferences } = Astro.props;
+const { images, imageAlt, fox, foxReferences } = Astro.props;
 ---
 
 <div class="outerWrap">
@@ -25,7 +26,7 @@ const { images, fox, foxReferences } = Astro.props;
 		</svg> -->
 
 		<div class="image">
-			<ImageShow images={images} client:load />
+			<ImageShow images={images} imageAlt={imageAlt} client:load />
 			<div class={foxReferences ? "headerWrap gradientRightToLeft" : "headerWrap gradientLeftToRight"}>
 				<div class="text">
 					<slot />

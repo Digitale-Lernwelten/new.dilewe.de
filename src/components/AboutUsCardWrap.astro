@@ -1,16 +1,17 @@
 ---
 interface Props {
 	image: ImageMetadata;
+	alt: string;
 	odd?: boolean;
 	color: "blue" | "yellow" | "pink";
 	isDoublePortrait: boolean;
 }
 
 import AboutUsCard from './AboutUsCard'
-const {image, odd, color, isDoublePortrait} = Astro.props;
+const {image, alt, odd, color, isDoublePortrait} = Astro.props;
 
 ---
 
-<AboutUsCard image={image} odd={odd ? true : false} color={color} isDoublePortrait={isDoublePortrait} client:only="react">
+<AboutUsCard image={image} alt={alt} odd={odd ? true : false} color={color} isDoublePortrait={isDoublePortrait} client:only="react">
 	<slot />
 </AboutUsCard>
