@@ -24,9 +24,10 @@ interface Props {
 	pageType?: string;
 	schema?: JsonLd | JsonLd[];
 	mainEntity?: JsonLd;
+	noIndex?: boolean;
 }
 
-const { title, bodyClass, description, hideHeader, pageType, schema, mainEntity } = Astro.props;
+const { title, bodyClass, description, hideHeader, pageType, schema, mainEntity, noIndex } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
 const canonical = new URL(pathname, Astro.site ?? 'https://dilewe.de').toString();
 const metaDescription = description ?? 'Digitale Lernwelten - Manufaktur für digitale Bildung';
@@ -55,6 +56,7 @@ const schemas = [organizationSchema, websiteSchema, ...pageSchemas, breadcrumbSc
 		<meta charset="UTF-8" />
 		<meta name="description" content={metaDescription}/>
 		<meta name="viewport" content="width=device-width" />
+		{noIndex && <meta name="robots" content="noindex" />}
 		<link rel="canonical" href={canonical} />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
