@@ -22,6 +22,11 @@ import Layout from "../../layouts/Layout.astro";
 			</dl>
 		</div>
 
+		<blockquote>
+			<p>„Ich bin dankbar, dass es in der Amtszeit meiner Vorgängerin gelungen ist, die Übersetzung des sensiblen Themas der Flucht und Vertreibung von Deutschen aus dem östlichen Europa in die digitale Welt vorzunehmen. Dabei war und ist die Digitale Lernwelten GmbH ein starker Partner, der mit der nötigen historischen Sorgfalt, didaktischer Klarheit und dem Blick für die Zukunft das Projekt sehr gut umgesetzt hat. Damit ist das Portal zu einem wichtigen Baustein der Erinnerungskultur in Hessen und darüber hinaus geworden."</p>
+			<cite>— Andreas Hofmeister, Beauftragter der Hessischen Landesregierung für Heimatvertriebene und Spätaussiedler</cite>
+		</blockquote>
+
 		<h2>Ausgangslage und Aufgabe</h2>
 		<p>Flucht und Vertreibung der Deutschen am Ende des Zweiten Weltkriegs gehören zu den größten Zwangsmigrationen der Geschichte. Rund 12 bis 14 Millionen Menschen verloren ihre Heimat in den ehemaligen deutschen Ostgebieten, im Sudetenland und in den deutschen Siedlungsgebieten Ost- und Südosteuropas. Hunderttausende starben auf der Flucht, in Lagern oder bei Gewaltakten. Die Überlebenden mussten in einem zerstörten Land neu anfangen — oft unter schwierigsten Bedingungen, nicht selten abgelehnt von der einheimischen Bevölkerung.</p>
 		<p>Diese Geschichte ist Teil der deutschen und europäischen Erinnerungskultur, doch sie ist komplex und kontrovers. Sie lässt sich nicht erzählen ohne ihre Ursachen: den Nationalsozialismus, den deutschen Vernichtungskrieg im Osten, die Besatzungspolitik und die Verbrechen an der Zivilbevölkerung der überfallenen Länder. Und sie endet nicht 1945 — die Integration der Vertriebenen in West und Ost, die politischen Auseinandersetzungen, die Suche nach Aussöhnung und die Frage, was diese Geschichte für das heutige Europa bedeutet, gehören dazu.</p>
@@ -76,9 +81,7 @@ import Layout from "../../layouts/Layout.astro";
 	}
 
 	h1 {
-		color: var(--primary);
 		font-size: 1.8rem;
-		font-weight: 400;
 		margin: 0 0 0.3rem;
 		line-height: 1.3;
 	}
@@ -126,17 +129,35 @@ import Layout from "../../layouts/Layout.astro";
 		text-decoration: underline;
 	}
 
+	blockquote {
+		border-left: 3px solid var(--primary, #027AAD);
+		margin: 0 0 2.5rem;
+		padding: 1rem 1.5rem;
+		background: rgba(2, 122, 173, 0.04);
+		border-radius: 0 4px 4px 0;
+	}
+
+	blockquote p {
+		font-size: 1.05rem;
+		font-style: italic;
+		color: #333;
+		line-height: 1.7;
+		margin: 0 0 0.5rem;
+	}
+
+	blockquote cite {
+		font-size: 0.85rem;
+		color: #888;
+		font-style: normal;
+	}
+
 	h2 {
 		font-size: 1.3rem;
-		font-weight: 500;
-		color: var(--primary);
 		margin: 2.5rem 0 0.75rem;
 	}
 
 	h3 {
 		font-size: 1.1rem;
-		font-weight: 500;
-		color: #333;
 		margin: 1.5rem 0 0.5rem;
 	}
 

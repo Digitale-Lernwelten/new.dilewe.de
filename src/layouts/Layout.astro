@@ -129,7 +129,7 @@ const schemas = [organizationSchema, websiteSchema, ...pageSchemas, breadcrumbSc
 	}
 
 	body.history {
-		--primary: #5AACBD;
+		--primary: #027AAD;
 	}
 
 	* {
@@ -140,6 +140,17 @@ const schemas = [organizationSchema, websiteSchema, ...pageSchemas, breadcrumbSc
 		font-family: Lato, system-ui, sans-serif;
 		text-transform: uppercase;
 		font-weight: 300;
+	}
+
+	h1, h2 {
+		color: var(--primary);
+		font-weight: 350;
+	}
+
+	h3 {
+		color: var(--text-color);
+		font-weight: 200;
+		text-transform: none;
 	}
 
 	p {

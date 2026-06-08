@@ -3,13 +3,12 @@ interface Props {
 	images: ImageMetadata[];
 	imageAlt?: string;
 	fox?: boolean;
-	foxReferences?: boolean;
+	gradient?: boolean;
 }
 
 import imageFox from "../assets/header-fox.png";
-import imageFoxReferences from "../assets/header-fox-reference.png";
 import { ImageShow } from "./ImageShow";
-const { images, imageAlt, fox, foxReferences } = Astro.props;
+const { images, imageAlt, fox, gradient } = Astro.props;
 ---
 
 <div class="outerWrap">
@@ -27,7 +26,7 @@ const { images, imageAlt, fox, foxReferences } = Astro.props;
 
 		<div class="image">
 			<ImageShow images={images} imageAlt={imageAlt} client:load />
-			<div class={foxReferences ? "headerWrap gradientRightToLeft" : "headerWrap gradientLeftToRight"}>
+			<div class={`headerWrap${gradient ? " gradientLeftToRight" : ""}`}>
 				<div class="text">
 					<slot />
 				</div>
@@ -35,7 +34,6 @@ const { images, imageAlt, fox, foxReferences } = Astro.props;
 		</div>
 	</div>
 	{ !fox ? '' : (<img class="fox" src={imageFox.src} width={imageFox.width} height={imageFox.height} alt="Ein Fuchs" />)}
-	{ !foxReferences ? '' : (<img class="fox-references" src={imageFoxReferences.src} width={imageFoxReferences.width} height={imageFoxReferences.height} alt="Ein Fuchs" />)}
 </div>
 
 <style>
@@ -76,9 +74,6 @@ const { images, imageAlt, fox, foxReferences } = Astro.props;
 	.gradientLeftToRight {
 		background: linear-gradient(270deg, rgba(30, 30, 30, 0.00) 0%, rgba(0, 0, 0, 0.80) 65%);
 	}
-	.gradientRightToLeft {
-		background: linear-gradient(270deg, rgba(0, 0, 0, 0.80) 0%, rgba(30, 30, 30, 0.00) 65%);
-	}
 	.text {
 		display: flex;
 		flex: 1;
@@ -102,18 +97,7 @@ const { images, imageAlt, fox, foxReferences } = Astro.props;
 		transform: translate(0, 45.5%);
 	}
 
-	.fox-references {
-		position: absolute;
-		z-index: 2;
-		left: 32%;
-		width: 580px;
-		height: auto;
-		display: block;
-		bottom: 0;
-		z-index:10;
-	}
-
-	@media only screen and (max-width: 750px)  {
+@media only screen and (max-width: 750px)  {
 		.text,
 		.image {
 			width: 100%;
@@ -144,14 +128,10 @@ const { images, imageAlt, fox, foxReferences } = Astro.props;
 		.gradientLeftToRight {
 			background: linear-gradient(0deg, rgba(30, 30, 30, 0.00) 0%, rgba(0, 0, 0, 0.80) 80%);
 		}
-		.gradientRightToLeft {
-			background: linear-gradient(0deg, rgba(30, 30, 30, 0.00) 0%, rgba(0, 0, 0, 0.80) 80%);
-		}
 
 	}
 
 	@media only screen and (max-width: 1750px)  {
-		.fox-references,
 		.fox {
 			display: none;
 		}

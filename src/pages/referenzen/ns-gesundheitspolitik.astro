@@ -22,6 +22,11 @@ import Layout from "../../layouts/Layout.astro";
 			</dl>
 		</div>
 
+		<blockquote>
+			<p>„Die Digitale Lernwelten hat ein äußerst sensibles Thema mit der nötigen Sorgfalt und zugleich mit didaktischer Klarheit umgesetzt. Das Ergebnis ist eine Plattform, die unsere Erinnerungsarbeit auf ein neues Fundament stellt — zugänglich für Schulen, Bildungsträger und alle, die sich mit diesem lange verdrängten Kapitel der Geschichte auseinandersetzen wollen."</p>
+			<cite>— Babette Müller-Gräper, Diakonie Herzogsägmühle gGmbH</cite>
+		</blockquote>
+
 		<h2>Ausgangslage und Aufgabe</h2>
 		<p>Zu den Opfergruppen des Nationalsozialismus, die lange im Schatten der Erinnerungskultur standen, gehören die Menschen, die der sogenannten „Euthanasie" und der rassenhygienischen Verfolgung zum Opfer fielen: Menschen mit Behinderungen, psychisch Erkrankte, als „asozial" oder „erbkrank" Stigmatisierte. Hunderttausende wurden zwangssterilisiert, in Anstalten verschleppt, ermordet. Ihre Geschichte wurde nach 1945 jahrzehntelang verdrängt — von der Gesellschaft, oft auch von den Institutionen, in denen die Verbrechen stattfanden.</p>
 		<p>Die Diakonie Herzogsägmühle, eine der großen diakonischen Einrichtungen in Bayern, stellte sich dieser Geschichte. An historischen Orten wie Herzogsägmühle selbst wurde die NS-„Gesundheitspolitik" konkret: Menschen wurden von hier deportiert, zwangssterilisiert, getötet. Die Aufarbeitung dieser Vergangenheit ist nicht nur eine historische Pflicht, sondern auch eine Voraussetzung für eine glaubwürdige Arbeit mit Menschen mit Behinderungen und psychischen Erkrankungen heute.</p>
@@ -80,9 +85,7 @@ import Layout from "../../layouts/Layout.astro";
 	}
 
 	h1 {
-		color: var(--primary);
 		font-size: 1.8rem;
-		font-weight: 400;
 		margin: 0 0 0.3rem;
 		line-height: 1.3;
 	}
@@ -130,17 +133,35 @@ import Layout from "../../layouts/Layout.astro";
 		text-decoration: underline;
 	}
 
+	blockquote {
+		border-left: 3px solid var(--primary, #027AAD);
+		margin: 0 0 2.5rem;
+		padding: 1rem 1.5rem;
+		background: rgba(2, 122, 173, 0.04);
+		border-radius: 0 4px 4px 0;
+	}
+
+	blockquote p {
+		font-size: 1.05rem;
+		font-style: italic;
+		color: #333;
+		line-height: 1.7;
+		margin: 0 0 0.5rem;
+	}
+
+	blockquote cite {
+		font-size: 0.85rem;
+		color: #888;
+		font-style: normal;
+	}
+	
 	h2 {
 		font-size: 1.3rem;
-		font-weight: 500;
-		color: var(--primary);
 		margin: 2.5rem 0 0.75rem;
 	}
 
 	h3 {
 		font-size: 1.1rem;
-		font-weight: 500;
-		color: #333;
 		margin: 1.5rem 0 0.5rem;
 	}
 

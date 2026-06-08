@@ -1,0 +1,288 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderImage from "../components/HeaderImage.astro";
+import { headerImages } from "../assets/header";
+import forschungPub1 from "../assets/forschung/Forschung Publikation 1.jpg";
+import forschungPub2 from "../assets/forschung/Forschung Publikation 2.jpg";
+import forschungPub3 from "../assets/forschung/Forschung Publikation 3.png";
+import diakonieGruppenfoto from "../assets/forschung/Diakonie Fachtagung Gruppenfoto.jpeg";
+import diakonieVortrag from "../assets/forschung/Diakonie Fachtagung Vortrag.jpeg";
+import gdmKino from "../assets/gdm/gdm kino.png";
+---
+
+<Layout
+	title="Forschung – Institut für angewandte Forschung"
+	bodyClass="research"
+	description="Aus Theorie praktische Anwendungen machen – für eine neue Bildungsrealität. Angewandte Forschung an der Schnittstelle von Kommunikations- und Medienwissenschaften, Pädagogik, Didaktik, Museumskunde und Publizistik."
+>
+	<HeaderImage images={headerImages}>
+	</HeaderImage>
+	<div class="content">
+		<div class="intro">
+			<h1>Aus Theorie praktische Anwendungen machen – für eine neue Bildungsrealität</h1>
+			<p>Unsere Realität ist an vielen Stellen längst digital. Auch Schule, Universität und Museum stehen vor herausfordernden Aufgaben: Digitale Inhaltsvermittlung erfordert an vielen Stellen andere Organisationsformen, veränderten Medieneinsatz und neue didaktische Konzepte.</p>
+			<p>Wir arbeiten als Akteur der angewandten Forschung daran, Ergebnisse der Grundlagenforschung in Kommunikations- und Medienwissenschaften, Pädagogik und Didaktik sowie Museumskunde und Publizistik fachübergreifend zusammenzuführen.</p>
+		</div>
+
+		<div class="carousel carousel-wide" id="diakonieSlider">
+			<img src={diakonieGruppenfoto.src} alt="Diakonie Fachtagung – Gruppenfoto" class="carousel-img active" />
+			<img src={diakonieVortrag.src} alt="Diakonie Fachtagung – Vortrag" class="carousel-img" />
+			<img src={gdmKino.src} alt="GdM Kino" class="carousel-img" />
+		</div>
+
+		<section class="edition">
+			<h2>Wir wollen Antworten auf zentrale Bildungsfragen der Gegenwart finden:</h2>
+			<ul class="questions">
+				<li>Wie können wir existierende Technologien nutzen, um Lern- und Denkprozesse effizienter zu gestalten? An welchen Stellen benötigen wir völlig neue Technologien?</li>
+				<li>Was ist eigentlich „digitales Denken"? Und kann man das erlernen?</li>
+				<li>Welche Folgen hat Medienkonvergenz für mediale Rezeptions- und Kommunikationsprozesse?</li>
+				<li>Was ist digitale Realität und in welchem Zusammenhang steht sie mit den anderen Realitäten?</li>
+				<li>Welche Beziehung zwischen Mensch und Wirklichkeit entsteht in der vernetzten Wahrnehmung? Welche Ästhetiken bringt diese Vernetzung hervor?</li>
+				<li>Wie kann virtuelles Kulturerbe gestaltet werden? Und welche Beziehungen hat es zur Gegenständlichkeit?</li>
+			</ul>
+		</section>
+
+		<section class="edition">
+			<h2>Gesellschaft und digitale Medien</h2>
+			<p>Um diese und weitere Fragen mit Akteuren und bildungspolitischen Entscheidern zu diskutieren, haben wir 2016 die Tagung <a href="/kommunikation/gdm/">„Gesellschaft und digitale Medien"</a> ins Leben gerufen.</p>
+
+		<details class="accordion">
+			<summary>Aktuelle Publikationen</summary>
+			<table class="cv-table">
+				<tbody>
+					<tr><td>2026</td><td>Marcus Ventzke: <em>Inklusive Digitalisierung von Lehr- und Lernmitteln: Differenzierung – Individualisierung – Adaptivität.</em> In: Inklusive Digitalisierung. Ein interdisziplinäres Lehrbuch, hgg. von Maren Heibges, Christine Schmid und Markus A. Feufel, Berlin 2026, S. 48–59.</td></tr>
+					<tr><td>2024</td><td>Marcus Ventzke: <em>Unterrichtliche Kommunikation mithilfe digitaler Lehr- und Lernmittel: Auf dem Weg vom multimedialen Contentmangement zu adaptiven Lehr- und Lernsystemen.</em> In: Geschichtskulturen im digitalen Wandel?, hgg. von Olaf Hartung, Alexandra Krebs und Johannes Meyer-Hamme, Frankfurt am Main 2024, S. 266–292.</td></tr>
+					<tr><td>2024</td><td>Marcus Ventzke; Lauritz Brinckmann; Linus Ubl: <em>MMMMO – Mechthild's Medieval Mystical Manuscripts Online. Eine interaktive Kartendarstellung als digitale Überlieferungsgeschichte am Beispiel des ›Liber specialis gratiae‹ der Mechthild von Hackeborn.</em> In: Zeitschrift für digitale Geisteswissenschaften 9 (2024), 23.05.2024. HTML/XML/PDF. DOI: 10.17175/2024_002.</td></tr>
+					<tr><td>2024</td><td>Marcus Ventzke: <em>Inklusion inklusive. Potenziale digitaler Lehr- und Lernmittel.</em> In: IM+io. Best & next Practices aus Digitalisierung | Management | Wissenschaft, Heft 01/2024 „Digital Future Skills" (<a href="https://www.im-io.de/digital-future-skills/inklusion-inklusive/" target="_blank">im-io.de</a> [10.5.2024]).</td></tr>
+					<tr><td></td><td>Hrsg.: Stefan Berger; Angelika Epple; Thomas Sandkühler; Holger Thünemann; Marcus Ventzke: <em>Beiträge zur Geschichtskultur</em>, begründet von Jörn Rüsen.</td></tr>
+					<tr><td>2018</td><td>Bd. 39 — Hrsg.: Thomas Sandkühler; Horst Walter Blanke: <em>Historisierung der Historik. Jörn Rüsen zum 80. Geburtstag.</em> Wien/Köln/Weimar 2018.</td></tr>
+					<tr><td>2021</td><td>Bd. 40 — Hrsg.: Thomas Sandkühler; Angelika Epple; Jürgen Zimmerer: <em>Geschichtskultur durch Restitution. Ein Kunst-Historikerstreit.</em> Wien/Köln/Weimar 2021.</td></tr>
+					<tr><td>2021</td><td>Bd. 41 — Hrsg.: Thomas Blank; Christoph Catrein; Christine van Hoof: <em>Caesarenwahn. Ein Topos zwischen Antwilheminismus, antikem Kaiserbild und moderner Populärkultur.</em> Wien/Köln/Weimar 2021.</td></tr>
+					<tr><td>2020</td><td>Hrsg.: Florian Sochatzy; Marcus Ventzke: <em>Bildung digital gestalten.</em> Eichstätt 2020 (<a href="https://bildung-digital-gestalten.institut-fuer-digitales-lernen.de/inhalt/bildung-digital-gestalten" target="_blank">bildung-digital-gestalten.institut-fuer-digitales-lernen.de</a> [21.5.2026]).</td></tr>
+					<tr><td>2018</td><td>Florian Sochatzy: <em>Das multimediale Schulbuch (mBook) — von der Theorie in die Praxis: Konzeption, Produktion und empirische Überprüfung eines multimedialen Geschichtsschulbuchs.</em> Dissertationsschrift (= Gesellschaft und digitale Medien, Bd. 2). Dortmund 2018.</td></tr>
+					<tr><td>2018</td><td>Marcus Ventzke: <em>Temporal turn. Grundlagen historischer Zeitanalysen im Prozess kompetenzorientierten Geschichtsdenkens.</em> Habilitationsschrift (= Gesellschaft und digitale Medien, Bd. 2). Dortmund 2018.</td></tr>
+					<tr><td>2017</td><td>Florian Sochatzy; Marcus Ventzke: <em>Die digitale (Bildungs-)Revolution und ihre Folgen. Veränderungen für Unterricht und Unterrichtsmaterialien.</em> In: Frank Thissen (Hg.), Lernen in virtuellen Räumen. Perspektiven des mobilen Lernens, De Gruyter Saur – Lernwelten, Berlin/Boston 2017, S. 54–70.</td></tr>
+					<tr><td>2016</td><td>Florian Sochatzy; Marcus Ventzke: <em>New technology and the potential and limitations for constructivist instructional designers: A multimedia history textbook.</em> In: Joanna Wojdon (Ed.), E-teaching History, Cambridge Scholars Publishing, Cambridge 2016, S. 50–64.</td></tr>
+					<tr><td>2015</td><td>Florian Sochatzy; Martin Merkt: <em>Kompetenzförderung durch ein multimediales Filmmethodentraining.</em> In: Monika Waldis und Béatrice Ziegler (Hg.): Forschungswerkstatt Geschichtsdidaktik 13. Beiträge zur Tagung „Geschichtsdidaktik Empirisch 13", Bern 2015: hep der Bildungsverlag (= Geschichtsdidaktik heute, 7), S. 193–204.</td></tr>
+					<tr><td>2013</td><td>Florian Sochatzy; Alexander Schöner; Waltraud Schreiber: <em>Analyse von Schulbüchern als Grundlage empirischer Geschichtsdidaktik.</em> 1. Auflage. Kohlhammer Verlag, Stuttgart 2013.</td></tr>
+					<tr><td>2010</td><td>Hrsg.: Marcus Ventzke; Sylvia Mebus; Waltraud Schreiber: <em>Geschichte denken statt pauken in der Sekundarstufe II. 20 Jahre nach der Friedlichen Revolution: Deutsche und europäische Perspektiven im gymnasialen Geschichtsunterricht.</em> Sächsisches Bildungsinstitut Dresden: Goldenbogen Verlag 2010.</td></tr>
+				</tbody>
+			</table>
+		</details>
+
+		<div class="carousel" id="forschungCarousel">
+			<img src={forschungPub1.src} alt="Forschungspublikation 1" class="carousel-img active" />
+			<img src={forschungPub2.src} alt="Forschungspublikation 2" class="carousel-img" />
+			<img src={forschungPub3.src} alt="Forschungspublikation 3" class="carousel-img" />
+		</div>
+	</div>
+</Layout>
+
+<style>
+	:global(.research) {
+		--primary: #027AAD;
+	}
+
+	.content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.intro h1 {
+		font-size: 1.6rem;
+		margin: 0 0 1.5rem;
+		line-height: 1.4;
+	}
+
+	.intro p {
+		font-size: 1rem;
+		color: #555;
+		line-height: 1.7;
+		margin: 0 0 1.5rem;
+	}
+
+	.edition {
+		margin-bottom: 2.5rem;
+	}
+
+	.edition h2 {
+		font-size: 1.3rem;
+		margin: 0 0 1rem;
+	}
+
+	.edition p a,
+	.intro p a {
+		color: var(--primary);
+		text-decoration: none;
+		border-bottom: 1px solid currentColor;
+	}
+
+	.edition p a:hover,
+	.intro p a:hover {
+		opacity: 0.7;
+	}
+
+	.questions {
+		margin: 0;
+		padding: 0 0 0 1.2rem;
+		color: #555;
+		line-height: 1.7;
+	}
+
+	.questions li {
+		margin: 0 0 0.8rem;
+	}
+
+	.accordion {
+		border-top: 1px solid #ddd;
+		padding: 1rem 0;
+		margin-top: 2rem;
+	}
+
+	.accordion summary {
+		font-size: 1.2rem;
+		font-weight: 500;
+		color: var(--primary);
+		cursor: pointer;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+	}
+
+	.accordion summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.accordion summary::before {
+		content: '+';
+		font-size: 1.4rem;
+		line-height: 1;
+		color: var(--primary);
+	}
+
+	.accordion[open] summary::before {
+		content: '–';
+	}
+
+	.accordion .placeholder {
+		font-style: italic;
+		color: #888;
+		margin: 1rem 0 0;
+	}
+
+	.cv-table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 1rem 0 0;
+	}
+
+	.cv-table td {
+		padding: 0.75rem 1rem;
+		font-size: 0.95rem;
+		color: #555;
+		line-height: 1.6;
+		vertical-align: top;
+		border-bottom: 1px solid #eee;
+	}
+
+	.cv-table td:first-child {
+		white-space: nowrap;
+		font-weight: 500;
+		color: var(--primary);
+		width: 1%;
+	}
+
+	.cv-table a {
+		color: var(--primary);
+		text-decoration: none;
+		border-bottom: 1px solid currentColor;
+	}
+
+	.cv-table a:hover {
+		opacity: 0.7;
+	}
+
+	@media (max-width: 600px) {
+		.cv-table td {
+			display: block;
+			padding: 0.3rem 0;
+			border-bottom: none;
+		}
+		.cv-table tr {
+			display: block;
+			margin-bottom: 1rem;
+			padding-bottom: 0.75rem;
+			border-bottom: 1px solid #eee;
+		}
+	}
+
+	.carousel {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 1 / 1.41421356;
+		border-radius: 6px;
+		overflow: hidden;
+		margin: 2rem 0 1rem;
+	}
+
+	.carousel.is-hidden {
+		display: none;
+	}
+
+	.carousel.carousel-wide {
+		aspect-ratio: 16 / 9;
+		margin: 1.5rem 0 2.5rem;
+	}
+
+	.carousel-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+		cursor: pointer;
+	}
+
+	.carousel-img.active {
+		opacity: 1;
+	}
+</style>
+
+<script>
+	const carousel = document.getElementById('forschungCarousel');
+	const accordion = document.querySelector('details.accordion') as HTMLDetailsElement | null;
+	const imgs = carousel?.querySelectorAll('.carousel-img') ?? [];
+
+	let current = 0;
+	setInterval(() => {
+		imgs[current]?.classList.remove('active');
+		current = (current + 1) % imgs.length;
+		imgs[current]?.classList.add('active');
+	}, 4000);
+
+	imgs.forEach(img => {
+		img.addEventListener('click', () => {
+			if (!accordion) return;
+			accordion.open = true;
+			accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+	});
+
+	accordion?.addEventListener('toggle', () => {
+		if (!carousel) return;
+		carousel.classList.toggle('is-hidden', accordion.open);
+	});
+
+	const wideImgs = document.querySelectorAll('#diakonieSlider .carousel-img');
+	let wideCurrent = 0;
+	setInterval(() => {
+		wideImgs[wideCurrent]?.classList.remove('active');
+		wideCurrent = (wideCurrent + 1) % wideImgs.length;
+		wideImgs[wideCurrent]?.classList.add('active');
+	}, 4000);
+</script>

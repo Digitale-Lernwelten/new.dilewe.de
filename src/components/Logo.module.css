@@ -80,3 +80,9 @@
 
 	}
 }
+
+@media only screen and (max-width: 750px)  {
+	.wrap {
+		display: none;
+	}
+}

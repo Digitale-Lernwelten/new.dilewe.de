@@ -24,6 +24,11 @@ import Layout from "../../layouts/Layout.astro";
 			</dl>
 		</div>
 
+		<blockquote>
+			<p>„Im Rahmen unseres Think Tanks ‚Digital Memorial Lab' suchten wir nach innovativen Wegen, biografische Arbeit digital weiterzudenken. Die Digitale Lernwelten hat diese Aufgabe mit didaktischer Klarheit und großem Gespür für die Anforderungen der Gedenkstättenpädagogik gelöst. Das Ergebnis ist eine Plattform, die Jugendliche nicht zur unkritischen Identifikation einlädt, sondern zur reflexiven Auseinandersetzung – genau das, was zeitgemäße Erinnerungskultur braucht."</p>
+			<cite>— Prof. Dr. Jörg Skriebeleit, Leiter der KZ-Gedenkstätte Flossenbürg</cite>
+		</blockquote>
+
 		<h2>Ausgangslage und Aufgabe</h2>
 		<p>Biografische Arbeit ist ein zentrales Element der Gedenkstättenpädagogik: Die Geschichten einzelner Menschen machen die abstrakten Dimensionen der nationalsozialistischen Verbrechen fassbar und schaffen Anknüpfungspunkte für Empathie und Reflexion. Doch biografische Erzählungen sind keine neutralen Abbildungen von Lebensläufen — sie sind Konstruktionen, geprägt von den Perspektiven der Erzählenden, den Erwartungen der Zuhörenden und den Konventionen des Genres.</p>
 		<p>Wie lässt sich diese Konstruiertheit biografischer Erzählungen für Schülerinnen und Schüler sichtbar machen? Wie können junge Menschen lernen, Lebensgeschichten nicht nur nachzuvollziehen, sondern kritisch zu reflektieren — ohne dabei die Würde der Betroffenen zu verletzen oder in relativierende Distanz zu verfallen?</p>
@@ -80,9 +85,7 @@ import Layout from "../../layouts/Layout.astro";
 	}
 
 	h1 {
-		color: var(--primary);
 		font-size: 1.8rem;
-		font-weight: 400;
 		margin: 0 0 0.3rem;
 		line-height: 1.3;
 	}
@@ -130,17 +133,35 @@ import Layout from "../../layouts/Layout.astro";
 		text-decoration: underline;
 	}
 
+	blockquote {
+		border-left: 3px solid var(--primary, #027AAD);
+		margin: 0 0 2.5rem;
+		padding: 1rem 1.5rem;
+		background: rgba(2, 122, 173, 0.04);
+		border-radius: 0 4px 4px 0;
+	}
+
+	blockquote p {
+		font-size: 1.05rem;
+		font-style: italic;
+		color: #333;
+		line-height: 1.7;
+		margin: 0 0 0.5rem;
+	}
+
+	blockquote cite {
+		font-size: 0.85rem;
+		color: #888;
+		font-style: normal;
+	}
+	
 	h2 {
 		font-size: 1.3rem;
-		font-weight: 500;
-		color: var(--primary);
 		margin: 2.5rem 0 0.75rem;
 	}
 
 	h3 {
 		font-size: 1.1rem;
-		font-weight: 500;
-		color: #333;
 		margin: 1.5rem 0 0.5rem;
 	}
 

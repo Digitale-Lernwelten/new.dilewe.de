@@ -22,6 +22,11 @@ import Layout from "../../layouts/Layout.astro";
 			</dl>
 		</div>
 
+		<blockquote>
+			<p>„Unser Ziel war es, eine benutzerfreundliche Lehr- und Lernplattform zu entwickeln, die bundesweit genutzt werden kann und sich insbesondere auf Jugendkulturen in der DDR und Transformationszeit fokussiert. Diese ist sowohl online zugänglich, um von Lehrkräften ortsunabhängig als zusätzliches Lehrmaterial im Unterricht genutzt zu werden, als auch in unsere bestehenden Bildungs- und Workshopangebote integriert."</p>
+			<cite>— Andreas Parnt, Archiv Bürgerbewegung Leipzig e.V.</cite>
+		</blockquote>
+
 		<h2>Ausgangslage und Aufgabe</h2>
 		<p>Die Geschichte der DDR wird im Schulunterricht oft auf politische Strukturen, Überwachung und Mauerfall reduziert. Doch wie lebten Jugendliche in diesem Staat? Welche Musik hörten sie, welche Szenen bildeten sich, welche Konflikte trugen sie mit dem Regime aus? Die Vielfalt jugendlicher Lebenswelten in der DDR — von der staatlich geförderten FDJ über Beat- und Rockmusik bis hin zu Punk, Heavy Metal und der Umweltbewegung — bleibt in herkömmlichen Unterrichtsmaterialien oft unsichtbar.</p>
 		<p>Das Archiv Bürgerbewegung Leipzig e.V. verfügt über einzigartige Quellenbestände zu diesen Themen: Dokumente, Fotografien, Zeitzeugenberichte, Ton- und Filmaufnahmen. Doch diese Bestände waren bislang vor allem für Forschende und interessierte Erwachsene zugänglich — nicht für die eigentliche Zielgruppe: Jugendliche von heute, die sich für das Leben Gleichaltriger in einer vergangenen Zeit interessieren könnten.</p>
@@ -80,9 +85,7 @@ import Layout from "../../layouts/Layout.astro";
 	}
 
 	h1 {
-		color: var(--primary);
 		font-size: 1.8rem;
-		font-weight: 400;
 		margin: 0 0 0.3rem;
 		line-height: 1.3;
 	}
@@ -130,17 +133,35 @@ import Layout from "../../layouts/Layout.astro";
 		text-decoration: underline;
 	}
 
+	blockquote {
+		border-left: 3px solid var(--primary, #027AAD);
+		margin: 0 0 2.5rem;
+		padding: 1rem 1.5rem;
+		background: rgba(2, 122, 173, 0.04);
+		border-radius: 0 4px 4px 0;
+	}
+
+	blockquote p {
+		font-size: 1.05rem;
+		font-style: italic;
+		color: #333;
+		line-height: 1.7;
+		margin: 0 0 0.5rem;
+	}
+
+	blockquote cite {
+		font-size: 0.85rem;
+		color: #888;
+		font-style: normal;
+	}
+	
 	h2 {
 		font-size: 1.3rem;
-		font-weight: 500;
-		color: var(--primary);
 		margin: 2.5rem 0 0.75rem;
 	}
 
 	h3 {
 		font-size: 1.1rem;
-		font-weight: 500;
-		color: #333;
 		margin: 1.5rem 0 0.5rem;
 	}
 
