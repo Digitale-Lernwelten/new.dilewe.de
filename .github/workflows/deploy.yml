@@ -1,0 +1,19 @@
+name: Deploy Production
+
+on:
+  schedule:
+    - cron: '0 23 * * 0'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run update script on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: live.dilewe.de
+          port: 42
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: ~/dilewe.de/update.sh
