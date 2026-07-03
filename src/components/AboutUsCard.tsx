@@ -43,7 +43,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = (props) => {
 					variants={variantsImage}
 					className={`${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}
 				>
-					<img src={image?.src} width={image?.width} height={image?.height} alt={alt} className={` ${isDoublePortrait ? css.doublePortrait : ""} ${color === "blue" ? css.blue : color === "yellow" ? css.yellow : css.pink}`}/>
+					<img src={image?.src} width={image?.width} height={image?.height} alt={alt} className={`${isDoublePortrait ? css.doublePortrait : ""}`}/>
 
 				</motion.div>
 			</div>

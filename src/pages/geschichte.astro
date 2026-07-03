@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeaderImage from "../components/HeaderImage.astro";
+import { HeaderText } from "../components/HeaderText";
+import { Logo } from "../components/Logo";
 import { headerImages } from "../assets/header";
 import geschichteGruendung from "../assets/geschichte/geschichte 1.png";
 import geschichteEbookAward from "../assets/geschichte/geschichte ebook award.png";
@@ -39,7 +41,9 @@ import geschichteGrimme from "../assets/geschichte/geschichte_grimme-online.png"
 	</div>
 </div>
 
-<HeaderImage images={headerImages}>
+<HeaderImage images={headerImages} gradient>
+	<HeaderText title="Der Weg von der Forschung zu einem führenden digitalen Bildungsunternehmen" text="Wie aus didaktischer Forschung in Eichstätt ein führender Produzent digitaler Bildungsmedien in Deutschland wurde." client:load />
+	<Logo client:load />
 </HeaderImage>
 
 <div class="hero-below">
@@ -390,13 +394,17 @@ import geschichteGrimme from "../assets/geschichte/geschichte_grimme-online.png"
 		position: relative;
 	}
 	.hero-content { position: relative; z-index: 2; max-width: 780px; }
+	@media only screen and (min-width: 1401px) {
+		.hero-content { display: none; }
+		.hero-below {
+			height: 1px;
+			min-height: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+	}
 	.hero-below h1 {
-		font-size: clamp(1.3rem, 4.5vw, 1.8rem);
-		line-height: 1.2;
-		letter-spacing: 0.04em;
 		margin: 0 0 1rem;
-		overflow-wrap: break-word;
-		hyphens: auto;
 	}
 	.hero-sub {
 		font-size: clamp(0.9rem, 2vw, 1.1rem);

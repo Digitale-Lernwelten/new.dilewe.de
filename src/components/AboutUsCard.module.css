@@ -70,16 +70,10 @@
 	margin-left: 6rem;
 }
 
-.blue {
-	background-color: rgba(2, 122, 173, 1) !important;
-}
-
-.yellow {
-	background-color: #DCD640;
-}
-
+.blue,
+.yellow,
 .pink {
-	background-color: rgba(246, 99, 120, 1);
+	background-color: transparent !important;
 }
 
 .wrap.even .image img {

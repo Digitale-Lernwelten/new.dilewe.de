@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import HeaderImage from "../../components/HeaderImage.astro";
+import { HeaderText } from "../../components/HeaderText";
+import { Logo } from "../../components/Logo";
 import { Image } from "astro:assets";
 
 import { headerImages } from "../../assets/header";
@@ -13,7 +15,9 @@ import gdmVortrag from "../../assets/gdm/gdm vortrag marcus.png";
 ---
 
 <Layout title="GdM – Gesellschaft und digitale Medien" bodyClass="communication">
-	<HeaderImage images={headerImages}>
+	<HeaderImage images={headerImages} gradient>
+		<HeaderText title="Tagung 'Gesellschaft und digitale Medien'" text="" client:load />
+		<Logo client:load />
 	</HeaderImage>
 	<div class="content">
 		<div class="intro">
@@ -102,6 +106,12 @@ import gdmVortrag from "../../assets/gdm/gdm vortrag marcus.png";
 		color: #555;
 		line-height: 1.7;
 		margin: 0 0 2rem;
+	}
+
+	@media only screen and (min-width: 1401px) {
+		.intro h1 {
+			display: none;
+		}
 	}
 
 	.edition {

@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import HeaderImage from "../../components/HeaderImage.astro";
+import { HeaderText } from "../../components/HeaderText";
+import { Logo } from "../../components/Logo";
 import { createPodcastEpisodeSchemas, createPodcastSeriesSchema } from "../../lib/schema";
 
 import { headerImages } from "../../assets/header";
@@ -129,11 +131,13 @@ const podcastEpisodeSchemas = createPodcastEpisodeSchemas(episodes.slice(0, 6).m
 	schema={[podcastSchema, ...podcastEpisodeSchemas]}
 	mainEntity={{ '@id': podcastSchema['@id'] }}
 >
-	<HeaderImage images={headerImages}>
+	<HeaderImage images={headerImages} gradient>
+		<HeaderText title="Die EduCouch — Der Bildungspodcast" text="" client:load />
+		<Logo client:load />
 	</HeaderImage>
 	<div class="content">
 		<div class="intro">
-			<h2 class="intro-title">Die EduCouch — Der Bildungspodcast</h2>
+			<h1>Die EduCouch — Der Bildungspodcast</h1>
 			<p class="intro-text">Seit 2017 reden wir in der EduCouch mit den Köpfen, die Bildung prägen — aus Wissenschaft, Praxis, Politik, Kunst und Kultur Über 180 Folgen zu digitalem Lernen, Schulentwicklung und der Frage, was Bildung und Wissen eigentlich ausmacht. Die EduCouch ist unser Gespräch mit der Bildungswelt — offen, neugierig und manchmal auch unbequem.</p>
 			<div class="subscribe-buttons">
 				<span class="subscribe-label">Abonnieren:</span>
@@ -234,10 +238,13 @@ const podcastEpisodeSchemas = createPodcastEpisodeSchemas(episodes.slice(0, 6).m
 	}
 
 	h1 {
-		color: var(--primary);
-		font-weight: 300;
-		font-size: 2rem;
 		margin-bottom: 2rem;
+	}
+
+	@media only screen and (min-width: 1401px) {
+		.intro h1 {
+			display: none;
+		}
 	}
 
 	.intro {

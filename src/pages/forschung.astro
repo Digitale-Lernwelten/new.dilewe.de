@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeaderImage from "../components/HeaderImage.astro";
+import { HeaderText } from "../components/HeaderText";
+import { Logo } from "../components/Logo";
 import { headerImages } from "../assets/header";
 import forschungPub1 from "../assets/forschung/Forschung Publikation 1.jpg";
 import forschungPub2 from "../assets/forschung/Forschung Publikation 2.jpg";
@@ -15,7 +17,9 @@ import gdmKino from "../assets/gdm/gdm kino.png";
 	bodyClass="research"
 	description="Aus Theorie praktische Anwendungen machen – für eine neue Bildungsrealität. Angewandte Forschung an der Schnittstelle von Kommunikations- und Medienwissenschaften, Pädagogik, Didaktik, Museumskunde und Publizistik."
 >
-	<HeaderImage images={headerImages}>
+	<HeaderImage images={headerImages} gradient>
+		<HeaderText title="Aus Theorie praktische Anwendungen machen – für eine neue Bildungsrealität" text="" client:load />
+		<Logo client:load />
 	</HeaderImage>
 	<div class="content">
 		<div class="intro">
@@ -90,9 +94,13 @@ import gdmKino from "../assets/gdm/gdm kino.png";
 	}
 
 	.intro h1 {
-		font-size: 1.6rem;
 		margin: 0 0 1.5rem;
-		line-height: 1.4;
+	}
+
+	@media only screen and (min-width: 1401px) {
+		.intro h1 {
+			display: none;
+		}
 	}
 
 	.intro p {
